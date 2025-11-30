@@ -1,0 +1,3 @@
+// This file is needed for some plugins to work
+// https://github.com/import-js/eslint-plugin-import/issues/3079#issuecomment-2429396100
+{}
