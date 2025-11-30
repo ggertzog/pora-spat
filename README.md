@@ -5,12 +5,9 @@
 | Библиотека         | Описание                       |
 | :----------------- | :----------------------------- |
 | Next.js            | React framework                |
-| TailwindCSS        | CSS                            |
-| Jotai              | State management               |
-| Motion             | Animation                      |
+| Sass               | CSS                            |
+| Zustand            | State management               |
 | zod                | Validation                     |
-| @t3-oss/env-nextjs | Environment variables typesafe |
-| keen-slider        | Slider                         |
 
 ## Запуск проекта
 
