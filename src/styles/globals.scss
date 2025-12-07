@@ -1,0 +1,43 @@
+@import "_typography";
+
+:root {
+  //bg
+  --bg-main: #fdfdfc;
+  --bg-secondary: #f6f6f3;
+  --bg-tertiary: #eeeee9;
+  --bg-border: #e0e0df;
+  --bg-border-red: #97050515; // потом проверить правильный ли цвет
+  --bg-beige-main: #d9d0c7;
+  --bg-beige-secondary: #cbbfb3;
+  --bg-beige1-main: #e5d5c7;
+  --bg-beige2-secondary: #e5d5c7;
+  --bg-purple-main: #dbbaba;
+  --bg-purple-econdary: #d6abaa;
+  --bg-blue: #d4e2f4;
+  --bg-yellow: #f3e4bd;
+  --bg-grey-blue: #dfe7f0;
+  --bg-green: #e2ebde;
+  --bg-red: #d70404;
+
+  //ico
+  --ico-color-main: #171717;
+  --ico-color-main-on: #ffffff;
+  --ico-color-secondary: #b1b1b1;
+  --ico-color-beige: #706b62;
+  --ico-color-red: #d70404;
+
+  //button
+  --button-color-main: #f2f2ef;
+  --button-color-secondary: #b3b3b3;
+  --button-color-tertiary: #f9f9f7;
+  --button-color-main-on: #fdfdfc;
+  --button-color-red: #d6abaa;
+
+  //text
+  --text-color-main: #30302b;
+  --text-color-secondary: #8a8a8a;
+  --text-color-tertiary: #d6d6d6;
+  --text-color-main-on: #ffffff;
+  --text-color-secondary-on: #00000070;
+  --text-color-red: #d70404;
+}

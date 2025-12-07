@@ -1,0 +1,163 @@
+@mixin h1($size: xl) {
+  font-family: var(--font-cygre);
+  font-size: 64px;
+  letter-spacing: -0.64px;
+  font-weight: 600;
+  line-height: 110%;
+
+  @if $size == sm or $size == xs {
+    font-size: 36px;
+    letter-spacing: -0.36px;
+  }
+}
+
+@mixin h2($size: xl) {
+  font-family: var(--font-cygre);
+  font-weight: 600;
+  font-style: normal;
+  font-size: 48px;
+  line-height: 110%;
+  letter-spacing: -0.48px;
+
+  @if $size == sm or $size == xs {
+    font-size: 26px;
+    letter-spacing: 0%;
+  }
+}
+
+@mixin h3($size: xl) {
+  font-family: var(--font-cygre);
+  font-weight: 600;
+  font-style: normal;
+  font-size: 32px;
+  line-height: 110%;
+  letter-spacing: -0.32px;
+
+  @if $size == sm or $size == xs {
+    font-size: 22px;
+    letter-spacing: 0%;
+  }
+}
+
+@mixin h4($size: xl) {
+  font-family: var(--font-cygre);
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 110%;
+  letter-spacing: 0.4px;
+}
+
+@mixin h5($size: xl) {
+  font-family: var(--font-vela-sans);
+  font-weight: 500;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 110%;
+  letter-spacing: 0%;
+
+  @if $size == sm or $size == xs {
+    font-size: 16px;
+    letter-spacing: 0%;
+  }
+}
+
+@mixin h6($size: xl) {
+  font-family: var(--font-cygre);
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+
+  @if $size == sm or $size == xs {
+    font-size: 14px;
+    letter-spacing: 0%;
+  }
+}
+
+@mixin text1($size: xl) {
+  font-family: var(--font-vela-sans);
+  font-weight: 500;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0%;
+
+  @if $size == sm or $size == xs {
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0%;
+  }
+}
+
+@mixin text2($size: xl) {
+  font-family: var(--font-vela-sans);
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 110%;
+  letter-spacing: 0%;
+
+  @if $size == sm or $size == xs {
+    font-size: 14px;
+    line-height: 130%;
+  }
+}
+
+@mixin text3($size: xl) {
+  font-family: var(--font-vela-sans);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: 0.48px;
+
+  @if $size == sm or $size == xs {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 110%;
+    letter-spacing: 0.12px;
+  }
+}
+
+@mixin text4($size: xl) {
+  font-family: var(--font-vela-sans);
+  font-weight: 600;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 110%;
+  letter-spacing: 0.14px;
+}
+
+@mixin number($size: xl) {
+  font-family: var(--font-cygre);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 110%;
+  letter-spacing: 0.18px;
+}
+
+@mixin tooltip($size: xl) {
+  font-family: var(--font-vela-sans);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 108%;
+  letter-spacing: 0.39px;
+}
+
+@mixin tooltip2($size: xl) {
+  font-family: var(--font-vela-sans);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 110%;
+  letter-spacing: 0.42px;
+
+  @if $size == sm or $size == xs {
+    font-size: 10px;
+    letter-spacing: 0.3px;
+  }
+}

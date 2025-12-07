@@ -20,8 +20,8 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@/app/*": ["./src/app/*"]
+      "@/app/*": ["./src/app/*"],
+      "@/providers/*": ["./src/providers/*"],
     },
     "target": "ES2017"
   },
