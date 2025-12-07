@@ -1,17 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "../styles/globals.scss";
 import { QueryProvider } from "@/providers/QueryProvider";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { CygreFont, VelaSansFont } from './_fonts';
+import clsx from 'clsx';
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="ru" className={clsx(CygreFont.variable, VelaSansFont.variable)}>
+      <body >
         <QueryProvider>{children}</QueryProvider>
       </body>
     </html>
