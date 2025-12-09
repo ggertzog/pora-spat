@@ -1,0 +1,150 @@
+@use "sass:math";
+
+/// Округляет число до 4 знаков после запятой.
+/// @param {Number} $val - Число, которое нужно округлить.
+/// @return {Number} - Округлённое число с точностью до 4 знаков после запятой.
+@function r2f($val) {
+  @return math.div(math.round($val * 10000), 10000);
+}
+
+/// Преобразует значение из пикселей в `vw` относительно базовой ширины 700px.
+/// Результат округляется до 4 знаков после запятой с помощью функции `r2f`.
+/// @param {Number} $px - Значение в пикселях, которое нужно преобразовать.
+/// @return {Number} - Значение в `vw`, округлённое до 4 знаков после запятой.
+@function apx($px) {
+  @return r2f(math.div($px, 700px) * 100vw);
+}
+
+@function apxm($px) {
+  @return r2f(math.div($px, $dbreak) * 100vw);
+}
+
+$dbreak: 1920px !default;
+
+//медиазапросы
+@mixin w1920 {
+  @media screen and (max-width: 1920px) {
+    $dbreak: 1920px !global;
+    @content;
+  }
+}
+
+@mixin w1440 {
+  @media screen and (max-width: 1440px) {
+    $dbreak: 1440px !global;
+    @content;
+  }
+}
+
+@mixin w1024 {
+  @media screen and (max-width: 1024px) {
+    $dbreak: 1024px !global;
+    @content;
+  }
+}
+
+@mixin w768 {
+  @media screen and (max-width: 768px) {
+    $dbreak: 768px !global;
+    @content;
+  }
+}
+
+@mixin w375 {
+  @media screen and (max-width: 375px) {
+    $dbreak: 375px !global;
+    @content;
+  }
+}
+
+@mixin all-breakpoints($property, $value1, $value2: null) {
+  @include w1920 {
+    @if $value2 == null {
+      #{$property}: vw($value1);
+    } @else {
+      #{$property}: vw($value1) vw($value2);
+    }
+  }
+  @include w1440 {
+    @if $value2 == null {
+      #{$property}: vw($value1);
+    } @else {
+      #{$property}: vw($value1) vw($value2);
+    }
+  }
+  @include w1024 {
+    @if $value2 == null {
+      #{$property}: vw($value1);
+    } @else {
+      #{$property}: vw($value1) vw($value2);
+    }
+  }
+  @include w768 {
+    @if $value2 == null {
+      #{$property}: vw($value1);
+    } @else {
+      #{$property}: vw($value1) vw($value2);
+    }
+  }
+  @include w375 {
+    @if $value2 == null {
+      #{$property}: vw($value1);
+    } @else {
+      #{$property}: vw($value1) vw($value2);
+    }
+  }
+}
+
+@mixin clearList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin clearButton {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+}
+
+@mixin clearInput {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+}
+
+@mixin containImg($objectFit: cover) {
+  width: 100%;
+  height: 100%;
+  object-fit: $objectFit;
+  object-position: center;
+}
+
+@mixin transit($tag...) {
+  transition-timing-function: ease-in-out;
+  transition-duration: 350ms;
+  transition-property: $tag;
+}
+
+@mixin clamp($lines) {
+  overflow: hidden;
+  display: -webkit-box;
+
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+}

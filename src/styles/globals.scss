@@ -1,6 +1,11 @@
 @import "_typography";
+@import "_mixins";
 
 :root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   //bg
   --bg-main: #fdfdfc;
   --bg-secondary: #f6f6f3;
@@ -40,4 +45,15 @@
   --text-color-main-on: #ffffff;
   --text-color-secondary-on: #00000070;
   --text-color-red: #d70404;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-vela-sans, sans-serif);
+  -webkit-tap-highlight-color: transparent;
 }
