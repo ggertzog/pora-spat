@@ -20,18 +20,13 @@
       }
     ],
     "paths": {
+      "@/*": ["./src/*"],
       "@/app/*": ["./src/app/*"],
-      "@/providers/*": ["./src/providers/*"],
+      "@/providers/*": ["src/core/providers/*"],
+      "@p/*": ["./public/*"]
     },
-    "target": "ES2017"
+    "target": "esnext"
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts",
-    "**/*.mts"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".next/dev/types/**/*.ts"],
   "exclude": ["node_modules"]
 }

@@ -1,6 +1,3 @@
-@import "_typography";
-@import "_mixins";
-
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,12 +14,13 @@
   --bg-beige1-main: #e5d5c7;
   --bg-beige2-secondary: #e5d5c7;
   --bg-purple-main: #dbbaba;
-  --bg-purple-econdary: #d6abaa;
+  --bg-purple-secondary: #d6abaa;
   --bg-blue: #d4e2f4;
   --bg-yellow: #f3e4bd;
   --bg-grey-blue: #dfe7f0;
   --bg-green: #e2ebde;
   --bg-red: #d70404;
+  --bg-devider: #d9d9d9;
 
   //ico
   --ico-color-main: #171717;
@@ -43,8 +41,13 @@
   --text-color-secondary: #8a8a8a;
   --text-color-tertiary: #d6d6d6;
   --text-color-main-on: #ffffff;
-  --text-color-secondary-on: #00000070;
+  --text-color-secondary-on: #000000b3;
   --text-color-red: #d70404;
+  --text-color-black: #000000;
+  --text-color-footer-link: #000000b2;
+
+  //form
+  --form-bg-color: #fafaf9;
 }
 
 * {
@@ -56,4 +59,14 @@
 html {
   font-family: var(--font-vela-sans, sans-serif);
   -webkit-tap-highlight-color: transparent;
+}
+
+.main {
+  width: 100%;
+  // height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }

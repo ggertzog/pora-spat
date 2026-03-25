@@ -1,0 +1,79 @@
+.uiCheckBox {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.label {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &_type_square {
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    border: 1px solid var(--bg-border);
+
+    .input:checked + & {
+      background-color: var(--bg-purple-main);
+      border: none;
+    }
+  }
+
+  &_type_circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid var(--ico-color-beige);
+
+    .input:checked + &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+    }
+  }
+
+  &_color_vanilla {
+    .input:checked + &::before {
+      background-color: var(--bg-beige-main);
+    }
+  }
+
+  &_color_blue {
+    .input:checked + &::before {
+      background-color: var(--bg-blue);
+    }
+  }
+}
+
+.input {
+  display: none;
+  width: 14px;
+  height: 14px;
+}
+
+.icon {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.input:checked + .label .icon {
+  opacity: 1;
+  visibility: visible;
+}
+
+.text {
+  font-family: var(--font-vela-sans);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 110%;
+  letter-spacing: 3%;
+}

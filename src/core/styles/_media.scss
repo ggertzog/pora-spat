@@ -1,0 +1,69 @@
+// Базовые точки
+$base-xs: 375;
+$base-sm: 768;
+$base-md: 1024;
+$base-xl: 1440;
+$base-xxl: 1920;
+
+// Значения для медиа запросов max-width
+$xs-max: $base-sm - 1;
+$sm-max: $base-md - 1;
+$md-max: $base-xl - 1;
+$xl-max: $base-xxl - 1;
+
+// Значения для медиа запросов min-width
+$xs-min: $base-xs;
+$sm-min: $base-sm;
+$md-min: $base-md;
+$xl-min: $base-xl;
+$xxl-min: $base-xxl;
+
+// Для max-width (из диапазона $sizes или числовое значение)
+@mixin media-max-width($size) {
+  $sizes: (
+    'xs': $xs-max, //767px
+    'sm': $sm-max, //1023px
+    'md': $md-max, //1439px
+    'xl': $xl-max, //1919px
+  );
+
+  $size-value: null;
+
+  @if map-has-key($sizes, $size) {
+    $size-value: map-get($sizes, $size);
+  } @else if type-of($size) == 'number' {
+    $size-value: $size;
+  } @else {
+    @error "Invalid size provided: #{$size}";
+  }
+
+  @media (max-width: #{$size-value}px) {
+    @content;
+  }
+}
+
+// Для min-width (из диапазона $sizes или числовое значение)
+@mixin media-min-width($size) {
+  $sizes: (
+    'xs': $xs-min,
+    'sm': $sm-min,
+    'md': $md-min,
+    'xl': $xl-min,
+    'xxl': $xxl-min,
+  );
+
+  $size-value: null;
+
+  @if map-has-key($sizes, $size) {
+    $size-value: map-get($sizes, $size);
+  } @else if type-of($size) == 'number' {
+    $size-value: $size;
+  } @else {
+    @error "Invalid size provided: #{$size}";
+  }
+
+  @media (min-width: #{$size-value}px) {
+    @content;
+  }
+}
+

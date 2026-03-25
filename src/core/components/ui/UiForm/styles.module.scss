@@ -1,0 +1,25 @@
+// Стили формы
+.form {
+  position: relative;
+  align-self: flex-start;
+  width: 100%;
+}
+
+.formLabel {
+  padding: 2px 2px 2px 24px;
+  width: 100%;
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--form-bg-color);
+  border-radius: 40px;
+
+  @include media-max-width(xs) {
+    height: 48px;
+  }
+}
+
+.formInput {
+  @include clearInput;
+  width: 100px;
+}

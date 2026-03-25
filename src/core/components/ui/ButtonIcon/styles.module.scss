@@ -1,0 +1,19 @@
+.buttonIcon {
+  @include clearButton;
+  width: 32px;
+  height: 32px;
+  color: var(--ico-color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+
+  &:hover {
+    color: var(--ico-color-beige);
+  }
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}

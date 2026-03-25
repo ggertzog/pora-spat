@@ -128,13 +128,6 @@ $dbreak: 1920px !default;
   -o-appearance: none;
 }
 
-@mixin containImg($objectFit: cover) {
-  width: 100%;
-  height: 100%;
-  object-fit: $objectFit;
-  object-position: center;
-}
-
 @mixin transit($tag...) {
   transition-timing-function: ease-in-out;
   transition-duration: 350ms;
@@ -147,4 +140,15 @@ $dbreak: 1920px !default;
 
   -webkit-box-orient: vertical;
   -webkit-line-clamp: $lines;
+}
+
+@mixin containImg($objectFit: cover) {
+  width: 100%;
+  height: 100%;
+  object-fit: $objectFit;
+  object-position: center;
+}
+
+@mixin clearLink {
+  text-decoration: none;
 }
