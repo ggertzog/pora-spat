@@ -1,0 +1,201 @@
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-main);
+}
+
+.navWrap {
+    padding: 0 40px;
+    width: 100%;
+    background-color: var(--bg-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include media-max-width(sm) {
+        display: none;
+    }
+}
+
+.navContainer {
+    max-width: 1360px;
+    width: 100%;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media-min-width(xl) {
+        max-width: 1560px;
+    }
+}
+
+.contacts {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.location {
+    p {
+        @include text4;
+        color: var(--text-color-main);
+    }
+}
+
+.locationBtn {
+    @include clearButton;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.locationIcon,
+.chevronIcon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.locationIcon {
+    @include media-max-width(sm) {
+        path {
+            fill: var(--ico-color-secondary);
+        }
+    }
+}
+
+.phone {
+    text-decoration: none;
+    @include text4;
+    color: var(--text-color-main);
+
+    @include media-max-width(sm) {
+        @include text4(sm);
+        padding: 6px 10px 6px 8px;
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        background-color: var(--button-color-main);
+        border-radius: 12px;
+    }
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.navList {
+    @include clearList;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.link {
+    @include text4;
+    color: var(--text-color-main);
+    text-decoration: none;
+}
+
+.mainWrap {
+    padding: 0 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include media-max-width(sm) {
+        display: none;
+    }
+}
+
+.mainContainer {
+    padding: 24px 0;
+    max-width: 1560px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logoLink {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logoIcon {
+    width: 218px;
+    height: 26px;
+
+    @include media-max-width(sm) {
+        width: 178px;
+        height: 20px;
+    }
+
+    @include media-max-width(xs) {
+        width: 124px;
+        height: 14px;
+    }
+}
+
+.searchWrap {
+    margin-left: 48px;
+    margin-right: auto;
+    max-width: 940px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.buttonsWrap {
+    margin-left: 32px;
+    display: flex;
+    align-items: center;
+    gap: 54px;
+}
+
+.mobileHeader {
+    display: none;
+
+    @include media-max-width(sm) {
+        padding: 0 32px;
+        height: 68px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    @include media-max-width(xs) {
+        padding: 0 20px;
+    }
+}
+
+.buttonsMobileWrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.callIcon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.locationBtnMobile {
+    @include clearButton;
+    background-color: var(--button-color-main);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

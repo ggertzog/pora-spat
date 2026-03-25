@@ -1,0 +1,42 @@
+.searchForm {
+    display: flex;
+    align-items: center;
+    max-width: 790px;
+    width: 100%;
+    background-color: var(--bg-secondary);
+    border-radius: 40px;
+}
+
+.searchLabel {
+    width: 100%;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.searchInput {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: var(--text-color-main);
+    @include text2;
+
+    &::placeholder {
+        color: var(--text-color-secondary);
+    }
+}
+
+.searchButton {
+    @include clearButton;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchIcon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}

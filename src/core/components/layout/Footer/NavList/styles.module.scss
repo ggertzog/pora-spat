@@ -1,0 +1,32 @@
+.navList {
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.title {
+  @include h6;
+  color: var(--text-color-black);
+
+  @include media-max-width(xs) {
+    @include h6(xs);
+  }
+}
+
+.list {
+  @include clearList;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.link {
+  @include text3;
+  @include clearLink;
+  color: var(--text-color-footer-link);
+
+  @include media-max-width(xs) {
+    @include tooltip2;
+  }
+}

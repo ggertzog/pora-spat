@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import "../styles/globals.scss";
-import { QueryProvider } from "@/providers/QueryProvider";
+import "../core/styles/globals.scss";
+import { QueryProvider } from "@/core/providers/QueryProvider";
 import { CygreFont, VelaSansFont } from './_fonts';
 import clsx from 'clsx';
 
