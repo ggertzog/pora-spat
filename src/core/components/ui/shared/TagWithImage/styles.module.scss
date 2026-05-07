@@ -1,0 +1,72 @@
+.tagWithImage {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  @include media-max-width(xs) {
+    background: none !important;
+  }
+
+  &_size_xl {
+    padding: 14px;
+    width: 180px;
+    height: 115px;
+    border-radius: 16px;
+
+    .imageWrap {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      right: -8px;
+      bottom: -15px;
+    }
+
+    .text {
+      @include text2;
+      max-width: 100px;
+    }
+
+    .image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &_size_xs {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 4px;
+
+    .imageWrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 76px;
+      height: 70px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .text {
+      @include tooltip2(sm);
+      text-align: center;
+    }
+
+    .image {
+      width: 66px;
+      height: 60px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+.link {
+  position: absolute;
+  inset: 0;
+}

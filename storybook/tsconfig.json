@@ -1,0 +1,14 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "..",
+    "baseUrl": "..",
+    "noEmit": true
+  },
+  "include": [
+    "../src/core/types/images.d.ts",
+    "../storybook/**/*",
+    "../src/**/*",
+    "../src/types/**/*.d.ts"
+  ]
+}

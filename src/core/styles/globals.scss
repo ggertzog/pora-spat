@@ -48,6 +48,24 @@
 
   //form
   --form-bg-color: #fafaf9;
+
+  --max-content-width: 1560px;
+  --content-padding: 0px;
+
+  @include media-max-width(1640) {
+    --max-content-width: 1640px;
+    --content-padding: 40px;
+  }
+
+  @include media-max-width(md) {
+    --content-padding: 20px;
+  }
+  @include media-max-width(sm) {
+    --content-padding: 32px;
+  }
+  @include media-max-width(xs) {
+    --content-padding: 20px;
+  }
 }
 
 * {
@@ -63,10 +81,14 @@ html {
 
 .main {
   width: 100%;
-  // height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 10px;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
 }

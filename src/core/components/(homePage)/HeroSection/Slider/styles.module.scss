@@ -1,0 +1,11 @@
+.swiperContainer {
+  width: 100%;
+  height: auto;
+}
+
+.swiperSlide {
+  @include media-max-width(xs) {
+    width: -webkit-min-content !important;
+    width: min-content !important;
+  }
+}

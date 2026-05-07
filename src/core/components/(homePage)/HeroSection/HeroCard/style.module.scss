@@ -1,0 +1,167 @@
+.heroCard {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  @include media-max-width(xs) {
+    border-radius: 32px;
+    width: 89vw;
+    max-width: 335px;
+  }
+}
+
+.backgroundContainer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.backBackground {
+  position: absolute;
+  width: 898px;
+  height: 718px;
+  top: -62px;
+  left: 50%;
+  transform: translateX(calc(-50% + 352px));
+
+  @include media-max-width(xl) {
+    top: -24px;
+    width: 804px;
+    height: 642px;
+    transform: translateX(calc(-50% + 293px));
+  }
+
+  @include media-max-width(md) {
+    top: -6px;
+    transform: translateX(calc(-50% + 247px));
+  }
+
+  @include media-max-width(sm) {
+    width: 674px;
+    height: 538px;
+    top: 28px;
+    transform: translateX(calc(-50% + 139px));
+  }
+
+  @include media-max-width(xs) {
+    width: 312px;
+    height: 248px;
+    top: 35px;
+    transform: translateX(calc(-50% + 73.5px));
+  }
+}
+
+.frontBackground {
+  position: absolute;
+  width: 682px;
+  height: 604px;
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(-50% + 328px), -50%);
+  z-index: 1;
+
+  @include media-max-width(xl) {
+    width: 610px;
+    height: 540px;
+    transform: translate(calc(-50% + 271px), -50%);
+  }
+
+  @include media-max-width(md) {
+    top: 18px;
+    transform: translate(calc(-50% + 225px), 0);
+  }
+
+  @include media-max-width(sm) {
+    width: 511px;
+    height: 453px;
+    top: 48px;
+    transform: translateX(calc(-50% + 120.5px));
+  }
+
+  @include media-max-width(xs) {
+    width: 237px;
+    height: 210px;
+    transform: translateX(calc(-50% + 65px));
+  }
+}
+
+.contentContainer {
+  position: relative;
+  flex: 1;
+  max-width: var(--max-content-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--content-padding);
+  display: flex;
+  z-index: 1;
+
+  @include media-max-width(xs) {
+    max-width: 89vw;
+  }
+}
+
+.contentWrap {
+  max-width: 520px;
+  width: 100%;
+  margin-top: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @include media-max-width(sm) {
+    margin-top: 56px;
+    max-width: 300px;
+  }
+
+  @include media-max-width(xs) {
+    margin-top: 19px;
+    gap: 14px;
+    max-width: 212px;
+  }
+}
+
+.date {
+  @include text1;
+
+  @include media-max-width(sm) {
+    @include text1(sm);
+  }
+
+  @include media-max-width(xs) {
+    @include text4(sm);
+    margin-bottom: 2px;
+  }
+}
+
+.title {
+  @include h1;
+
+  @include media-max-width(sm) {
+    @include h1(sm);
+  }
+
+  @include media-max-width(xs) {
+    @include h2(sm);
+  }
+}
+
+.subtitle {
+  @include text1;
+
+  @include media-max-width(sm) {
+    @include text1(sm);
+  }
+
+  @include media-max-width(xs) {
+    @include text4(sm);
+  }
+}
+
+.button {
+  align-self: flex-start;
+}
