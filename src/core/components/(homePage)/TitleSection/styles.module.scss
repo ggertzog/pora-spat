@@ -5,6 +5,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include media-max-width(xl) {
+    padding-top: 80px;
+  }
+
+  @include media-max-width(sm) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
 
 .titleContainer {
@@ -27,14 +36,46 @@
   @include media-max-width(md) {
     padding: 60px 56px;
   }
+
+  @include media-max-width(sm) {
+    flex-direction: column;
+    padding: 40px 99px;
+    gap: 24px;
+  }
+
+  @include media-max-width(xs) {
+    padding: 24px;
+  }
 }
 
 .titleSectionBackground {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: -80px;
+  left: -55px;
+  width: auto;
+  height: 530px;
+
+  @include media-max-width(xl) {
+    height: 506px;
+    left: -40px;
+  }
+
+  @include media-max-width(md) {
+    height: 480px;
+    top: -46px;
+    left: -40px;
+  }
+
+  @include media-max-width(sm) {
+    height: 450px;
+    top: -36px;
+    left: 50%;
+    transform: translateX(-35%);
+  }
+
+  @include media-max-width(xs) {
+    transform: translateX(-28%);
+  }
 }
 
 .title {
@@ -51,6 +92,17 @@
   @include media-max-width(md) {
     max-width: 489px;
   }
+
+  @include media-max-width(sm) {
+    @include h2(sm);
+    text-align: center;
+    max-width: 353px;
+  }
+
+  @include media-max-width(xs) {
+    max-width: 287px;
+    text-align: left;
+  }
 }
 
 .description {
@@ -65,5 +117,16 @@
 
   @include media-max-width(md) {
     max-width: 344px;
+  }
+
+  @include media-max-width(sm) {
+    @include text1(sm);
+    text-align: center;
+    max-width: 504px;
+  }
+
+  @include media-max-width(xs) {
+    max-width: 287px;
+    text-align: left;
   }
 }

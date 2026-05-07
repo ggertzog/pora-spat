@@ -6,6 +6,7 @@ import ProductCard from "@/core/components/ui/shared/ProductCard/ProductCard";
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import ButtonSlide from "../../ui/shared/ButtonSlide/ButtonSlide";
+import { useMediaQuery } from "@/core/utils/hooks/useMediaQuery";
 
 interface IProductSection {
   bgColor: "main" | "secondary";
@@ -31,10 +32,12 @@ export default function ProductSection({ cards = [], title, bgColor }: IProductS
     swiperRef.current?.slideNext();
   }, []);
 
+  const isSMlayout = useMediaQuery("(max-width: 1439px)");
+
   return (
     <section className={styles.productSection}>
       <h2 className={styles.title}>{title}</h2>
-      <Swiper className={styles.swiperContainer} onSwiper={onSwiper} slidesPerView={"auto"} spaceBetween={10}>
+      <Swiper className={styles.swiperContainer} onSwiper={onSwiper} slidesPerView={"auto"} spaceBetween={16}>
         {cards?.map((card) => (
           <SwiperSlide className={styles.swiperSlide} key={card.id}>
             <ProductCard card={card} bgColor={bgColor} size="xl" />

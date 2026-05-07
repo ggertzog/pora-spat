@@ -27,10 +27,10 @@ const HomePage = () => {
     <>
       {/* <HeroSection />
       <TagsSection />
-      <CategorySection /> */}
-      <TitleSection />
-      {/* <ProductSection cards={hitSales || []} title="Хиты продаж" bgColor="secondary" />
-      <RecommendationSection />
+      <CategorySection />
+      <TitleSection /> */}
+      <ProductSection cards={hitSales || []} title="Хиты продаж" bgColor="secondary" />
+      {/* <RecommendationSection />
       <div className={styles.deliveryTomorrowSection}>
         <ProductSection cards={deliveryTomorrow || []} title="Доставим завтра" bgColor="main" />
       </div> */}

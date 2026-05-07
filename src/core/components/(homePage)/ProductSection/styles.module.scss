@@ -39,6 +39,10 @@
   justify-content: flex-end;
   gap: 8px;
   visibility: visible;
+
+  @include media-max-width(sm) {
+    margin-top: 20px;
+  }
 }
 
 @include media-max-width(1640) {
