@@ -1,5 +1,6 @@
 .button {
   @include clearButton;
+  @include transit(background-color);
   padding: 10px 14px 10px 16px;
   display: flex;
   align-items: center;
@@ -7,7 +8,6 @@
   border-radius: 12px;
   background-color: transparent;
   gap: 147px;
-  @include transit(background-color);
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
@@ -42,8 +42,8 @@
 }
 
 .arrow {
-    width: 16px;
-    height: 16px;
-    opacity: 0;
-    @include transit(opacity);
+  @include transit(opacity);
+  width: 16px;
+  height: 16px;
+  opacity: 0;
 }

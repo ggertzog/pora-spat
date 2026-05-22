@@ -13,7 +13,8 @@
     "generate:shared": "node scripts/generate-shared-stories.mjs",
     "generate:stories": "npm run generate:shared",
     "storybook": "npm run generate:stories && storybook dev -p 6006 --config-dir storybook/.storybook",
-    "build-storybook": "npm run generate:stories && storybook build --config-dir storybook/.storybook"
+    "build-storybook": "npm run generate:stories && storybook build --config-dir storybook/.storybook",
+    "update-schema" : "npx openapi-typescript https://poraspat-be.preprod.su/docs?api-docs.yaml -o ./src/core/types/__generated__/api-schema.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

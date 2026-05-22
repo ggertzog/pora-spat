@@ -1,5 +1,10 @@
+//libs
 import React from "react";
+
+//styles
 import styles from "./styles.module.scss";
+
+//types
 import { ISlide } from "@/core/api/queryFetchers/getMainSliderQuery";
 
 interface PaginationProps {

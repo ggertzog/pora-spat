@@ -7,12 +7,19 @@
 
 .title {
   margin-bottom: 48px;
-  @include h2();
   color: var(--text-color-main);
   max-width: var(--max-content-width);
   width: 100%;
   padding: 0 var(--content-padding);
   align-self: center;
+
+  @include media-max-width(sm) {
+    margin-bottom: 32px;
+  }
+
+  @include media-max-width(sm) {
+    margin-bottom: 21px;
+  }
 }
 
 .swiperContainer {
@@ -40,8 +47,12 @@
   gap: 8px;
   visibility: visible;
 
-  @include media-max-width(sm) {
+  @include media-max-width(md) {
     margin-top: 20px;
+  }
+
+  @include media-max-width(sm) {
+    margin-top: 32px;
   }
 }
 

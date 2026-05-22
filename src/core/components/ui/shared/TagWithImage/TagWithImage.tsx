@@ -1,16 +1,21 @@
-import React, { FC } from "react";
-import styles from "./styles.module.scss";
+//libs
+import React from "react";
 import Image from "next/image";
 import clsx from "clsx";
-import { ITag } from "@/core/api/queryFetchers/getTagsQuery";
 import Link from "next/link";
+
+//styles
+import styles from "./styles.module.scss";
+
+//types
+import { ITag } from "@/core/api/queryFetchers/getTagsQuery";
 
 interface ITagWithImage {
   card: ITag;
   size: "xl" | "xs";
 }
 
-const TagWithImage: FC<ITagWithImage> = ({ card, size }: ITagWithImage) => {
+const TagWithImage = ({ card, size }: ITagWithImage) => {
   const { title, image_url, link, background_color } = card;
 
   return (

@@ -1,6 +1,11 @@
+//libs
 import React from "react";
-import styles from "./styles.module.scss";
 import Image from "next/image";
+
+//styles
+import styles from "./styles.module.scss";
+
+//types
 import { IReview } from "@/core/api/queryFetchers/getReviewsQuery";
 
 interface ReviewCardProps {

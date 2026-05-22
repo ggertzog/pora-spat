@@ -1,0 +1,75 @@
+.h1 {
+  @include h1;
+
+  @include media-max-width(sm) {
+    @include h1(sm);
+  }
+}
+
+.h2 {
+  @include h2;
+
+  @include media-max-width(sm) {
+    @include h2(sm);
+  }
+}
+
+.h3 {
+  @include h3;
+}
+
+.h4 {
+  @include h4;
+}
+
+.h5 {
+  @include h5;
+}
+
+.h6 {
+  @include h6;
+
+  @include media-max-width(sm) {
+    @include h6(sm);
+  }
+}
+
+.text1 {
+  @include text1;
+
+  @include media-max-width(sm) {
+    @include text1(sm);
+  }
+}
+
+.text2 {
+  @include text2;
+}
+
+.text3 {
+  @include text3;
+}
+
+.text4 {
+  @include text4;
+
+  @include media-max-width(sm) {
+    @include text4(sm);
+  }
+}
+
+.numbers {
+  @include numbers;
+}
+
+.tooltip {
+  @include tooltip;
+}
+
+.tooltip2 {
+  @include tooltip2;
+
+  @include media-max-width(sm) {
+    @include tooltip2(sm);
+  }
+}

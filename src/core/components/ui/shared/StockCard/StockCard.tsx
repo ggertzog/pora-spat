@@ -1,19 +1,20 @@
+"use client";
+// libs
 import React from "react";
-import styles from "./styles.module.scss";
 import Image from "next/image";
-import Tag from "@/core/components/ui/shared/Tag/Tag";
 import clsx from "clsx";
-import { IBanner } from "@/core/api/queryFetchers/getBannersQuery";
 
-// interface IStockCard {
-//     background_image: string | StaticImageData;
-//     front_image?: string | StaticImageData;
-//     title: string;
-//     description: string;
-//     type: number;
-//     color_bg?: string;
-//     tags: string[];
-// }
+//hooks
+import { useMediaQuery } from "@/core/utils/hooks/useMediaQuery";
+
+//styles
+import styles from "./styles.module.scss";
+
+//components
+import Tag from "@/core/components/ui/shared/Tag/Tag";
+
+//types
+import { IBanner } from "@/core/api/queryFetchers/getBannersQuery";
 
 interface IStockCard {
   banner: IBanner;
@@ -21,6 +22,7 @@ interface IStockCard {
 
 const StockCard = ({ banner }: IStockCard) => {
   const { name, sub_name, slug, color_bg, color_text, background_image, front_image, type, tags } = banner;
+  const isSmLayout = useMediaQuery("(max-width: 1023px)");
 
   return (
     <div className={styles.stockCard}>
@@ -55,7 +57,7 @@ const StockCard = ({ banner }: IStockCard) => {
         )}
       </div>
       <div className={styles.tagsWrap}>
-        {tags && tags.map((tag, index) => <Tag key={index} text={tag.title || ""} size="sm" />)}
+        {tags && tags.map((tag, index) => <Tag key={index} text={tag.title || ""} size={isSmLayout ? "sm" : "xl"} />)}
       </div>
       <div
         className={clsx(

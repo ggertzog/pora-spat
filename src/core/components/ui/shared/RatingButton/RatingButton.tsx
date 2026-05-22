@@ -1,8 +1,15 @@
-import React, { FC, LinkHTMLAttributes } from "react";
+//libs
+import React, { LinkHTMLAttributes } from "react";
 import Image from "next/image";
-import styles from "./styles.module.scss";
 import clsx from "clsx";
+
+//styles
+import styles from "./styles.module.scss";
+
+//assets
 import StarIcon from "@p/assets/icons/star.svg";
+
+//types
 import { IMarketplaces } from "@/core/api/queryFetchers/getMarketplacesQuery";
 
 interface IRatingButton extends LinkHTMLAttributes<HTMLAnchorElement> {

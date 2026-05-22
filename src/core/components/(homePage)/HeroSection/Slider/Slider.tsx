@@ -1,8 +1,16 @@
+//libs
 import React from "react";
-import styles from "./styles.module.scss";
-import { ISlide } from "@/core/api/queryFetchers/getMainSliderQuery";
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
+
+//styles
+import styles from "./styles.module.scss";
+import "swiper/css";
+
+//components
 import HeroCard from "../HeroCard/HeroCard";
+
+//types
+import { ISlide } from "@/core/api/queryFetchers/getMainSliderQuery";
 
 interface SliderProps {
   slides: ISlide[];

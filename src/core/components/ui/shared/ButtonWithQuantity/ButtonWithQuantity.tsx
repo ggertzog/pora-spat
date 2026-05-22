@@ -1,6 +1,11 @@
-import React, { FC, ButtonHTMLAttributes, JSX } from "react";
-import styles from "./styles.module.scss";
+//libs
+import React, { ButtonHTMLAttributes, JSX } from "react";
 import clsx from "clsx";
+
+//styles
+import styles from "./styles.module.scss";
+
+//assets
 import FavoriteSvg from "@p/assets/icons/heart-icon.svg";
 import BasketSvg from "@p/assets/icons/basket.svg";
 import HomeSvg from "@p/assets/icons/home.svg";
@@ -18,10 +23,10 @@ interface IButtonWithQuantity extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon: TIcon;
   quantity: number;
   text?: string;
-  size?: 'xl' | 'xs';
+  size?: "xl" | "xs";
 }
 
-const ButtonWithQuantity: FC<IButtonWithQuantity> = ({ icon, quantity, text, size = 'xl', className, ...props }) => {
+const ButtonWithQuantity = ({ icon, quantity, text, size = "xl", className, ...props }: IButtonWithQuantity) => {
   const Icon = icons[icon];
 
   return (

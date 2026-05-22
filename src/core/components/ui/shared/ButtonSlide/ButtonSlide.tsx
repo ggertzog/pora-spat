@@ -1,10 +1,15 @@
-import React, { FC, ButtonHTMLAttributes, JSX } from "react";
-import styles from "./styles.module.scss";
+//libs
+import React, { ButtonHTMLAttributes, JSX } from "react";
 import clsx from "clsx";
+
+//styles
+import styles from "./styles.module.scss";
+
+//assets
 import ArrowRight from "@p/assets/icons/right-arrow.svg";
 import ArrowLeft from "@p/assets/icons/left-arrow.svg";
 
-// TODO: Доделать disabled состояние, на макете нихера не понятно как это должно выглядеть
+// TODO: Доделать disabled состояние, на макете не понятно как это должно выглядеть
 
 type TIcon = "arrowRight" | "arrowLeft";
 
@@ -21,13 +26,7 @@ interface IButtonSlide extends ButtonHTMLAttributes<HTMLButtonElement> {
   theme: TTheme;
 }
 
-const ButtonSlide: FC<IButtonSlide> = ({
-  icon = "arrowRight",
-  theme = "light",
-  className,
-  onClick,
-  ...props
-}) => {
+const ButtonSlide = ({ icon = "arrowRight", theme = "light", className, onClick, ...props }: IButtonSlide) => {
   const Icon = icons[icon];
   return (
     <button className={clsx(styles.button, styles[`button_theme_${theme}`], className)} onClick={onClick} {...props}>

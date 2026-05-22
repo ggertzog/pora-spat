@@ -1,0 +1,127 @@
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  gap: 0;
+
+  .text {
+    @include clearLink;
+    color: var(--text-color-footer-link);
+  }
+}
+
+.footerContentItem {
+  display: flex;
+  flex-direction: column;
+
+  &:last-child {
+    padding-right: 47px;
+
+    @include media-max-width(sm) {
+      padding-right: 20px;
+    }
+  }
+}
+
+.orderCall {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: var(--text-color-black);
+}
+
+.orderCallButton {
+  align-self: flex-start;
+}
+
+.operatingMode,
+.deliveryHours,
+.socialMedia {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.socialMedia {
+  margin-top: 91px;
+}
+
+.address {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 48px;
+  max-width: 219px;
+}
+
+.socialMediaList {
+  display: flex;
+  gap: 8px;
+}
+
+.logoWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 35px;
+}
+
+.logoText {
+  color: var(--text-color-footer-link);
+}
+
+.subscription {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 0;
+  max-width: 314px;
+
+  @include media-max-width(sm) {
+    max-width: 224px;
+  }
+}
+
+.navList {
+  margin-top: 48px;
+  align-self: flex-start;
+}
+
+.paymentSystems {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.paymentSystemsList {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.ratingList {
+  @include clearList;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ratingLink {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

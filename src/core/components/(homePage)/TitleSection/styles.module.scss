@@ -79,7 +79,6 @@
 }
 
 .title {
-  @include h2;
   max-width: 688px;
   color: var(--text-color-main);
   flex-shrink: 0;
@@ -94,7 +93,6 @@
   }
 
   @include media-max-width(sm) {
-    @include h2(sm);
     text-align: center;
     max-width: 353px;
   }
@@ -106,7 +104,6 @@
 }
 
 .description {
-  @include text1;
   max-width: 612px;
   color: var(--text-color-secondary-on);
   z-index: 1;
@@ -120,7 +117,6 @@
   }
 
   @include media-max-width(sm) {
-    @include text1(sm);
     text-align: center;
     max-width: 504px;
   }

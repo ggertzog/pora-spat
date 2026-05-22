@@ -1,9 +1,16 @@
-import Image from "next/image";
+//libs
 import React from "react";
+import Image from "next/image";
+
+//styles
 import styles from "./style.module.scss";
-import { ISlide } from "@/core/api/queryFetchers/getMainSliderQuery";
+
+//components
 import ButtonRounded from "@/core/components/ui/shared/ButtonRounded/ButtonRounded";
-import clsx from "clsx";
+import Typography from "@/core/components/ui/shared/Typography/Typography";
+
+//types
+import { ISlide } from "@/core/api/queryFetchers/getMainSliderQuery";
 
 interface IHeroCardProps {
   slide: ISlide;
@@ -30,18 +37,18 @@ export default function HeroCard({ slide, isXSLayout }: IHeroCardProps) {
       <div className={styles.contentContainer}>
         <div className={styles.contentWrap}>
           {pretitle && (
-            <p className={styles.date} style={{ color: text_color || "" }}>
+            <Typography as="p" className={styles.date} variant="text1" style={{ color: text_color || "" }}>
               {pretitle}
-            </p>
+            </Typography>
           )}
 
-          <p className={styles.title} style={{ color: text_color || "" }}>
+          <Typography as="p" className={styles.title} variant="h1" style={{ color: text_color || "" }}>
             {title}
-          </p>
+          </Typography>
 
-          <p className={styles.subtitle} style={{ color: text_color || "" }}>
+          <Typography as="p" className={styles.subtitle} variant="text1" style={{ color: text_color || "" }}>
             {subtitle}
-          </p>
+          </Typography>
 
           {!isXSLayout && <ButtonRounded size="h46" text="Подробнее" className={styles.button} />}
         </div>

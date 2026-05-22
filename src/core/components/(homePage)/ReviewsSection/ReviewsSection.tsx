@@ -1,10 +1,17 @@
 "use client";
+//libs
 import React, { useLayoutEffect, useRef, useState } from "react";
+
+//styles
 import styles from "./styles.module.scss";
-import { useMarketplacesQuery } from "@/core/api/queryFetchers/getMarketplacesQuery";
-import RatingButton from "../../ui/shared/RatingButton/RatingButton";
-import { useReviewsQuery } from "@/core/api/queryFetchers/getReviewsQuery";
+
+//components
+import RatingButton from "@/core/components/ui/shared/RatingButton/RatingButton";
 import ReviewCard from "./ReviewCard/ReviewCard";
+
+//query fetchers
+import { useMarketplacesQuery } from "@/core/api/queryFetchers/getMarketplacesQuery";
+import { useReviewsQuery } from "@/core/api/queryFetchers/getReviewsQuery";
 
 const maxFeedbacks = 6;
 

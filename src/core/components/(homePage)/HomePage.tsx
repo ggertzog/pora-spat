@@ -25,22 +25,25 @@ const HomePage = () => {
 
   return (
     <>
-      {/* <HeroSection />
+      <HeroSection />
       <TagsSection />
       <CategorySection />
-      <TitleSection /> */}
+      <TitleSection />
+      {/* TODO: cards={hitSales || []} Переделать */}
       <ProductSection cards={hitSales || []} title="Хиты продаж" bgColor="secondary" />
-      {/* <RecommendationSection />
+      <RecommendationSection />
       <div className={styles.deliveryTomorrowSection}>
         <ProductSection cards={deliveryTomorrow || []} title="Доставим завтра" bgColor="main" />
-      </div> */}
+      </div>
       {/* TODO: Как доделаю верстку RoomIdeasSection, переключить на серверный запросы с мок даты */}
       {/* {cards && <RoomIdeasSection cards={cards} />} */}
-      {/* <RoomIdeasSection />
-      <ReviewsSection /> */}
+      <RoomIdeasSection />
+      <ReviewsSection />
       {/* TODO: переделать условие рендера */}
-      {/* {discountData && <DiscountSection discountData={discountData} />}
-      {!!settingsData && <AboutSection htmlData={settingsData?.home_description_html} image={settingsData?.home_description_image} />} */}
+      {discountData && <DiscountSection discountData={discountData} />}
+      {!!settingsData && (
+        <AboutSection htmlData={settingsData?.home_description_html} image={settingsData?.home_description_image} />
+      )}
     </>
   );
 };

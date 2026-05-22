@@ -3,6 +3,15 @@
   padding-top: 116px;
   padding-bottom: 120px;
   background-color: var(--bg-main);
+
+  @include media-max-width(md) {
+    padding-top: 76px;
+    padding-bottom: 80px;
+  }
+
+  @include media-max-width(sm) {
+    padding: 60px 0;
+  }
 }
 
 .container {
@@ -17,6 +26,10 @@
 .title {
   @include h2();
   color: var(--text-color-main);
+
+  @include media-max-width(sm) {
+    @include h2(sm);
+  }
 }
 
 .ratingWrap {
@@ -24,14 +37,24 @@
   gap: 24px;
   margin-top: 48px;
   margin-bottom: 32px;
+
+  @include media-max-width(sm) {
+    margin-top: 32px;
+    margin-bottom: 24px;
+    gap: 8px;
+  }
 }
 
 .reviewWrap {
   display: flex;
   width: 100%;
-  padding: 24px;
+  padding: 24px 24px 26px;
   background-color: var(--bg-secondary);
   overflow: hidden;
+
+  @include media-max-width(xs) {
+    padding: 16px 16px 17px;
+  }
 }
 
 .reviewList {

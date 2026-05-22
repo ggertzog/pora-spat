@@ -1,8 +1,22 @@
+//libs
 import React from "react";
+
+//styles
 import styles from "./styles.module.scss";
-import NavigationCard from "../../ui/shared/NavigationCard/NavigationCard";
+
+//components
+import NavigationCard from "@/core/components/ui/shared/NavigationCard/NavigationCard";
+import Typography from "@/core/components/ui/shared/Typography/Typography";
+import RoomIdeasSlider from "./RoomIdeasSlider/RoomIdeasSlider";
+
+//types
 import { components } from "@/core/types/__generated__/api-schema";
+
+//images
 import RoomImg from "@p/assets/images/navigation-card.png";
+
+//hooks
+import { useMediaQuery } from "@/core/utils/hooks/useMediaQuery";
 
 const cards = [
   {
@@ -48,16 +62,27 @@ const cards = [
 // }
 
 export default function RoomIdeasSection() {
+  const isXSLayout = useMediaQuery("(max-width: 767px");
+  const slicedCards = cards.slice(0, 3);
+
   return (
     <section className={styles.roomIdeasSection}>
       <div className={styles.container}>
-        <h2 className={styles.title}>Идеи для комнат</h2>
-        <p className={styles.descriptiom}>Мы собрали нашу похожую по стилю мебель в готовые решения для ваших комнат</p>
-        <div className={styles.navigationCardsList}>
-          {cards.slice(0, 3).map((item) => (
-            <NavigationCard key={item.id} card={item} className={styles.navigationCardItem} />
-          ))}
-        </div>
+        <Typography className={styles.title} as="h2" variant="h2">
+          Идеи для комнат
+        </Typography>
+        <Typography className={styles.description} variant="text1" as="p">
+          Мы собрали нашу похожую по стилю мебель в готовые решения для ваших комнат
+        </Typography>
+        {isXSLayout ? (
+          <RoomIdeasSlider cards={slicedCards} />
+        ) : (
+          <div className={styles.navigationCardsList}>
+            {slicedCards.map((item) => (
+              <NavigationCard key={item.id} card={item} className={styles.navigationCardItem} />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

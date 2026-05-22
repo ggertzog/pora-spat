@@ -16,10 +16,6 @@
     color: var(--ico-color-secondary);
   }
 
-//   &[disabled] &_theme_dark {
-
-//   }
-
   @media (hover: hover) and (pointer: fine) {
     &_theme_dark:hover {
       background-color: var(--button-color-main);

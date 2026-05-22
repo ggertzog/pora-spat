@@ -13,6 +13,6 @@ type Story = StoryObj<typeof UiCheckBox>;
 
 export const Default: Story = {
   args: {
-    // TODO: Добавьте props для компонента
+    // ANOTHER: Добавьте props для компонента
   },
 };

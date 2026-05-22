@@ -1,8 +1,11 @@
-import Image, { StaticImageData } from "next/image";
-import styles from "./styles.module.scss";
+//libs
 import React from "react";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
+
+//styles
+import styles from "./styles.module.scss";
 
 interface INewsCard {
   link: string;

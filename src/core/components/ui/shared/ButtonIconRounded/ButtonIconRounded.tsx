@@ -1,7 +1,12 @@
-import React, { ButtonHTMLAttributes, FC, JSX } from "react";
-import styles from "./styles.module.scss";
-import ArrowRightSvg from "@p/assets/icons/big-arrow-right.svg";
+//libs
+import React, { ButtonHTMLAttributes, JSX } from "react";
 import clsx from "clsx";
+
+//styles
+import styles from "./styles.module.scss";
+
+//assets
+import ArrowRightSvg from "@p/assets/icons/big-arrow-right.svg";
 
 type TIcon = "arrowRight";
 
@@ -14,7 +19,7 @@ interface IButtonIconRounded extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon: TIcon;
 }
 
-const ButtonIconRounded: FC<IButtonIconRounded> = ({ icon = "arrowRight", className, ...props }) => {
+const ButtonIconRounded = ({ icon = "arrowRight", className, ...props }: IButtonIconRounded) => {
   const Icon = icons[icon];
 
   return (

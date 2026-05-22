@@ -1,6 +1,11 @@
-import React, { FC, ButtonHTMLAttributes, JSX } from "react";
-import styles from "./styles.module.scss";
+//libs
+import React, { ButtonHTMLAttributes, JSX } from "react";
 import clsx from "clsx";
+
+//styles
+import styles from "./styles.module.scss";
+
+//assets
 import BedIcon from "@p/assets/icons/bed.svg";
 import MattressIcon from "@p/assets/icons/mattress.svg";
 import SleepIcon from "@p/assets/icons/sleep.svg";
@@ -38,7 +43,7 @@ interface IButtonCatalog extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
 }
 
-const ButtonCatalog: FC<IButtonCatalog> = ({ icon, text, className, ...props }) => {
+const ButtonCatalog  = ({ icon, text, className, ...props }: IButtonCatalog) => {
   const Icon = icons[icon];
   return (
     <button className={clsx(styles.button, className)} {...props}>

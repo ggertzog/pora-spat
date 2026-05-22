@@ -1,12 +1,21 @@
 "use client";
+//libs
 import React, { useCallback, useRef } from "react";
-import styles from "./styles.module.scss";
-import CategoryCard from "../../ui/shared/CategoryCard/CategoryCard";
-import { useCategoriesQuery } from "@/core/api/queryFetchers/getCategoriesQuery";
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
+
+//styles
+import styles from "./styles.module.scss";
 import "swiper/css";
-import ButtonSlide from "../../ui/shared/ButtonSlide/ButtonSlide";
+
+//hooks
 import { useMediaQuery } from "@/core/utils/hooks/useMediaQuery";
+
+//query fetchers
+import { useCategoriesQuery } from "@/core/api/queryFetchers/getCategoriesQuery";
+
+//components
+import CategoryCard from "@/core/components/ui/shared/CategoryCard/CategoryCard";
+import ButtonSlide from "@/core/components/ui/shared/ButtonSlide/ButtonSlide";
 
 export default function CategorySection() {
   const { data: categories } = useCategoriesQuery();

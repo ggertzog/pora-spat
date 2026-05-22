@@ -1,13 +1,21 @@
 "use client";
-import styles from "./styles.module.scss";
-import { IDiscount } from "@/core/api/queryFetchers/getDiscountQuery";
+//libs
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import ButtonRounded from "../../ui/shared/ButtonRounded/ButtonRounded";
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
-import Image from "next/image";
 import { Autoplay } from "swiper/modules";
-import "swiper/css";
+import Image from "next/image";
 import clsx from "clsx";
+
+//styles
+import styles from "./styles.module.scss";
+import "swiper/css";
+
+//types
+import { IDiscount } from "@/core/api/queryFetchers/getDiscountQuery";
+
+//components
+import ButtonRounded from "@/core/components/ui/shared/ButtonRounded/ButtonRounded";
+import Typography from "@/core/components/ui/shared/Typography/Typography";
 
 interface DiscountSectionProps {
   discountData: IDiscount;
@@ -43,8 +51,10 @@ const DiscountSection = ({ discountData }: DiscountSectionProps) => {
       <div className={styles.backgroundWrap}></div>
       <div className={styles.container}>
         <div className={styles.linkWrap}>
-          <h2 className={styles.title}>{title}</h2>
-          <ButtonRounded as="link" size="h56" text={button_text} href={button_link || ""} />
+          <Typography className={styles.title} as="h2" variant="h2">
+            {title}
+          </Typography>
+          <ButtonRounded as="link" size="h56" text={button_text} href={button_link || ""} className={styles.button} />
         </div>
         <div className={styles.sliderContainer}>
           <Swiper
@@ -80,7 +90,9 @@ const DiscountSection = ({ discountData }: DiscountSectionProps) => {
                     [styles.afterActiveSlide as string]: !isAfterActive && !isActive,
                   })}
                 >
-                  <Image className={styles.image} src={image} sizes="40vw" alt="Слайд" fill />
+                  <div className={styles.slideInner}>
+                    <Image className={styles.image} src={image} sizes="40vw" alt="Слайд" fill />
+                  </div>
                 </SwiperSlide>
               );
             })}

@@ -1,11 +1,11 @@
 .link {
+  @include transit(color);
   font-family: var(--font-vela-sans);
   font-weight: 500;
   font-size: 16px;
   line-height: 110%;
   color: var(--text-color-main);
   text-decoration: none;
-  @include transit(color);
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {

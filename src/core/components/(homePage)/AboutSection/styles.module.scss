@@ -1,4 +1,5 @@
 .aboutSection {
+  @include transit(height, 0.8s);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -7,27 +8,51 @@
   max-width: var(--max-content-width);
   width: 100%;
   padding: 0 var(--content-padding);
-  margin: 124px auto 120px;
-  max-height: 491px;
+  margin: 120px auto;
+  height: 491px;
   overflow: hidden;
 
-  @include transit(max-height, 0.8s);
+  @include media-max-width(md) {
+    margin: 80px auto;
+  }
 
-  &.expanded {
-    max-height: 3000px;
+  @include media-max-width(sm) {
+    margin: 60px auto;
+    height: 827px;
+  }
+
+  @include media-max-width(xs) {
+    height: 585px;
   }
 }
 
 .container {
   display: flex;
+  justify-content: space-between;
   gap: 98px;
-  max-width: var(--max-content-width);
   width: 100%;
   margin: 0 auto;
-  padding: 0 var(--content-padding);
+
+  @include media-max-width(xl) {
+    gap: 78px;
+  }
+
+  @include media-max-width(md) {
+    gap: 22px;
+  }
+
+  @include media-max-width(sm) {
+    flex-direction: column-reverse;
+    gap: 38px;
+  }
+
+  @include media-max-width(xs) {
+    gap: 24px;
+  }
 }
 
 .gradient {
+  @include transit(opacity, 0.8s);
   position: absolute;
   left: 0;
   bottom: 0;
@@ -35,7 +60,11 @@
   height: 307px;
   opacity: 1;
   background: linear-gradient(177deg, rgba(255, 255, 255, 0) 22.52%, #fdfdfc 51.73%, #fdfdfc 64.39%);
-  @include transit(opacity, 0.8s);
+
+  @include media-max-width(sm) {
+    height: 274px;
+    background: linear-gradient(172.68deg, rgba(255, 255, 255, 0) 22.52%, #fdfdfc 51.73%, #fdfdfc 64.39%);
+  }
 
   &.hidden {
     opacity: 0;

@@ -1,12 +1,17 @@
 "use client";
 
+//libs
 import React, { useCallback, useState } from "react";
 import Image, { StaticImageData } from "next/image";
-import styles from "./styles.module.scss";
 import clsx from "clsx";
-import ProductTag from "../ProductTag/ProductTag";
-import ButtonIcon from "../ButtonIcon/ButtonIcon";
-import ButtonRounded from "../ButtonRounded/ButtonRounded";
+
+//styles
+import styles from "./styles.module.scss";
+
+//components
+import ProductTag from "@/core/components/ui/shared/ProductTag/ProductTag";
+import ButtonIcon from "@/core/components/ui/shared/ButtonIcon/ButtonIcon";
+import ButtonRounded from "@/core/components/ui/shared/ButtonRounded/ButtonRounded";
 
 interface ICatalogCard {
   title: string;

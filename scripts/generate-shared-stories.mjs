@@ -298,7 +298,7 @@ export const ${story.name}: Story = {
     storiesCode = `
 export const Default: Story = {
   args: {
-    // TODO: Добавьте props для компонента
+    // ANOTHER: Добавьте props для компонента
   },
 };`;
   }

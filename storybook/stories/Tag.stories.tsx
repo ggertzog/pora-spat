@@ -13,6 +13,6 @@ type Story = StoryObj<typeof Tag>;
 
 export const Default: Story = {
   args: {
-    // TODO: Добавьте props для компонента
+    // ANOTHER: Добавьте props для компонента
   },
 };

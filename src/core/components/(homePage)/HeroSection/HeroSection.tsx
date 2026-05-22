@@ -1,12 +1,20 @@
 "use client";
+//libs
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import styles from "./styles.module.scss";
-import { useMainSliderQuery } from "@/core/api/queryFetchers/getMainSliderQuery";
 import { SwiperClass } from "swiper/react";
-import "swiper/css";
-import ButtonSlide from "../../ui/shared/ButtonSlide/ButtonSlide";
+
+//styles
+import styles from "./styles.module.scss";
+
+//components
+import ButtonSlide from "@/core/components/ui/shared/ButtonSlide/ButtonSlide";
 import Pagination from "./Pagination/Pagination";
 import { Slider } from "./Slider/Slider";
+
+//query fetchers
+import { useMainSliderQuery } from "@/core/api/queryFetchers/getMainSliderQuery";
+
+//hooks
 import { useMediaQuery } from "@/core/utils/hooks/useMediaQuery";
 
 export default function HeroSection() {

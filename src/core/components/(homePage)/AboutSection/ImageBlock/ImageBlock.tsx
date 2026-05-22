@@ -1,7 +1,10 @@
+//libs
 import React from "react";
-import styles from "./styles.module.scss";
-import Image, { StaticImageData } from "next/image";
 import clsx from "clsx";
+import Image, { StaticImageData } from "next/image";
+
+//styles
+import styles from "./styles.module.scss";
 
 interface ImageBlockProps {
   image: string | StaticImageData;

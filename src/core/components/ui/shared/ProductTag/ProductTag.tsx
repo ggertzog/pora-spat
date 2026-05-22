@@ -1,6 +1,11 @@
-import React, { FC } from "react";
+//libs
+import React from "react";
 import clsx from "clsx";
+
+//styles
 import styles from "./styles.module.scss";
+
+//assets
 import { CheckMark } from "@p/assets/icons/CheckMark";
 
 type TType = "availability" | "discount";
@@ -11,7 +16,7 @@ interface IProductTag {
   type: TType;
 }
 
-const ProductTag: FC<IProductTag> = ({ icon, text, type }) => {
+const ProductTag = ({ icon, text, type }: IProductTag) => {
   return (
     <div className={clsx(styles.productLink, styles[`productLink_type_${type}`])}>
       {icon && <CheckMark />}

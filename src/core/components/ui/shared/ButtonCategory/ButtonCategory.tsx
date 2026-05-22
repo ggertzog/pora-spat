@@ -1,17 +1,20 @@
-import React, {FC, ButtonHTMLAttributes} from 'react'
-import styles from './styles.module.scss';
-import clsx from 'clsx';
+//libs
+import React, { ButtonHTMLAttributes } from "react";
+import clsx from "clsx";
+
+//styles
+import styles from "./styles.module.scss";
 
 interface IButtonCategory extends ButtonHTMLAttributes<HTMLButtonElement> {
-    text: string;
+  text: string;
 }
 
-const ButtonCategory: FC<IButtonCategory> = ({text, className, onClick, ...props}) => {
+const ButtonCategory = ({ text, className, onClick, ...props }: IButtonCategory) => {
   return (
     <button className={clsx(styles.button, className)} onClick={onClick} {...props}>
-        <span className={styles.text}>{text}</span>
+      <span className={styles.text}>{text}</span>
     </button>
-  )
-}
+  );
+};
 
 export default ButtonCategory;

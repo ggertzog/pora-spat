@@ -1,4 +1,3 @@
-
 .button {
   @include clearButton;
   position: relative;
@@ -31,6 +30,8 @@
   flex-shrink: 0;
 }
 
+
+// TODO: Не понятно что тут за шрифт, в основных его нет, поэтому и инклюдов пока нет
 .quantity {
   position: absolute;
   right: -15px;
@@ -47,5 +48,5 @@
 }
 
 .text {
-    @include text1;
+  @include text1;
 }

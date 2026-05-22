@@ -1,11 +1,21 @@
 "use client";
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import styles from "./styles.module.scss";
-import { IHitSale } from "@/core/api/queryFetchers/getHitSalesQuery";
-import ProductCard from "@/core/components/ui/shared/ProductCard/ProductCard";
+//libs
+import React, { useCallback, useRef } from "react";
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
+
+//styles
+import styles from "./styles.module.scss";
 import "swiper/css";
-import ButtonSlide from "../../ui/shared/ButtonSlide/ButtonSlide";
+
+//components
+import ButtonSlide from "@/core/components/ui/shared/ButtonSlide/ButtonSlide";
+import ProductCard from "@/core/components/ui/shared/ProductCard/ProductCard";
+import Typography from "@/core/components/ui/shared/Typography/Typography";
+
+//types
+import { IHitSale } from "@/core/api/queryFetchers/getHitSalesQuery";
+
+//query fetchers
 import { useMediaQuery } from "@/core/utils/hooks/useMediaQuery";
 
 interface IProductSection {
@@ -32,22 +42,32 @@ export default function ProductSection({ cards = [], title, bgColor }: IProductS
     swiperRef.current?.slideNext();
   }, []);
 
-  const isSMlayout = useMediaQuery("(max-width: 1439px)");
+  const isSMlayout = useMediaQuery("(max-width: 1023px)");
+  const isXSlayout = useMediaQuery("(max-width: 767px)");
 
   return (
     <section className={styles.productSection}>
-      <h2 className={styles.title}>{title}</h2>
-      <Swiper className={styles.swiperContainer} onSwiper={onSwiper} slidesPerView={"auto"} spaceBetween={16}>
+      <Typography className={styles.title} variant="h2" as="h2">
+        {title}
+      </Typography>
+      <Swiper
+        className={styles.swiperContainer}
+        onSwiper={onSwiper}
+        slidesPerView={"auto"}
+        spaceBetween={isXSlayout ? 10 : 16}
+      >
         {cards?.map((card) => (
           <SwiperSlide className={styles.swiperSlide} key={card.id}>
-            <ProductCard card={card} bgColor={bgColor} size="xl" />
+            <ProductCard card={card} bgColor={bgColor} size={isSMlayout ? "xs" : "xl"} />
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className={styles.buttonsWrapper}>
-        <ButtonSlide icon="arrowLeft" theme="dark" onClick={handlePrevClick} />
-        <ButtonSlide icon="arrowRight" theme="dark" onClick={handleNextClick} />
-      </div>
+      {!isXSlayout && (
+        <div className={styles.buttonsWrapper}>
+          <ButtonSlide icon="arrowLeft" theme="dark" onClick={handlePrevClick} />
+          <ButtonSlide icon="arrowRight" theme="dark" onClick={handleNextClick} />
+        </div>
+      )}
     </section>
   );
 }

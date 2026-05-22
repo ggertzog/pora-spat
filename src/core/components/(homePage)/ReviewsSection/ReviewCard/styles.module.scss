@@ -5,6 +5,11 @@
   overflow: hidden;
   border-radius: 20px;
   flex-shrink: 0;
+
+  @include media-max-width(xs) {
+    width: 225px;
+    height: 260px;
+  }
 }
 
 .reviewImage {

@@ -1,7 +1,12 @@
+//libs
 import React from 'react';
-import styles from './styles.module.scss';
 import Image from 'next/image';
 import clsx from 'clsx';
+
+//styles
+import styles from './styles.module.scss';
+
+//types
 import { ICategory } from '@/core/api/queryFetchers/getCategoriesQuery';
 
 interface ICategoryCard {

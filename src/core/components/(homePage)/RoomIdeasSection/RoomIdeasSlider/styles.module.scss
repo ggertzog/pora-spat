@@ -1,0 +1,16 @@
+.swiperContainer {
+  margin-top: 32px;
+  width: 100%;
+}
+
+.swiperSlide {
+  width: -webkit-min-content !important;
+  width: min-content !important;
+
+  &:first-child {
+    margin-left: calc(var(--content-padding));
+  }
+  &:last-child {
+    margin-right: calc(var(--content-padding));
+  }
+}

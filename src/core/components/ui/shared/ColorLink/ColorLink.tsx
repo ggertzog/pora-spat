@@ -1,15 +1,18 @@
-import React, { FC } from "react";
-import styles from "./styles.module.scss";
+//libs
+import React from "react";
 import clsx from "clsx";
 import Link, { LinkProps } from "next/link";
 import Image, { StaticImageData } from "next/image";
+
+//styles
+import styles from "./styles.module.scss";
 
 interface IColorLink extends LinkProps {
   img: string | StaticImageData;
   imgAlt?: string;
 }
 
-const ColorLink: FC<IColorLink> = ({ img, imgAlt = "image", href, ...props }) => {
+const ColorLink = ({ img, imgAlt = "image", href, ...props }: IColorLink) => {
   return (
     <Link className={clsx(styles.colorLink, styles[`colorLink_active`])} href={href} {...props}>
       <div className={styles.img}>

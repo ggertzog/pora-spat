@@ -1,8 +1,15 @@
+//libs
 import React from "react";
-import styles from "./styles.module.scss";
 import Image, { StaticImageData } from "next/image";
-import ButtonRounded from "@/core/components/ui/shared/ButtonRounded/ButtonRounded";
 import clsx from "clsx";
+
+//styles
+import styles from "./styles.module.scss";
+
+//components
+import ButtonRounded from "@/core/components/ui/shared/ButtonRounded/ButtonRounded";
+
+//types
 import { components } from "@/core/types/__generated__/api-schema";
 
 type NavigationCardData = Omit<components["schemas"]["PublicationResource"], "image"> & {

@@ -1,9 +1,19 @@
 "use client";
+
+//libs
 import React from "react";
-import styles from "./styles.module.scss";
-import { useTagsQuery } from "@/core/api/queryFetchers/getTagsQuery";
-import TagWithImage from "../../ui/shared/TagWithImage/TagWithImage";
 import { Swiper, SwiperSlide } from "swiper/react";
+
+//styles
+import styles from "./styles.module.scss";
+
+//components
+import TagWithImage from "@/core/components/ui/shared/TagWithImage/TagWithImage";
+
+//query fetchers
+import { useTagsQuery } from "@/core/api/queryFetchers/getTagsQuery";
+
+//hooks
 import { useMediaQuery } from "@/core/utils/hooks/useMediaQuery";
 
 export default function TagsSection() {

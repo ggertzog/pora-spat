@@ -1,5 +1,6 @@
 .button {
   @include clearButton;
+  @include transit(background-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,7 +8,6 @@
   padding: 14px 32px;
   gap: 10px;
   background-color: var(--button-color-secondary);
-  @include transit(background-color);
 
   // Почему-то один и тот же цвет для hover и default
   @media (hover: hover) and (pointer: fine) {

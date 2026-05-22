@@ -1,0 +1,135 @@
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+
+  .text {
+    @include clearLink;
+    color: var(--text-color-footer-link);
+  }
+}
+
+.footerContentLeftItem {
+  max-width: 568px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 7px;
+}
+
+.footerContentItem {
+  display: flex;
+  flex-direction: column;
+
+  &:last-child {
+    padding-right: 20px;
+
+    @include media-max-width(xl) {
+      padding-right: 40px;
+    }
+  }
+}
+
+.orderCall {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: var(--text-color-black);
+}
+
+.orderCallButton {
+  align-self: flex-start;
+}
+
+.address {
+  margin-top: 68px;
+  max-width: 280px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.logoWrapper {
+  margin-top: 88px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.logoText {
+  color: var(--text-color-footer-link);
+}
+
+.socialMedia {
+  margin-top: 91px;
+}
+
+.socialMediaList {
+  display: flex;
+  gap: 8px;
+}
+
+.deliveryHours {
+  margin-top: 48px;
+}
+
+.operatingMode,
+.deliveryHours,
+.socialMedia {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footerNavigation {
+  max-width: 476px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.subscription {
+  margin-top: 56px;
+  max-width: 436px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.ratingList {
+  @include clearList;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ratingLink {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.paymentSystems {
+  margin-top: 75px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.paymentSystemsList {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}

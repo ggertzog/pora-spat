@@ -50,10 +50,6 @@
 }
 
 .span {
-  font-family: var(--font-vela-sans);
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 110%;
-  letter-spacing: 3%;
+  @include tooltip2;
   color: var(--text-color-main);
 }

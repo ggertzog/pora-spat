@@ -14,14 +14,13 @@
   @include media-max-width(xs) {
     max-width: 207px;
   }
-}
 
-.text {
-  @include text3;
-  @include clearLink;
-  color: var(--text-color-footer-link);
+  .text {
+    @include clearLink;
+    color: var(--text-color-footer-link);
 
-  @include media-max-width(xs) {
-    @include tooltip2;
+    @include media-max-width(sm) {
+      @include tooltip2;
+    }
   }
 }
