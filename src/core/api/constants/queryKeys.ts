@@ -1,2 +1,15 @@
-export const KEY_TAGS = 'tags' as const;
-export const KEY_CATEGORIES = 'categories' as const
+export const KEY_TAGS = "tags" as const;
+export const KEY_CATEGORIES = "categories" as const;
+export const KEY_MAIN_SLIDER = "mainSlider" as const;
+export const KEY_HIT_SALES = "hitSales" as const;
+export const KEY_BANNERS = "banners" as const;
+export const KEY_PUBLICATIONS_CATEGORY = "publications_category" as const;
+export const KEY_MARKETPLACES = "marketplaces" as const;
+export const KEY_REVIEWS = 'reviews' as const;
+export const KEY_DISCOUNT = 'discount' as const;
+export const KEY_SETTINGS = 'settings' as const;
+export const KEY_PAGE = 'pages' as const;
+export const KEY_PRODUCT = 'product' as const;
+export const KEY_PRODUCTS = 'products' as const;
+export const KEY_CITIES = 'cities' as const;
+export const KEY_CITY = 'city' as const;

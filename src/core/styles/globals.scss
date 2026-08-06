@@ -29,12 +29,22 @@
   --ico-color-beige: #706b62;
   --ico-color-red: #d70404;
 
+  //border
+  --border-color-light-gray: #8080803b;
+  --border-color-light-white: #ffffff3b;
+
   //button
   --button-color-main: #f2f2ef;
   --button-color-secondary: #b3b3b3;
+  --button-color-secondary-hover: #c2c2c2;
   --button-color-tertiary: #f9f9f7;
+  --button-color-tertiary-hover: #f0f0eb;
   --button-color-main-on: #fdfdfc;
+  --button-color-main-on-hover: #f5f4f2;
   --button-color-red: #d6abaa;
+  --button-color-red-hover: #e8cfcf;
+  --button-color-gray-hover: #e3e3dc;
+  --button-color-bordered: #9b9b9b0a;
 
   //text
   --text-color-main: #30302b;
@@ -48,6 +58,24 @@
 
   //form
   --form-bg-color: #fafaf9;
+
+  --max-content-width: 1560px;
+  --content-padding: 0px;
+
+  @include media-max-width(1640) {
+    --max-content-width: 1640px;
+    --content-padding: 40px;
+  }
+
+  @include media-max-width(md) {
+    --content-padding: 20px;
+  }
+  @include media-max-width(sm) {
+    --content-padding: 32px;
+  }
+  @include media-max-width(xs) {
+    --content-padding: 20px;
+  }
 }
 
 * {
@@ -63,10 +91,20 @@ html {
 
 .main {
   width: 100%;
-  // height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 10px;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
 }

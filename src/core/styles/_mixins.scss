@@ -128,9 +128,9 @@ $dbreak: 1920px !default;
   -o-appearance: none;
 }
 
-@mixin transit($tag...) {
+@mixin transit($tag, $duration: 350ms) {
   transition-timing-function: ease-in-out;
-  transition-duration: 350ms;
+  transition-duration: $duration;
   transition-property: $tag;
 }
 

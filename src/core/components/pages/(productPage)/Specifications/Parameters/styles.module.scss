@@ -1,0 +1,38 @@
+.parameters {
+  width: 100%;
+}
+
+.parametersGrid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - 16px));
+  column-gap: 32px;
+  row-gap: 16px;
+
+  @include media-max-width(xl) {
+    column-gap: 40px;
+  }
+
+  @include media-max-width(md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.parametersGridItem {
+  display: flex;
+  width: 100%;
+}
+
+.parametersItemTitle {
+  color: var(--text-color-secondary);
+  white-space: nowrap;
+}
+
+.parametersItemLine {
+  width: 100%;
+  border-bottom: 1px solid var(--bg-border);
+}
+
+.parametersItemValue {
+  white-space: nowrap;
+}

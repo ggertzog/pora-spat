@@ -1,0 +1,55 @@
+.label {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 11px;
+  padding: 18px 24px;
+  gap: 10px;
+  border: 1px solid var(--bg-border);
+  background-color: transparent;
+  cursor: pointer;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: var(--bg-secondary);
+    }
+  }
+}
+
+.input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.input:checked + .circle {
+  border-color: var(--ico-color-beige);
+}
+
+.input:checked + .circle::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--bg-beige-main);
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid var(--ico-color-secondary);
+  background-color: transparent;
+  position: relative;
+}
+
+.span {
+  @include tooltip2;
+  color: var(--text-color-main);
+}

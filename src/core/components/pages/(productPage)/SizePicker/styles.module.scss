@@ -1,0 +1,113 @@
+.sizePicker {
+  padding: 12px 16px;
+  width: 100%;
+  background-color: var(--bg-main);
+  border-radius: 16px;
+}
+
+.header {
+  padding: 0 5px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.mb {
+  margin-bottom: 28px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+
+  @include media-max-width(sm) {
+    height: 34px;
+  }
+
+  @include media-max-width(xs) {
+    height: 36px;
+  }
+}
+
+.contentItem {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 70px;
+
+  @include media-max-width(xs) {
+    min-width: 60px;
+  }
+}
+
+.arrowImg {
+  @include transit(transform);
+  color: var(--ico-color-secondary);
+  transform: rotateX(0);
+}
+
+.arrowImgRotated {
+  transform: rotateX(180deg);
+}
+
+.list {
+  @include clearList;
+  @include transit(height);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+  height: 0;
+}
+
+.link {
+  display: flex;
+}
+
+.listItem {
+  padding: 3px 5px;
+  border-radius: 10px;
+  width: 100%;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: var(--bg-tertiary);
+    }
+  }
+}
+
+.listItemActive {
+  background-color: var(--bg-beige1-main);
+}
+
+.listContent {
+  display: flex;
+  gap: 6px;
+  width: 100%;
+}
+
+.listContentWrap {
+  min-width: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @include media-max-width(xs) {
+    min-width: 60px;
+  }
+
+  &:last-child {
+    align-items: flex-end;
+    margin-left: auto;
+    text-align: right;
+  }
+}
+
+.listContentCost {
+  font-weight: 600;
+}

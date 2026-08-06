@@ -1,0 +1,244 @@
+.catalogCard {
+  @include transit(box-shadow);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: var(--bg-secondary);
+  cursor: pointer;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      box-shadow: 0px 14px 34px 0px #0000003d;
+      padding-bottom: 12px;
+
+      .infoWrap {
+        gap: 16px;
+      }
+
+      .buttonWrap {
+        height: auto;
+      }
+    }
+  }
+
+  &_size_xxl {
+    width: 100%;
+    border-radius: 24px;
+    padding: 8px 10px 20px;
+
+    .sliderWrap {
+      width: 100%;
+      height: 258px;
+    }
+
+    .infoWrap {
+      padding: 10px 0 0;
+    }
+
+    .descWrap {
+      gap: 10px;
+    }
+
+    .priceWrap {
+      gap: 8px;
+    }
+
+    .buttonWrap {
+      gap: 8px;
+    }
+  }
+
+  &_size_xl {
+    width: 329px;
+    border-radius: 24px;
+    padding: 8px 8px 20px;
+
+    .sliderWrap {
+      width: 100%;
+      height: 226px;
+    }
+
+    .infoWrap {
+      padding: 10px 0 0;
+    }
+
+    .descWrap {
+      gap: 10px;
+    }
+
+    .priceWrap {
+      gap: 8px;
+    }
+
+    .buttonWrap {
+      gap: 8px;
+    }
+  }
+
+  &_size_md {
+    width: 317px;
+    border-radius: 24px;
+    padding: 8px 8px 20px;
+
+    .sliderWrap {
+      width: 100%;
+      height: 218px;
+    }
+
+    .infoWrap {
+      padding: 10px 0 0;
+    }
+
+    .descWrap {
+      gap: 10px;
+    }
+
+    .priceWrap {
+      gap: 10px;
+    }
+
+    .buttonWrap {
+      gap: 8px;
+    }
+  }
+
+  &_size_sm {
+    width: 346px;
+    border-radius: 24px;
+    padding: 8px 8px 20px;
+
+    .sliderWrap {
+      width: 100%;
+      height: 238px;
+    }
+
+    .infoWrap {
+      padding: 10px 0 0;
+    }
+
+    .descWrap {
+      gap: 10px;
+    }
+
+    .priceWrap {
+      gap: 10px;
+    }
+
+    .buttonWrap {
+      gap: 8px;
+    }
+  }
+
+  &_size_xs {
+    width: 180px;
+    border-radius: 24px;
+    padding: 7px 10.5px 20px;
+
+    .sliderWrap {
+      width: 100%;
+      height: 120px;
+      border-radius: 10px;
+    }
+
+    .infoWrap {
+      padding: 12px 0 0;
+    }
+
+    .descWrap {
+      gap: 6px;
+    }
+
+    .priceWrap {
+      gap: 6px;
+    }
+
+    .buttonWrap {
+      gap: 6px;
+    }
+  }
+
+  .likeButton {
+    margin-left: auto;
+  }
+}
+
+.sliderWrap {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  opacity: 0;
+  visibility: hidden;
+
+  &_visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.pagination {
+  display: flex;
+  width: 100%;
+  height: 1px;
+  background-color: var(--bg-main);
+}
+
+.paginationItem {
+  width: 100%;
+  height: 1px;
+  background-color: var(--bg-main);
+
+  &_active {
+    background-color: var(--bg-beige-secondar, #cbbfb3);
+  }
+}
+
+.infoWrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.descWrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.priceWrap {
+  display: flex;
+  align-items: center;
+}
+
+.price {
+  color: var(--text-color-main);
+}
+
+.priceNew {
+  color: var(--text-color-red);
+}
+
+.priceOld {
+  color: var(--text-color-secondary);
+  text-decoration: line-through;
+}
+
+.title {
+  color: var(--text-color-secondary-on);
+}
+
+.buttonWrap {
+  @include transit(height);
+  display: flex;
+  flex-direction: column;
+  height: 0;
+  overflow: clip;
+}

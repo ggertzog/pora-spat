@@ -1,0 +1,21 @@
+.reviewCard {
+  position: relative;
+  width: 361px;
+  height: 405px;
+  overflow: hidden;
+  border-radius: 20px;
+  flex-shrink: 0;
+
+  @include media-max-width(xs) {
+    width: 225px;
+    height: 260px;
+  }
+}
+
+.reviewImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+}

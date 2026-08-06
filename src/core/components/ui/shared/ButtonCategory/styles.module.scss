@@ -1,0 +1,17 @@
+.button {
+  @include clearButton;
+  padding: 20px 32px;
+  background-color: var(--button-color-main);
+  border-radius: 6px;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: var(--button-color-gray-hover);
+    }
+  }
+}
+
+.text {
+  @include text4;
+  color: var(--text-color-footer-link);
+}

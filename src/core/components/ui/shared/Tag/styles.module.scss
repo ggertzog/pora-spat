@@ -1,0 +1,25 @@
+.tag {
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-main);
+
+  &_size_xl {
+    // background-color: var(--bg-purple-main);
+    padding: 16px 24px;
+
+    .text {
+      @include text2;
+    }
+  }
+
+  &_size_sm {
+    // background: var(--bg-main);
+    padding: 10px 20px;
+
+    .text {
+      @include text4(sm);
+    }
+  }
+}

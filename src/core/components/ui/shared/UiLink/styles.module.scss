@@ -1,0 +1,20 @@
+.link {
+  @include transit(color);
+  font-family: var(--font-vela-sans);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 110%;
+  color: var(--text-color-main);
+  text-decoration: none;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      border-bottom: 1px solid var(--text-color-main);
+    }
+  }
+
+  &:active {
+    border-bottom: 1px solid var(--text-color-secondary);
+    color: var(--text-color-secondary);
+  }
+}

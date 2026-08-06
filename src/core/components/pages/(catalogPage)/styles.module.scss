@@ -1,0 +1,55 @@
+.catalogPage {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: var(--max-content-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px var(--content-padding) 120px;
+
+  @include media-max-width(md) {
+    padding: 48px var(--content-padding) 90px;
+  }
+
+  @include media-max-width(xs) {
+    padding: 32px var(--content-padding) 60px;
+  }
+}
+
+.catalogListWrap {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.catalogList {
+  @include clearList();
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 20px;
+  row-gap: 32px;
+}
+
+.catalogItem {
+  display: flex;
+  position: relative;
+  width: 100%;
+
+  &:hover .card[data-weight] {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  @include media-max-width(xs) {
+    &:hover .card[data-weight] {
+      position: relative;
+    }
+  }
+}

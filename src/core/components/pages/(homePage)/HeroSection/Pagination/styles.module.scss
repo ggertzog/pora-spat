@@ -1,0 +1,45 @@
+
+.pagination {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 40px;
+  visibility: visible;
+}
+
+.paginationItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  background-color: #ffffff99;
+  height: 2px;
+}
+
+.paginationItemFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #000000;
+  animation: fillProgress 6s linear forwards;
+}
+
+@keyframes fillProgress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.paginationItemFillDone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+}

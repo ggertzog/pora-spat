@@ -1,201 +1,170 @@
 .header {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--bg-main);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-main);
 }
 
 .navWrap {
-    padding: 0 40px;
-    width: 100%;
-    background-color: var(--bg-secondary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  padding: 0 40px;
+  width: 100%;
+  background-color: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    @include media-max-width(sm) {
-        display: none;
-    }
+  @include media-max-width(sm) {
+    display: none;
+  }
 }
 
 .navContainer {
-    max-width: 1360px;
-    width: 100%;
-    padding: 8px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  max-width: 1360px;
+  width: 100%;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    @include media-min-width(xl) {
-        max-width: 1560px;
-    }
+  @include media-min-width(xl) {
+    max-width: 1560px;
+  }
 }
 
 .contacts {
-    display: flex;
-    align-items: center;
-    gap: 18px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
 .location {
-    p {
-        @include text4;
-        color: var(--text-color-main);
-    }
+  p {
+    color: var(--text-color-main);
+  }
 }
 
 .locationBtn {
-    @include clearButton;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.locationIcon,
-.chevronIcon {
-    flex-shrink: 0;
-    width: 20px;
-    height: 20px;
+  @include clearButton;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .locationIcon {
-    @include media-max-width(sm) {
-        path {
-            fill: var(--ico-color-secondary);
-        }
-    }
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
 }
 
-.phone {
-    text-decoration: none;
-    @include text4;
-    color: var(--text-color-main);
+.chevronIcon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
 
-    @include media-max-width(sm) {
-        @include text4(sm);
-        padding: 6px 10px 6px 8px;
-        display: flex;
-        align-items: center;
-        gap: 2px;
-        background-color: var(--button-color-main);
-        border-radius: 12px;
-    }
+// .locationIcon {
+//   @include media-max-width(sm) {
+//     path {
+//       fill: var(--ico-color-secondary);
+//     }
+//   }
+// }
+
+.phone {
+  text-decoration: none;
+  color: var(--text-color-main);
+
+  // @include media-max-width(sm) {
+  //   padding: 6px 10px 6px 8px;
+  //   display: flex;
+  //   align-items: center;
+  //   gap: 2px;
+  //   background-color: var(--button-color-main);
+  //   border-radius: 12px;
+  // }
 }
 
 .nav {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .navList {
-    @include clearList;
-    display: flex;
-    align-items: center;
-    gap: 24px;
+  @include clearList;
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
 .link {
-    @include text4;
-    color: var(--text-color-main);
-    text-decoration: none;
+  @include text4;
+  color: var(--text-color-main);
+  text-decoration: none;
 }
 
 .mainWrap {
-    padding: 0 40px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  padding: 0 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    @include media-max-width(sm) {
-        display: none;
-    }
+  @include media-max-width(sm) {
+    display: none;
+  }
 }
 
 .mainContainer {
-    padding: 24px 0;
-    max-width: 1560px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  padding: 24px 0;
+  max-width: 1560px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .logoLink {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logoIcon {
-    width: 218px;
-    height: 26px;
+  width: 218px;
+  height: 26px;
 
-    @include media-max-width(sm) {
-        width: 178px;
-        height: 20px;
-    }
+  // @include media-max-width(sm) {
+  //   width: 178px;
+  //   height: 20px;
+  // }
 
-    @include media-max-width(xs) {
-        width: 124px;
-        height: 14px;
-    }
+  // @include media-max-width(xs) {
+  //   width: 124px;
+  //   height: 14px;
+  // }
 }
 
 .searchWrap {
-    margin-left: 48px;
-    margin-right: auto;
-    max-width: 940px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 24px;
+  margin-left: 48px;
+  margin-right: auto;
+  max-width: 940px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
 .buttonsWrap {
-    margin-left: 32px;
-    display: flex;
-    align-items: center;
-    gap: 54px;
+  margin-left: 32px;
+  display: flex;
+  align-items: center;
+  gap: 54px;
 }
 
-.mobileHeader {
-    display: none;
-
-    @include media-max-width(sm) {
-        padding: 0 32px;
-        height: 68px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    @include media-max-width(xs) {
-        padding: 0 20px;
-    }
-}
-
-.buttonsMobileWrap {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.callIcon {
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-}
-
-.locationBtnMobile {
-    @include clearButton;
-    background-color: var(--button-color-main);
-    border-radius: 50%;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
 }

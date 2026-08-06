@@ -1,8 +1,17 @@
+//libs
+import clsx from "clsx";
+
+//styles
+import "@/core/styles/globals.scss";
+
+//types
 import type { Metadata } from "next";
-import "../core/styles/globals.scss";
+
+//query provider
 import { QueryProvider } from "@/core/providers/QueryProvider";
-import { CygreFont, VelaSansFont } from './_fonts';
-import clsx from 'clsx';
+
+//fonts
+import { CygreFont, VelaSansFont } from "./_fonts";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className={clsx(CygreFont.variable, VelaSansFont.variable)}>
-      <body >
+      <body>
         <QueryProvider>{children}</QueryProvider>
       </body>
     </html>

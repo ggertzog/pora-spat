@@ -1,0 +1,82 @@
+.button {
+  @include transit(background-color);
+  text-decoration: none;
+  padding: 12px;
+  border: 1px solid var(--bg-border);
+  border-radius: 16px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: var(--bg-secondary);
+    }
+  }
+
+  @include media-max-width(sm) {
+    padding: 8px;
+    gap: 8px;
+    border-radius: 10px;
+  }
+}
+
+.image {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  object-position: center;
+
+  @include media-max-width(sm) {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @include media-max-width(sm) {
+    gap: 3px;
+  }
+}
+
+.rating {
+  @include text2;
+  color: var(--text-color-footer-link);
+
+  @include media-max-width(sm) {
+    font-size: 12px;
+  }
+}
+
+.list {
+  @include clearList;
+  display: flex;
+  gap: 5px;
+}
+
+.item {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+
+  @include media-max-width(sm) {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.starIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}

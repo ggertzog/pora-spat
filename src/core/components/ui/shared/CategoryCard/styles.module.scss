@@ -1,0 +1,80 @@
+.categoryCard {
+  @include transit(background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 24px;
+  background-color: var(--bg-secondary);
+  cursor: pointer;
+  flex-shrink: 0;
+
+  &_size_xl {
+    padding: 24px 24px 32px;
+    width: 328px;
+    height: 296px;
+    gap: 24px;
+
+    .image {
+      width: 274px;
+      height: 194px;
+    }
+
+    .title {
+      @include h4;
+    }
+  }
+
+  &_size_sm {
+    padding: 14px 15.5px 32px;
+    width: 224px;
+    height: 226px;
+    gap: 24px;
+
+    .image {
+      width: 193px;
+      height: 150px;
+    }
+
+    .title {
+      @include h4;
+    }
+  }
+
+  &_size_xs {
+    padding: 14px 14px 24px;
+    width: 157px;
+    height: 167px;
+    gap: 24px;
+
+    .image {
+      width: 124px;
+      height: 100px;
+    }
+
+    .title {
+      @include text1(xs);
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: var(--bg-tertiary);
+
+      .image {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+.image {
+  @include transit(transform);
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1);
+}
+
+.title {
+  margin-top: auto;
+  color: var(--text-color-main);
+}

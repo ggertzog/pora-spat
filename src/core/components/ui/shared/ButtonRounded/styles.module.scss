@@ -1,0 +1,164 @@
+.button {
+  @include clearButton;
+  @include transit(background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &_size {
+    &_h56 {
+      padding: 0 24px 0 22px;
+      height: 56px;
+      border-radius: 40px;
+    }
+
+    &_h52 {
+      height: 52px;
+      padding: 0 32px;
+      border-radius: 60px;
+    }
+
+    &_h48 {
+      padding: 0 20px;
+      height: 48px;
+      width: 100%;
+      justify-content: center;
+      border-radius: 40px;
+    }
+
+    &_h46 {
+      padding: 0 24px;
+      height: 46px;
+      border-radius: 50px;
+    }
+
+    &_h44 {
+      padding: 0 20px;
+      height: 44px;
+      border-radius: 40px;
+    }
+
+    &_h43 {
+      padding: 0 24px;
+      height: 43px;
+      border-radius: 40px;
+    }
+
+    &_h31 {
+      padding: 0 16px;
+      height: 31px;
+      border-radius: 40px;
+    }
+  }
+
+  &_variant {
+    &_main {
+      background-color: var(--button-color-main);
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          background-color: var(--button-color-gray-hover);
+        }
+      }
+    }
+
+    &_red {
+      background-color: var(--button-color-red);
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          background-color: var(--button-color-red-hover);
+        }
+      }
+    }
+
+    &_tertiary {
+      background-color: var(--button-color-tertiary);
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          background-color: var(--button-color-tertiary-hover);
+        }
+      }
+    }
+
+    &_bordered {
+      @include transit(border);
+      background-color: var(--button-color-bordered);
+      box-sizing: border-box;
+      border: 1px solid var(--border-color-light-gray);
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          background-color: var(--button-color-bordered);
+          border: 1px solid var(--border-color-light-white);
+        }
+      }
+    }
+
+    &_main-on {
+      background-color: var(--button-color-main-on);
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          background-color: var(--button-color-main-on-hover);
+        }
+      }
+    }
+
+    &_secondary {
+      background-color: var(--button-color-secondary);
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          background-color: var(--button-color-secondary-hover);
+        }
+      }
+    }
+
+    &_beige-main {
+      background-color: var(--bg-beige-main);
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          background-color: var(--bg-beige-secondary);
+        }
+      }
+    }
+
+    &_tab {
+      background-color: transparent;
+      color: var(--text-color-footer-link);
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          background-color: var(--bg-tertiary);
+        }
+      }
+
+      &:active {
+        background-color: var(--bg-beige-main);
+      }
+
+      &:disabled {
+        background-color: transparent;
+        color: var(--text-color-secondary);
+      }
+    }
+  }
+}
+
+.iconWrap {
+  display: inline-flex;
+  flex-shrink: 0;
+
+  &_left {
+    margin-right: 7px;
+  }
+
+  &_right {
+    margin-left: 7px;
+  }
+}

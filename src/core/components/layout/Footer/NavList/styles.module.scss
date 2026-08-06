@@ -6,12 +6,7 @@
 }
 
 .title {
-  @include h6;
   color: var(--text-color-black);
-
-  @include media-max-width(xs) {
-    @include h6(xs);
-  }
 }
 
 .list {
@@ -26,7 +21,7 @@
   @include clearLink;
   color: var(--text-color-footer-link);
 
-  @include media-max-width(xs) {
+  @include media-max-width(sm) {
     @include tooltip2;
   }
 }

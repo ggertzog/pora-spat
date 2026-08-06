@@ -1,0 +1,12 @@
+.button {
+  @include clearButton;
+  width: 100%;
+  padding: 14px 20px;
+  background-color: var(--bg-beige-main);
+  border-radius: 40px;
+}
+
+.text {
+  @include text4;
+  color: var(--text-color-main-on);
+}

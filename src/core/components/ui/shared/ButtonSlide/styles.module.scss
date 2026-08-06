@@ -1,0 +1,39 @@
+.button {
+  @include clearButton;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &_theme_light {
+    background-color: var(--bg-main);
+    color: var(--bg-beige-main);
+  }
+
+  &_theme_dark {
+    background-color: var(--button-color-main);
+    color: var(--ico-color-secondary);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &_theme_dark:hover {
+      background-color: var(--button-color-main);
+      color: var(--ico-color-secondary);
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &_theme_light:hover {
+      background-color: var(--bg-main);
+      color: var(--bg-beige-main);
+    }
+  }
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  object-fit: cover;
+  object-position: center;
+}

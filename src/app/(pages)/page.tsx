@@ -1,9 +1,6 @@
-import HomePage from "@/core/components/(homePage)/HomePage";
-
+//components
+import HomePage from "@/core/components/pages/(homePage)/HomePage";
 
 export default function Home() {
-
-  return (
-    <HomePage />
-  );
+  return <HomePage />;
 }
