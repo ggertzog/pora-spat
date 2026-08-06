@@ -1,0 +1,150 @@
+.productSlider {
+  position: relative;
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  height: 740px;
+  gap: 16px;
+
+  @include media-max-width(xl) {
+    height: 604px;
+  }
+
+  @include media-max-width(md) {
+    grid-template-columns: 1fr;
+    height: 400px;
+  }
+
+  @include media-max-width(sm) {
+    height: 476px;
+  }
+
+  @include media-max-width(xs) {
+    height: 226px;
+  }
+}
+
+.thumbnailsSwiperContainer {
+  width: 100%;
+  height: 740px;
+
+  @include media-max-width(xl) {
+    height: 600px;
+  }
+
+  @include media-max-width(md) {
+    display: none;
+  }
+}
+
+.thumbnailsSwiper {
+  width: 100%;
+  height: 100%;
+}
+
+.thumbnailSlide {
+  height: min-content !important;
+  height: -webkit-min-content !important;
+}
+
+.thumbnailCard {
+  @include transit(border);
+  @include transit(opacity);
+  width: 130px;
+  height: 90px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid transparent;
+  opacity: 0.3;
+  cursor: pointer;
+
+  &_active {
+    border: 1px solid var(--bg-beige-secondary);
+    opacity: 1;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      border: 1px solid var(--bg-beige-secondary);
+    }
+  }
+}
+
+.thumbnailImgWrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.thumbnailImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.productSwiperContainer {
+  height: 740px;
+  width: 100%;
+  border-radius: 24px;
+
+  @include media-max-width(xl) {
+    height: 604px;
+  }
+
+  @include media-max-width(md) {
+    height: 400px;
+  }
+
+  @include media-max-width(sm) {
+    height: 476px;
+  }
+
+  @include media-max-width(xs) {
+    height: 226px;
+  }
+}
+
+.productSwiper {
+  height: 100%;
+  width: 100%;
+}
+
+.productSlide {
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.productCard {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productImgWrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.btnsWrap {
+  position: absolute;
+  display: flex;
+  gap: 12px;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1;
+
+  @include media-max-width(sm) {
+    display: none;
+  }
+}

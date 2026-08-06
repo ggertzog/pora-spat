@@ -1,11 +1,14 @@
-import { components } from "@/core/types/__generated__/api-schema";
+//libs
 import { queryOptions, useQuery } from "@tanstack/react-query";
-import { KEY_BANNERS } from "../constants/queryKeys";
 import { fetchClient } from "../fetchClient/fetchClient";
 
-const PATH = "/banners" as const;
+//constants
+import { KEY_BANNERS } from "../constants/queryKeys";
 
-export type IBanner = components["schemas"]["BannerResource"];
+//types
+import { IBanner } from "@/core/types/newapi";
+
+const PATH = "/banners" as const;
 
 export const bannersQueryOptions = () =>
   queryOptions<IBanner[]>({

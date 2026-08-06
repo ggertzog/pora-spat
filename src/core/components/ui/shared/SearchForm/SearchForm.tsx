@@ -5,7 +5,7 @@ import React from "react";
 import styles from "./styles.module.scss";
 
 //assets
-import SearchIcon from "@p/assets/icons/search-icon.svg";
+import SearchIcon from "@p/assets/icons/search.svg";
 
 const SearchForm = () => {
   return (

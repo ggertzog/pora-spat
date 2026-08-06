@@ -36,7 +36,7 @@ const XsFooterContent = ({ contactItems }: SmFooterContentProps) => {
         <Typography className={styles.title} as="h6" variant="h6">
           Подпишитесь на рассылку и получите скидку на первый заказ
         </Typography>
-        <UiForm placeholder="Введите ваш email" />
+        <UiForm placeholder="Введите ваш email" onSubmit={() => {}} />
       </div>
 
       <div className={styles.orderCall}>

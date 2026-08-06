@@ -6,9 +6,12 @@ import Link from "next/link";
 import styles from "./styles.module.scss";
 
 //assets
-import LocationIcon from "@p/assets/icons/location.svg";
-import ChevronDownIcon from "@p/assets/icons/chevron.svg";
+import LocationIcon from "@p/assets/icons/location-full-color-20.svg";
+import ChevronDownIcon from "@p/assets/icons/chevron-16.svg";
 import LogoIcon from "@p/assets/icons/logo.svg";
+import HeartIcon from "@p/assets/icons/heart.svg";
+import ShopingCartIcon from "@p/assets/icons/shopping-cart.svg";
+import MenuIcon from "@p/assets/icons/menu-second.svg";
 
 //components
 import ButtonRounded from "@/core/components/ui/shared/ButtonRounded/ButtonRounded";
@@ -77,12 +80,23 @@ export const Header = () => {
               <LogoIcon className={styles.logoIcon} />
             </Link>
             <div className={styles.searchWrap}>
-              <ButtonRounded icon="catalog" text="Каталог" size="h56" className={styles.catalogButton} />
+              <ButtonRounded
+                text="Каталог"
+                size="h56"
+                variant="main"
+                textSize="big"
+                className={styles.catalogButton}
+                leftIcon={<MenuIcon />}
+              />
               <SearchForm />
             </div>
             <div className={styles.buttonsWrap}>
-              <ButtonWithQuantity icon="favorite" quantity={0} text="Избранное" size="xs" />
-              <ButtonWithQuantity icon="basket" quantity={0} text="Корзина" size="xs" />
+              <ButtonWithQuantity quantity={0} text="Избранное" size="xs">
+                <HeartIcon className={styles.icon} />
+              </ButtonWithQuantity>
+              <ButtonWithQuantity quantity={0} text="Корзина" size="xs">
+                <ShopingCartIcon className={styles.icon} />
+              </ButtonWithQuantity>
             </div>
           </div>
         </div>

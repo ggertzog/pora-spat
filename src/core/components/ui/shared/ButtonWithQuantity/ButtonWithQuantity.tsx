@@ -5,34 +5,18 @@ import clsx from "clsx";
 //styles
 import styles from "./styles.module.scss";
 
-//assets
-import FavoriteSvg from "@p/assets/icons/heart-icon.svg";
-import BasketSvg from "@p/assets/icons/basket.svg";
-import HomeSvg from "@p/assets/icons/home.svg";
-
-type TIcon = "favorite" | "basket" | "home";
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const icons: Record<TIcon, (props?: any) => JSX.Element> = {
-  favorite: ({ ...props }) => <FavoriteSvg {...props} />,
-  basket: ({ ...props }) => <BasketSvg {...props} />,
-  home: ({ ...props }) => <HomeSvg {...props} />,
-};
-
 interface IButtonWithQuantity extends ButtonHTMLAttributes<HTMLButtonElement> {
-  icon: TIcon;
   quantity: number;
   text?: string;
   size?: "xl" | "xs";
+  children: React.ReactNode;
 }
 
-const ButtonWithQuantity = ({ icon, quantity, text, size = "xl", className, ...props }: IButtonWithQuantity) => {
-  const Icon = icons[icon];
-
+const ButtonWithQuantity = ({ children, quantity, text, size = "xl", className, ...props }: IButtonWithQuantity) => {
   return (
     <button className={clsx(styles.button, styles[`button_size_${size}`], className)} {...props}>
       <div className={styles.iconWrapper}>
-        <Icon className={styles.icon} />
+        {children}
         {quantity > 0 && <span className={styles.quantity}>{quantity}</span>}
       </div>
       {text && <span className={styles.text}>{text}</span>}

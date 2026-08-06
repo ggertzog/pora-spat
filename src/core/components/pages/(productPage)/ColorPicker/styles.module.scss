@@ -1,0 +1,13 @@
+.colorPicker {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: var(--bg-main);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.colorsList {
+  @include clearList;
+}

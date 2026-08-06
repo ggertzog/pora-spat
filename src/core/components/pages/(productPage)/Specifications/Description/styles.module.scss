@@ -1,0 +1,66 @@
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @include media-max-width(md) {
+    gap: 16px;
+  }
+}
+
+.descriptionContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.descriptionContentItem {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+
+  @include media-max-width(xl) {
+    gap: 40px;
+  }
+
+  @include media-max-width(md) {
+    gap: 16px;
+  }
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+}
+
+.descriptionImageWrap {
+  position: relative;
+  width: 517px;
+  height: 294px;
+  flex-shrink: 0;
+  border-radius: 24px;
+  overflow: hidden;
+
+  @include media-max-width(xl) {
+    width: 423px;
+    height: 240px;
+  }
+
+  @include media-max-width(md) {
+    width: 257px;
+    height: 192px;
+  }
+}
+
+.descriptionTextContent {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+
+.descriptionItemTitle {
+}
+
+.descriptionItemText {
+  color: var(--text-color-secondary);
+}

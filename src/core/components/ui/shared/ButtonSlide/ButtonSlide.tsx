@@ -6,8 +6,8 @@ import clsx from "clsx";
 import styles from "./styles.module.scss";
 
 //assets
-import ArrowRight from "@p/assets/icons/right-arrow.svg";
-import ArrowLeft from "@p/assets/icons/left-arrow.svg";
+import ArrowRight from "@p/assets/icons/right-arrow-16.svg";
+import ArrowLeft from "@p/assets/icons/left-arrow-16.svg";
 
 // TODO: Доделать disabled состояние, на макете не понятно как это должно выглядеть
 

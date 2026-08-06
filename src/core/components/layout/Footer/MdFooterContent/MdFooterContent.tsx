@@ -45,7 +45,7 @@ interface MdFooterContentProps {
   }[];
 }
 
-export const MdFooterContent = ({contactItems, customersItems, catalogItems}: MdFooterContentProps) => {
+const MdFooterContent = ({contactItems, customersItems, catalogItems}: MdFooterContentProps) => {
   return (
     <div className={styles.footerContent}>
       <div className={styles.footerContentItem}>
@@ -159,3 +159,5 @@ export const MdFooterContent = ({contactItems, customersItems, catalogItems}: Md
     </div>
   );
 };
+
+export default MdFooterContent

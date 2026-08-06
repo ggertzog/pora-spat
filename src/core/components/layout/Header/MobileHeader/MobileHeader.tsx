@@ -8,7 +8,7 @@ import styles from "./styles.module.scss";
 //assets
 import CallIcon from "@p/assets/icons/call.svg";
 import LogoIcon from "@p/assets/icons/logo.svg";
-import LocationIcon from "@p/assets/icons/location.svg";
+import LocationIcon from "@p/assets/icons/location-20.svg";
 
 //components
 import Typography from "@/core/components/ui/shared/Typography/Typography";

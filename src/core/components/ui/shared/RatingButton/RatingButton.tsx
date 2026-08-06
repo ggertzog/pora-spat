@@ -7,7 +7,7 @@ import clsx from "clsx";
 import styles from "./styles.module.scss";
 
 //assets
-import StarIcon from "@p/assets/icons/star.svg";
+import StarIcon from "@p/assets/icons/star-20.svg";
 
 //types
 import { IMarketplaces } from "@/core/api/queryFetchers/getMarketplacesQuery";

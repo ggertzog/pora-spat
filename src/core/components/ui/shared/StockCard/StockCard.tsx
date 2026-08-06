@@ -14,7 +14,7 @@ import styles from "./styles.module.scss";
 import Tag from "@/core/components/ui/shared/Tag/Tag";
 
 //types
-import { IBanner } from "@/core/api/queryFetchers/getBannersQuery";
+import { IBanner } from "@/core/types/newapi";
 
 interface IStockCard {
   banner: IBanner;

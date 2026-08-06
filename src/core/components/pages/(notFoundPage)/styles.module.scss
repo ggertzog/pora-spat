@@ -1,0 +1,163 @@
+.notFoundPage {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.imageWrap {
+  position: absolute;
+  width: 972.4px;
+  height: 827.44px;
+  bottom: 0;
+  right: 0;
+
+  @include w1920 {
+    width: apxm(972.4px);
+    height: apxm(827.44px);
+  }
+
+  @include w1440 {
+    width: apxm(870.87px);
+    height: apxm(724px);
+    right: -100px;
+    bottom: -100px;
+  }
+
+  @include w1024 {
+    transform: rotate(-10deg);
+    bottom: -30px;
+    right: -150px;
+    width: apxm(628.55px);
+    height: apxm(525.17px);
+  }
+
+  @include w768 {
+    transform: rotate(0deg);
+    right: -160px;
+    bottom: -50px;
+    width: apxm(613.12px);
+    height: apxm(511.31px);
+  }
+
+  @include w375 {
+    right: -100px;
+    bottom: 0;
+    width: apxm(374.38px);
+    height: apxm(311.78px);
+  }
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  margin-top: 74px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  @include w1920 {
+    margin-top: apxm(74px);
+  }
+
+  @include w1440 {
+    margin-top: apxm(46px);
+  }
+
+  @include w1024 {
+    margin-top: apxm(42px);
+  }
+
+  @include w768 {
+    margin-top: apxm(196px);
+  }
+
+  @include w375 {
+    margin-top: apxm(102px);
+  }
+}
+
+.title {
+  font-family: var(--font-cygre);
+  font-weight: 600;
+  font-size: 300px;
+  line-height: 110%;
+  letter-spacing: -1%;
+  text-align: center;
+
+  @include w1920 {
+    font-size: apxm(300px);
+  }
+
+  @include w1440 {
+    font-size: apxm(200px);
+  }
+
+  @include w1024 {
+    font-size: apxm(180px);
+  }
+
+  @include w768 {
+    font-size: apxm(180px);
+  }
+
+  @include w375 {
+    font-size: apxm(110px);
+  }
+}
+
+.subtitle {
+  margin: 16px 0 52px;
+  font-family: var(--font-cygre);
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 110%;
+  letter-spacing: -1%;
+  text-align: center;
+
+  @include w1920 {
+    font-size: apxm(40px);
+    margin: apxm(16px) 0 apxm(52px);
+  }
+
+  @include w1440 {
+    font-size: apxm(32px);
+    margin: apxm(16px) 0 apxm(36px);
+  }
+
+  @include w1024 {
+    font-size: apxm(32px);
+    margin: apxm(16px) 0 apxm(36px);
+  }
+
+  @include w768 {
+    font-size: apxm(32px);
+    margin: apxm(16px) 0 apxm(36px);
+  }
+
+  @include w375 {
+    font-size: apxm(20px);
+    margin: apxm(16px) 0 apxm(24px);
+  }
+}
+
+.text {
+  color: var(--text-color-secondary);
+  text-align: center;
+
+  @include w375 {
+    max-width: apxm(300px);
+    width: 100%;
+  }
+}
+
+.link {
+  text-decoration: underline;
+}

@@ -5,17 +5,18 @@ import clsx from "clsx";
 //styles
 import styles from "./styles.module.scss";
 
-//assets
-import { Heart } from "@p/assets/icons/Heart";
 
 interface IButtonIcon extends ButtonHTMLAttributes<HTMLButtonElement> {
   isActive?: boolean;
+  children: React.ReactNode
 }
 
-const ButtonIcon = ({ isActive = false, className, ...props }: IButtonIcon) => {
+const ButtonIcon = ({ children, isActive = false, className, ...props }: IButtonIcon) => {
   return (
     <button className={clsx(styles.buttonIcon, className)} {...props}>
-      <Heart className={styles.icon} isActive={isActive} />
+      {children}
+      {/* TODO: Переделать логику иконки сердца, вынести ее из ui кнопки */}
+      {/* <Heart className={styles.icon} isActive={isActive} /> */}
     </button>
   );
 };

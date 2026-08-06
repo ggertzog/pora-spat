@@ -29,13 +29,22 @@
   --ico-color-beige: #706b62;
   --ico-color-red: #d70404;
 
+  //border
+  --border-color-light-gray: #8080803b;
+  --border-color-light-white: #ffffff3b;
+
   //button
   --button-color-main: #f2f2ef;
   --button-color-secondary: #b3b3b3;
+  --button-color-secondary-hover: #c2c2c2;
   --button-color-tertiary: #f9f9f7;
+  --button-color-tertiary-hover: #f0f0eb;
   --button-color-main-on: #fdfdfc;
+  --button-color-main-on-hover: #f5f4f2;
   --button-color-red: #d6abaa;
+  --button-color-red-hover: #e8cfcf;
   --button-color-gray-hover: #e3e3dc;
+  --button-color-bordered: #9b9b9b0a;
 
   //text
   --text-color-main: #30302b;
@@ -92,4 +101,10 @@ html {
 a {
   color: inherit;
   text-decoration: inherit;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
 }

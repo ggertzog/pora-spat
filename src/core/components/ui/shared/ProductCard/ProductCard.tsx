@@ -12,6 +12,7 @@ import styles from "./styles.module.scss";
 //assets
 import BedImg from "@p/assets/images/bed.png";
 import ButtonIcon from "@/core/components/ui/shared/ButtonIcon/ButtonIcon";
+import HeartIcon from "@p/assets/icons/heart.svg";
 
 //components
 import ProductTag from "@/core/components/ui/shared/ProductTag/ProductTag";
@@ -38,7 +39,9 @@ const ProductCard = ({ bgColor, size, card }: IProductCard) => {
       <Link href={`/products/${slug}`}>
         <div className={styles.imgWrap}>
           {image && <Image className={styles.img} src={image} alt={name || "фотография товара"} fill />}
-          <ButtonIcon isActive={isLiked} onClick={() => setIsLiked(!isLiked)} />
+          <ButtonIcon isActive={isLiked} onClick={() => setIsLiked(!isLiked)}>
+            <HeartIcon />
+          </ButtonIcon>
           <div className={styles.tagsWrap}>
             {cost?.discount && <ProductTag icon={true} text={`-${cost.discount}%`} type="discount" />}
             <ProductTag icon={true} text="В наличии" type="availability" />

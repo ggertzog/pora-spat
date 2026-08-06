@@ -6,6 +6,9 @@ import clsx from "clsx";
 //styles
 import styles from "./styles.module.scss";
 
+//assets
+import ArrowRightIcon from '@p/assets/icons/arrow-right.svg'
+
 //components
 import ButtonRounded from "@/core/components/ui/shared/ButtonRounded/ButtonRounded";
 
@@ -30,7 +33,9 @@ const NavigationCard = ({ card, className }: INavigationCard) => {
       <Image className={styles.image} src={image || ""} alt={title || ""} fill />
       <div className={styles.content}>
         <p className={styles.title}>{title}</p>
-        <ButtonRounded className={styles.button} icon="arrowRight" size="h46" onClick={() => {}} text="Смотреть" />
+        <ButtonRounded className={styles.button} size="h46" onClick={() => {}} text="Смотреть">
+          <ArrowRightIcon />
+        </ButtonRounded>
       </div>
     </div>
   );

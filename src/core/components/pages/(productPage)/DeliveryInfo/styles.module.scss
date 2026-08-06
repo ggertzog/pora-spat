@@ -1,0 +1,54 @@
+.deliveryInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-secondary);
+  border-radius: 24px;
+  padding: 24px;
+  gap: 40px;
+}
+
+.deliveryWrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.deliveryInfoTitle {
+  color: var(--text-color-main);
+}
+
+.deliveryInfoList {
+  @include clearList;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.deliveryInfoListItem {
+  display: flex;
+  width: 100%;
+}
+
+.deliveryInfoName {
+  color: var(--text-color-secondary);
+  flex-shrink: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.deliveryInfoLine {
+  border-bottom: var(--bg-border, #e0e0df) 1px solid;
+  width: 100%;
+}
+
+.deliveryInfoValue {
+  color: var(--text-color-main);
+  flex-shrink: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,321 @@
+.aboutPage {
+  position: relative;
+  width: 100%;
+  background-color: var(--bg-main);
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.backgroundWrap {
+  position: absolute;
+  width: 1440px;
+  height: 100%;
+  overflow-y: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: relative;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include w768 {
+      top: -400px;
+      left: calc(50% - 30px);
+    }
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 24px var(--content-padding) 145px;
+
+  @include media-max-width(md) {
+    padding: 48px var(--content-padding) 120px;
+  }
+
+  @include media-max-width(sm) {
+    padding: 20px var(--content-padding) 90px;
+  }
+
+  @include media-max-width(xs) {
+    padding: 32px var(--content-padding) 60px;
+  }
+}
+
+.title {
+  margin-top: 32px;
+  position: relative;
+  z-index: 1;
+
+  @include media-max-width(md) {
+    margin-top: 16px;
+  }
+
+  @include media-max-width(sm) {
+    margin-top: 34px;
+  }
+
+  @include media-max-width(xs) {
+    margin-top: 10px;
+  }
+}
+
+.descriptionWrap {
+  max-width: 605px;
+  width: 100%;
+  margin: 32px 0 64px;
+  position: relative;
+  z-index: 1;
+
+  @include media-max-width(xl) {
+    max-width: 550px;
+  }
+
+  @include media-max-width(md) {
+    margin-bottom: 71px;
+  }
+
+  @include media-max-width(sm) {
+    margin-bottom: 91px;
+  }
+
+  @include media-max-width(xs) {
+    margin-bottom: 60px;
+    max-width: 335px;
+  }
+
+  p {
+    @include text1;
+    color: var(--text-color-secondary);
+  }
+}
+
+.imageWrap {
+  position: relative;
+
+  @include media-max-width(xs) {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+.largeImageWrap {
+  position: relative;
+  width: 100%;
+  height: 733px;
+  border-radius: 24px;
+  overflow: hidden;
+
+  @include media-max-width(xl) {
+    height: 639px;
+  }
+
+  @include media-max-width(md) {
+    height: 462px;
+  }
+
+  @include media-max-width(sm) {
+    height: 331px;
+  }
+
+  @include media-max-width(xs) {
+    width: 210px;
+    height: 158px;
+  }
+}
+
+.smallImageWrap {
+  position: absolute;
+  width: 242px;
+  height: 235px;
+  top: -129px;
+  left: 730px;
+  z-index: 1;
+  border-radius: 24px;
+  overflow: hidden;
+
+  @include media-max-width(xl) {
+    left: 584px;
+  }
+
+  @include media-max-width(md) {
+    width: 174px;
+    height: 170px;
+    top: -83px;
+    left: 669px;
+  }
+
+  @include media-max-width(sm) {
+    width: 124px;
+    height: 122px;
+    left: 479px;
+    top: -59px;
+  }
+
+  @include media-max-width(xs) {
+    position: relative;
+    width: 115px;
+    height: 158px;
+    top: unset;
+    left: unset;
+  }
+}
+
+.tablesWrap {
+  position: relative;
+  margin-top: 175px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 120px;
+  z-index: 1;
+
+  @include media-max-width(sm) {
+    margin-top: 90px;
+    gap: 90px;
+  }
+
+  @include media-max-width(xs) {
+    margin-top: 60px;
+    gap: 60px;
+  }
+}
+
+.tableItem {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  @include media-max-width(sm) {
+    gap: 40px;
+  }
+
+  @include media-max-width(xs) {
+    gap: 60px;
+  }
+}
+
+.tableContent {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+
+  @include media-max-width(sm) {
+    flex-direction: column;
+  }
+}
+
+.contentBox {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 776px;
+  width: 100%;
+  flex-shrink: 0;
+
+  @include media-max-width(md) {
+    max-width: 649px;
+  }
+
+  @include media-max-width(sm) {
+    gap: 32px;
+  }
+}
+
+.chapter {
+  width: 100%;
+  color: var(--text-color-main);
+}
+
+.subtitle {
+  color: var(--text-color-main);
+
+  @include media-max-width(sm) {
+    margin-top: 24px;
+  }
+}
+
+.textWrap {
+  p {
+    @include text1;
+    color: var(--text-color-secondary);
+  }
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 32px;
+
+  @include media-max-width(sm) {
+    gap: 24.34px;
+  }
+
+  @include media-max-width(xs) {
+    gap: 10px;
+  }
+}
+
+.tableSmallImageWrap {
+  position: relative;
+  width: 243px;
+  height: 225px;
+  border-radius: 24px;
+  overflow: hidden;
+
+  @include media-max-width(sm) {
+    width: 186px;
+    height: 172px;
+    border-radius: 18.31px;
+  }
+
+  @include media-max-width(xs) {
+    width: 115px;
+    height: 158px;
+  }
+}
+
+.tableLargeImageWrap {
+  position: relative;
+  width: 831px;
+  height: 568px;
+  border-radius: 24px;
+  overflow: hidden;
+
+  @include media-max-width(xl) {
+    width: 776px;
+    height: 530px;
+  }
+
+  @include media-max-width(md) {
+    width: 648px;
+    height: 443px;
+  }
+
+  @include media-max-width(sm) {
+    width: 494px;
+    height: 338px;
+  }
+
+  @include media-max-width(xs) {
+    width: 210px;
+    height: 158px;
+  }
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}

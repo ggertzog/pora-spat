@@ -1,0 +1,44 @@
+.specifications {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--bg-main);
+  padding: 12px 16px;
+  border-radius: 16px;
+
+  @include media-max-width(sm) {
+    padding: 6px;
+  }
+}
+
+.specificationsList {
+  @include clearList;
+  display: flex;
+  gap: 18px;
+  
+  @include media-max-width(sm) {
+    gap: 6px;
+  }
+}
+
+.specificationsItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+  gap: 4px;
+}
+
+.specificationsItemTitle {
+  color: var(--text-color-secondary);
+}
+
+.specificationsItemValue {
+  color: var(--text-color-secondary-on);
+}
+
+.dimensions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}

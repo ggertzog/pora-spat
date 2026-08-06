@@ -50,11 +50,16 @@
   gap: 6px;
 }
 
-.locationIcon,
-.chevronIcon {
+.locationIcon {
   flex-shrink: 0;
   width: 20px;
   height: 20px;
+}
+
+.chevronIcon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
 }
 
 // .locationIcon {
@@ -158,4 +163,8 @@
   gap: 54px;
 }
 
-
+.icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}

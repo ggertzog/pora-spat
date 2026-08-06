@@ -6,7 +6,7 @@ import clsx from "clsx";
 import styles from "./styles.module.scss";
 
 //assets
-import { CheckMark } from "@p/assets/icons/CheckMark";
+import CheckMark from "@p/assets/icons/check-16.svg";
 
 type TType = "availability" | "discount";
 

@@ -1,66 +1,67 @@
 //libs
-import React, { AnchorHTMLAttributes, ButtonHTMLAttributes, JSX } from "react";
+import React, {  ButtonHTMLAttributes, ReactNode } from "react";
 import Link, { LinkProps } from "next/link";
 import clsx from "clsx";
 
 //styles
 import styles from "./styles.module.scss";
 
-//assets
-import CatalogSvg from "@p/assets/icons/menu.svg";
-import ArrowRightSvg from "@p/assets/icons/arrow-right.svg";
-import TruckIcon from "@p/assets/icons/truck.svg";
+//components
+import Typography from "../Typography/Typography";
 
-type TIcon = "catalog" | "arrowRight" | "truck";
-type TSize = "h56" | "h48" | "h46" | "h44" | "h43" | "h31";
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const icons: Record<TIcon, (props?: any) => JSX.Element> = {
-  catalog: ({ ...props }) => <CatalogSvg {...props} />,
-  arrowRight: ({ ...props }) => <ArrowRightSvg {...props} />,
-  truck: ({ ...props }) => <TruckIcon {...props} />,
-};
+type TSize = "h56" | 'h52' | "h48" | "h46" | "h44" | "h43" | "h31";
+type TVariant = "main" | "red" | "tertiary" | "bordered" | "main-on" | "secondary" | "beige-main" | "tab";
 
 type TCommon = {
-  icon?: TIcon;
+  leftIcon?: ReactNode;
+  rightIcon?: ReactNode;
   text?: string;
-  size: TSize;
+  size?: TSize;
+  variant?: TVariant;
   className?: string;
+  textSize?: "big" | "small";
 };
 
 type TAsButton = TCommon & ButtonHTMLAttributes<HTMLButtonElement> & { as?: "button" };
-type TAsAnchor = TCommon & AnchorHTMLAttributes<HTMLAnchorElement> & { as: "a"; href: string };
-type TAsLink = TCommon & Omit<LinkProps, "as"> & { as: "link" };
+type TAsRouter = TCommon & Omit<LinkProps, "as"> & { as: "router" };
 
-type TProps = TAsButton | TAsAnchor | TAsLink;
+type TProps = TAsButton | TAsRouter;
 
 // TODO: Исправить баг с цветом кнопки в секциях
-const ButtonRounded = ({ icon, text, size = "h56", className, as: asProp, ...props }: TProps) => {
-  const Icon = icon ? icons[icon] : null;
-  const cn = clsx(styles.button, styles[`button_size_${size}`], className);
+const ButtonRounded = ({
+  leftIcon,
+  rightIcon,
+  text,
+  size = "h56",
+  variant = "main",
+  className,
+  textSize = "big",
+  as: asProp,
+  ...props
+}: TProps) => {
+  const cn = clsx(styles.button, styles[`button_size_${size}`], styles[`button_variant_${variant}`], className);
 
-  if (asProp === "link") {
+  const content = (
+    <>
+      {leftIcon && <span className={clsx(styles.iconWrap, styles.iconWrap_left)}>{leftIcon}</span>}
+      <Typography as="span" variant={textSize === "small" ? "text2" : "text4"}>
+        {text}
+      </Typography>
+      {rightIcon && <span className={clsx(styles.iconWrap, styles.iconWrap_right)}>{rightIcon}</span>}
+    </>
+  );
+
+  if (asProp === "router") {
     return (
-      <Link className={cn} {...(props as Omit<LinkProps, "as">)}>
-        {Icon && <Icon className={styles.icon} />}
-        <span>{text}</span>
+      <Link className={cn} {...(props as Omit<LinkProps, "as">)} prefetch={false}>
+        {content}
       </Link>
-    );
-  }
-
-  if (asProp === "a") {
-    return (
-      <a className={cn} {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}>
-        {Icon && <Icon className={styles.icon} />}
-        <span>{text}</span>
-      </a>
     );
   }
 
   return (
     <button className={cn} {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}>
-      {Icon && <Icon className={styles.icon} />}
-      <span>{text}</span>
+      {content}
     </button>
   );
 };
