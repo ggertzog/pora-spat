@@ -9,7 +9,7 @@ import { KEY_PRODUCT } from "../constants/queryKeys";
 import { IProductDetailed, ISeoInfo } from "@/core/types/newapi";
 
 //hooks
-import { qetQueryClient } from "../query/getQueryClient";
+import { getQueryClient } from "../query/getQueryClient";
 
 const PATH = "/products/{slug}" as const;
 
@@ -33,7 +33,7 @@ const productBySlugQueryOptions = (slug: string, cityId: number) =>
 
 //серверный фетчер
 export const getProducBySlugQuery = async (slug: string, cityId: number) => {
-  const queryClient = qetQueryClient();
+  const queryClient = getQueryClient();
 
   try {
     const productData = await queryClient.fetchQuery(productBySlugQueryOptions(slug, cityId));

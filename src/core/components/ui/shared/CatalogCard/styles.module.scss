@@ -6,11 +6,23 @@
   overflow: hidden;
   background-color: var(--bg-secondary);
   cursor: pointer;
+  width: 100%;
+  border-radius: 24px;
+  padding: 8px 10px 20px;
+
+  @include media-max-width(sm) {
+    padding: 8px 8px 20px;
+  }
+
+  @include media-max-width(xs) {
+    padding: 7px 10.5px 20px;
+  }
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       box-shadow: 0px 14px 34px 0px #0000003d;
       padding-bottom: 12px;
+      z-index: 10;
 
       .infoWrap {
         gap: 16px;
@@ -22,152 +34,35 @@
     }
   }
 
-  &_size_xxl {
-    width: 100%;
-    border-radius: 24px;
-    padding: 8px 10px 20px;
-
-    .sliderWrap {
-      width: 100%;
-      height: 258px;
-    }
-
-    .infoWrap {
-      padding: 10px 0 0;
-    }
-
-    .descWrap {
-      gap: 10px;
-    }
-
-    .priceWrap {
-      gap: 8px;
-    }
-
-    .buttonWrap {
-      gap: 8px;
-    }
-  }
-
-  &_size_xl {
-    width: 329px;
-    border-radius: 24px;
-    padding: 8px 8px 20px;
-
-    .sliderWrap {
-      width: 100%;
-      height: 226px;
-    }
-
-    .infoWrap {
-      padding: 10px 0 0;
-    }
-
-    .descWrap {
-      gap: 10px;
-    }
-
-    .priceWrap {
-      gap: 8px;
-    }
-
-    .buttonWrap {
-      gap: 8px;
-    }
-  }
-
-  &_size_md {
-    width: 317px;
-    border-radius: 24px;
-    padding: 8px 8px 20px;
-
-    .sliderWrap {
-      width: 100%;
-      height: 218px;
-    }
-
-    .infoWrap {
-      padding: 10px 0 0;
-    }
-
-    .descWrap {
-      gap: 10px;
-    }
-
-    .priceWrap {
-      gap: 10px;
-    }
-
-    .buttonWrap {
-      gap: 8px;
-    }
-  }
-
-  &_size_sm {
-    width: 346px;
-    border-radius: 24px;
-    padding: 8px 8px 20px;
-
-    .sliderWrap {
-      width: 100%;
-      height: 238px;
-    }
-
-    .infoWrap {
-      padding: 10px 0 0;
-    }
-
-    .descWrap {
-      gap: 10px;
-    }
-
-    .priceWrap {
-      gap: 10px;
-    }
-
-    .buttonWrap {
-      gap: 8px;
-    }
-  }
-
-  &_size_xs {
-    width: 180px;
-    border-radius: 24px;
-    padding: 7px 10.5px 20px;
-
-    .sliderWrap {
-      width: 100%;
-      height: 120px;
-      border-radius: 10px;
-    }
-
-    .infoWrap {
-      padding: 12px 0 0;
-    }
-
-    .descWrap {
-      gap: 6px;
-    }
-
-    .priceWrap {
-      gap: 6px;
-    }
-
-    .buttonWrap {
-      gap: 6px;
-    }
-  }
-
   .likeButton {
     margin-left: auto;
   }
 }
 
 .sliderWrap {
+  width: 100%;
+  height: 258px;
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+
+  @include media-max-width(xl) {
+    height: 226px;
+  }
+
+  @include media-max-width(md) {
+    height: 218px;
+  }
+
+  @include media-max-width(sm) {
+    height: 238px;
+  }
+
+  @include media-max-width(xs) {
+    height: 120px;
+    border-radius: 10px;
+  }
 }
 
 .img {
@@ -206,16 +101,35 @@
   display: flex;
   flex-direction: column;
   gap: 0;
+  padding: 10px 0 0;
+
+  @include media-max-width(xs) {
+    padding: 12px 0 0;
+  }
 }
 
 .descWrap {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+
+  @include media-max-width(xs) {
+    gap: 6px;
+  }
 }
 
 .priceWrap {
   display: flex;
   align-items: center;
+  gap: 8px;
+
+  @include media-max-width(md) {
+    gap: 10px;
+  }
+
+  @include media-max-width(xs) {
+    gap: 6px;
+  }
 }
 
 .price {
@@ -229,6 +143,13 @@
 .priceOld {
   color: var(--text-color-secondary);
   text-decoration: line-through;
+
+  @include media-max-width(xs) {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 110%; 
+    letter-spacing: 0.12px;
+  }
 }
 
 .title {
@@ -241,4 +162,9 @@
   flex-direction: column;
   height: 0;
   overflow: clip;
+  gap: 8px;
+
+  @include media-max-width(xs) {
+    gap: 6px;
+  }
 }

@@ -10,13 +10,21 @@ import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { getCatalogProductsQuery } from "@/core/api/queryFetchers/getCatalogProductsQuery";
 
 interface CatalogProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug?: string[] }>;
 }
 
 export default async function Catalog({ params }: CatalogProps) {
-  const { slug } = await params;
+  const { slug: slugParam } = await params;
+  const slugArray = slugParam || [];
+  const categorySlug = slugArray[slugArray.length - 1] ?? "";
+
   const cityId = 1;
-  const { queryClient, data, error } = await getCatalogProductsQuery({ initPage: 1, slug: slug, sort: "new", cityId });
+  const { queryClient, data, error } = await getCatalogProductsQuery({
+    initPage: 1,
+    slug: categorySlug,
+    sort: "new",
+    cityId,
+  });
 
   if (error || !data) {
     notFound();
@@ -24,7 +32,7 @@ export default async function Catalog({ params }: CatalogProps) {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <CatalogPage slug={slug} />
+      <CatalogPage slug={categorySlug} category={slugArray[0] ?? ""} subcategory={slugArray[1] ?? ""} />
     </HydrationBoundary>
   );
 }

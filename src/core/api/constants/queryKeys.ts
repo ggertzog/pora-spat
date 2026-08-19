@@ -13,3 +13,4 @@ export const KEY_PRODUCT = 'product' as const;
 export const KEY_PRODUCTS = 'products' as const;
 export const KEY_CITIES = 'cities' as const;
 export const KEY_CITY = 'city' as const;
+export const KEY_ARTICLES = 'articles' as const;

@@ -94,16 +94,18 @@ const CatalogCard = ({ card, size = "xxl", discount }: ICatalogCard) => {
             ))}
       </div>
       {/* Пагинация */}
-      <div className={styles.pagination}>
-        {Array.from({ length: images && images.length <= maxImgCount ? images.length : maxImgCount }).map(
-          (_, index) => (
-            <div
-              key={index}
-              className={clsx(styles.paginationItem, index === currentImageIndex && styles.paginationItem_active)}
-            />
-          ),
-        )}
-      </div>
+      {images.length > 1 && (
+        <div className={styles.pagination}>
+          {Array.from({ length: images && images.length <= maxImgCount ? images.length : maxImgCount }).map(
+            (_, index) => (
+              <div
+                key={index}
+                className={clsx(styles.paginationItem, index === currentImageIndex && styles.paginationItem_active)}
+              />
+            ),
+          )}
+        </div>
+      )}
       <div className={styles.infoWrap}>
         <div className={styles.descWrap}>
           <div className={styles.priceWrap}>
@@ -113,7 +115,13 @@ const CatalogCard = ({ card, size = "xxl", discount }: ICatalogCard) => {
               </Typography>
             )}
             {cost && cost.old_price && (
-              <Typography as="span" variant="numbers" className={clsx(styles.price, cost?.old_price && styles.priceOld)}>{cost?.old_price} ₽</Typography>
+              <Typography
+                as="span"
+                variant="numbers"
+                className={clsx(styles.price, cost?.old_price && styles.priceOld)}
+              >
+                {cost?.old_price} ₽
+              </Typography>
             )}
           </div>
           <Typography as="p" variant="h6" className={styles.title}>

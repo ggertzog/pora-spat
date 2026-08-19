@@ -1,0 +1,174 @@
+.contentBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: 754px;
+
+  @include media-max-width(md) {
+    max-width: 555px;
+  }
+
+  @include media-max-width(sm) {
+    max-width: 704px;
+  }
+
+  @include media-max-width(xs) {
+    max-width: unset;
+  }
+}
+
+.titleWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 32px;
+
+  h2 {
+    @include h2;
+    color: var(--text-color-main);
+    margin-bottom: 40px;
+
+    @include media-max-width(sm) {
+      @include h2(sm);
+      margin-bottom: 32px;
+    }
+
+    @include media-max-width(xs) {
+      margin-bottom: 20px;
+    }
+  }
+
+  h3 {
+    @include h3;
+    color: var(--text-color-main);
+    margin-bottom: 16px;
+
+    @include media-max-width(sm) {
+      @include h3(sm);
+    }
+  }
+
+  h4 {
+    @include h4;
+    color: var(--text-color-main);
+    margin-bottom: 16px;
+
+    @include media-max-width(sm) {
+      @include h4(sm);
+    }
+  }
+
+  h5 {
+    @include h5;
+    color: var(--text-color-main);
+    margin-bottom: 16px;
+
+    @include media-max-width(sm) {
+      @include h5(sm);
+    }
+  }
+
+  h6 {
+    @include h6;
+    color: var(--text-color-main);
+    margin-bottom: 16px;
+
+    @include media-max-width(sm) {
+      @include h6(sm);
+    }
+  }
+
+  p {
+    @include text1;
+    color: var(--text-color-secondary);
+    margin-bottom: 32px;
+
+    @include media-max-width(sm) {
+      @include text1(sm);
+    }
+  }
+
+  ul {
+    @include text1;
+    color: var(--text-color-secondary);
+    list-style: disc;
+    padding-left: 25px;
+    margin-bottom: 32px;
+
+    @include media-max-width(sm) {
+      @include text1(sm);
+    }
+
+    @include media-max-width(xs) {
+      margin-bottom: 20px;
+    }
+  }
+
+  ol {
+    @include text1;
+    color: var(--text-color-secondary);
+    padding-left: 25px;
+    margin-bottom: 32px;
+
+    @include media-max-width(sm) {
+      @include text1(sm);
+    }
+
+    @include media-max-width(xs) {
+      margin-bottom: 20px;
+    }
+  }
+
+  li {
+    margin-bottom: 8px;
+  }
+
+  b,
+  strong {
+    color: inherit;
+    font-size: inherit;
+    font-weight: 800;
+  }
+
+  u {
+    @include text1;
+    color: var(--text-color-main);
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: 6.5%; /* 1.17px */
+    text-underline-offset: 10%; /* 1.8px */
+    text-underline-position: from-font;
+
+    @include media-max-width(sm) {
+      @include text1(sm);
+    }
+  }
+
+  s,
+  del {
+    @include text1;
+    color: var(--text-color-main);
+    text-decoration-line: strikethrough;
+
+    @include media-max-width(sm) {
+      @include text1(sm);
+    }
+  }
+}
+
+.link {
+  width: 288px;
+  align-self: flex-start;
+
+  @include media-max-width(xs) {
+    width: 100%;
+  }
+}

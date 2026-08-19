@@ -1,19 +1,25 @@
 "use client";
+
+//styles
 import styles from "./styles.module.scss";
+
+//components
 import { TitleSection } from "./TitleSection/TitleSection";
 import TagsSection from "./TagsSection/TagsSection";
 import CategorySection from "./CategorySection/CategorySection";
 import HeroSection from "./HeroSection/HeroSection";
 import ProductSection from "./ProductSection/ProductSection";
 import RecommendationSection from "./RecommendationSection/RecommendationSection";
-import { useHitSalesQuery } from "@/core/api/queryFetchers/getHitSalesQuery";
-import { useDeliveryTomorrowQuery } from "@/core/api/queryFetchers/getDeliveryTomorrowQuery";
 import RoomIdeasSection from "./RoomIdeasSection/RoomIdeasSection";
-import { usePublicationsCategoryQuery } from "@/core/api/queryFetchers/getPublicationsCategoryQuery";
 import ReviewsSection from "./ReviewsSection/ReviewsSection";
 import DiscountSection from "./DiscountSection/DiscountSection";
+import AboutSection from "@/core/components/common/AboutSection/AboutSection";
+
+//queries
+import { useHitSalesQuery } from "@/core/api/queryFetchers/getHitSalesQuery";
+import { useDeliveryTomorrowQuery } from "@/core/api/queryFetchers/getDeliveryTomorrowQuery";
+import { usePublicationsCategoryQuery } from "@/core/api/queryFetchers/getPublicationsCategoryQuery";
 import { useDiscountQuery } from "@/core/api/queryFetchers/getDiscountQuery";
-import AboutSection from "./AboutSection/AboutSection";
 import { useSettingsQuery } from "@/core/api/queryFetchers/getSettingsQuery";
 import { useReviewsQuery } from "@/core/api/queryFetchers/getReviewsQuery";
 
