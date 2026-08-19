@@ -1,25 +1,16 @@
 //libs
 import { infiniteQueryOptions, useInfiniteQuery } from "@tanstack/react-query";
 import { fetchClient } from "../fetchClient/fetchClient";
+import { getQueryClient } from "../query/getQueryClient";
 
 //constants
 import { KEY_PRODUCTS } from "../constants/queryKeys";
+import { CATALOG_PAGE_SIZE } from "@/core/utils/constants";
 
 //types
-import { ILinks, IMeta, IProductShort, ISeoInfo } from "@/core/types/newapi";
-import { qetQueryClient } from "../query/getQueryClient";
+import { ICatalogProducts } from "@/core/types/newapi";
 
 const PATH = "/category/{slug}" as const;
-
-//Типизация ответа
-interface ICatalogProducts {
-  data?: IProductShort[];
-  links?: ILinks;
-  meta?: IMeta;
-  seo?: ISeoInfo;
-  category_description_text?: string | null;
-  category_description_image?: string | null;
-}
 
 //Типизация параметров
 interface IParams {
@@ -36,8 +27,7 @@ export const infiniteCatalogProductsOptions = ({ initPage = 1, slug, sort, cityI
     queryFn: async ({ pageParam = initPage }) => {
       const searchParams: Record<string, string | number> = {
         page: pageParam,
-        //TODO: хардкод, поменять
-        perPage: 12,
+        perPage: CATALOG_PAGE_SIZE,
       };
 
       if (sort) {
@@ -64,12 +54,10 @@ export const infiniteCatalogProductsOptions = ({ initPage = 1, slug, sort, cityI
 
 //Серверный фетчер
 export const getCatalogProductsQuery = async ({ initPage = 1, slug, sort, cityId }: IParams) => {
-  const queryClient = qetQueryClient();
+  const queryClient = getQueryClient();
 
   try {
-    const data = await queryClient.fetchInfiniteQuery(
-      infiniteCatalogProductsOptions({ initPage, slug, sort, cityId }),
-    );
+    const data = await queryClient.fetchInfiniteQuery(infiniteCatalogProductsOptions({ initPage, slug, sort, cityId }));
     return { queryClient, data };
   } catch (error) {
     console.error("getCatalogProductsQuery", error);

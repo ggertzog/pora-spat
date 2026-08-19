@@ -60,6 +60,10 @@
 
 .numbers {
   @include numbers;
+
+  @include media-max-width(xs) {
+    @include numbers(xs);
+  }
 }
 
 .tooltip {

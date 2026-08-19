@@ -1,0 +1,132 @@
+.accordionItem {
+  position: relative;
+  cursor: pointer;
+  padding: 24px 32px;
+  border-radius: 24px;
+  background-color: var(--bg-secondary);
+  transition: background-color 0.3s ease;
+
+  @include media-max-width(xs) {
+    padding: 24px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--bg-tertiary);
+    }
+  }
+}
+
+.accordionHeader {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.accordionTitle {
+  color: var(--text-color-main);
+}
+
+.close {
+  @include transit(transform);
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--bg-main);
+  color: var(--text-color-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.rotate {
+    transform: rotate(45deg);
+  }
+}
+
+.accordionContent {
+  @include transit(height);
+  height: 0;
+  overflow: hidden;
+
+  p {
+    margin-top: 40px;
+    max-width: 610px;
+    margin-left: auto;
+    margin-right: 221px;
+    @include h4;
+
+    @include media-max-width(xl) {
+      margin-right: 166px;
+    }
+
+    @include media-max-width(md) {
+      margin-right: 7px;
+    }
+
+    @include media-max-width(sm) {
+      margin-right: 0;
+      max-width: unset;
+      margin-left: 0;
+    }
+  }
+
+  ul {
+    @include clearList();
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding-top: 24px;
+  }
+
+  ol {
+    @include clearList();
+  }
+
+  li {
+    margin-left: auto;
+    margin-right: 221px;
+    max-width: 630px;
+    width: 100%;
+    position: relative;
+    padding-top: 16px;
+    padding-left: 25px;
+    color: var(--text-color-secondary);
+    @include text1;
+
+    @include media-max-width(xl) {
+      margin-right: 166px;
+    }
+
+    @include media-max-width(md) {
+      margin-right: 7px;
+    }
+
+    @include media-max-width(sm) {
+      max-width: unset;
+      margin-left: 0;
+      margin-right: 0;
+      padding-top: 8px;
+    }
+
+    @include media-max-width(xs) {
+      padding-left: 20px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 24px;
+      width: 8px;
+      height: 7.68px;
+      border-radius: 50%;
+      background-color: var(--ico-color-beige);
+
+      @include media-max-width(sm) {
+        top: 12px;
+      }
+    }
+  }
+}

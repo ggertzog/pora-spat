@@ -7,25 +7,32 @@ import clsx from "clsx";
 //styles
 import styles from "./styles.module.scss";
 
+//components
+import Typography from "@/core/components/ui/shared/Typography/Typography";
+
 interface INewsCard {
   link: string;
   image: string | StaticImageData;
   title: string;
   subtitle: string;
   date: string;
-  size: "xl" | "xs";
+  className?: string;
 }
 
-const NewsCard = ({ link, image, title, subtitle, date, size }: INewsCard) => {
+const NewsCard = ({ link, image, title, subtitle, date, className }: INewsCard) => {
   return (
-    <Link className={clsx(styles.newsCard, styles[`newsCard_size_${size}`])} href={link}>
+    <Link className={clsx(styles.newsCard, className)} href={link}>
       <div className={styles.imageWrap}>
         <Image className={styles.img} src={image} alt={title} fill />
       </div>
       <div className={styles.contentWrap}>
-        <h3 className={styles.title}>{title}</h3>
-        <p className={styles.subtitle}>{subtitle}</p>
-        <p className={styles.date}>{date}</p>
+        <Typography as="h3" variant="h4" className={styles.title}>
+          {title}
+        </Typography>
+        <div className={styles.subtitle} dangerouslySetInnerHTML={{ __html: subtitle.replace(/<[^>]*>/g, "") }}></div>
+        <Typography as="p" variant="tooltip" className={styles.date}>
+          {date}
+        </Typography>
       </div>
     </Link>
   );

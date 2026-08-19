@@ -1,5 +1,8 @@
 .breadCrumbs {
   position: relative;
+  max-width: var(--max-content-width);
+  padding: 0 var(--content-padding);
+  width: 100%;
   z-index: 1;
 }
 

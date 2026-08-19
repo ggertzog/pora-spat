@@ -9,7 +9,7 @@ import { KEY_PAGE } from "../constants/queryKeys";
 import { IPageInfo, ISeoInfo } from "@/core/types/newapi";
 
 //hooks
-import { qetQueryClient } from "../query/getQueryClient";
+import { getQueryClient } from "../query/getQueryClient";
 
 const PATH = "/pages/{slug}" as const;
 
@@ -30,7 +30,7 @@ export const pageInfoBySlugQueryOptions = (slug: string) =>
 
 //серверный фетчер
 export const getPageInfoBySlugQuery = async (slug: string) => {
-  const queryClient = qetQueryClient();
+  const queryClient = getQueryClient();
 
   try {
     const pageData = await queryClient.fetchQuery(pageInfoBySlugQueryOptions(slug));

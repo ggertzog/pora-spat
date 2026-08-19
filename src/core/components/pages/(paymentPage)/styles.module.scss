@@ -1,0 +1,245 @@
+.paymentPage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0 120px;
+  gap: 32px;
+
+  @include media-max-width(sm) {
+    padding: 20px 0 80px;
+    gap: 34px;
+  }
+
+  @include media-max-width(xs) {
+    padding: 32px 0 50px;
+    gap: 16px;
+  }
+}
+
+.accordionWrap {
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @include media-max-width(sm) {
+    margin-top: 32px;
+  }
+
+  @include media-max-width(xs) {
+    margin-top: 24px;
+  }
+}
+
+.paymentInfo {
+  overflow: hidden;
+  position: relative;
+  margin-top: 120px;
+  width: 100%;
+  height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-beige-secondary);
+  border-radius: 24px;
+
+  @media (max-width: 768px) {
+    margin-top: 80px;
+    height: 296px;
+    padding-left: 26px;
+    padding-right: 26px;
+  }
+
+  @media (max-width: 375px) {
+    margin-top: 50px;
+    height: 377px;
+  }
+}
+
+.paymentInfoWrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 46px;
+  z-index: 3;
+}
+
+.paymentInfoTitle {
+  max-width: 593px;
+  text-align: center;
+  color: var(--text-color-main-on);
+}
+
+.paymentInfoText {
+  max-width: 523px;
+  text-align: center;
+  color: var(--text-color-main-on);
+}
+
+.visaWrap {
+  z-index: 2;
+  position: absolute;
+  width: 312.742px;
+  height: 146.598px;
+  left: 0;
+  top: 40px;
+
+  @media (max-width: 1024px) {
+    width: 242.386px;
+    height: 113.619px;
+    top: 0;
+  }
+
+  @media (max-width: 768px) {
+    width: 183.273px;
+    height: 85.909px;
+  }
+
+  @media (max-width: 375px) {
+    width: 146.376px;
+    height: 68.614px;
+  }
+
+  & img {
+    @media (max-width: 1024px) {
+      height: 120px;
+      object-fit: cover;
+      object-position: bottom;
+    }
+
+    @media (max-width: 768px) {
+      height: 80px;
+      object-fit: cover;
+      object-position: bottom;
+    }
+  }
+}
+
+.mirWrap {
+  position: absolute;
+  z-index: 2;
+  width: 321.471px;
+  height: 169.486px;
+  right: 0;
+
+  @media (max-width: 1024px) {
+    bottom: 30px;
+    width: 250.99px;
+    height: 132.327px;
+  }
+
+  @media (max-width: 768px) {
+    width: 205.347px;
+    height: 108.263px;
+    bottom: 20px;
+  }
+
+  @media (max-width: 375px) {
+    width: 164.4px;
+    height: 86.675px;
+    top: 0;
+  }
+}
+
+.mastercardWrap {
+  z-index: 2;
+  position: absolute;
+  width: 263.984px;
+  height: 187.451px;
+  bottom: -60px;
+  left: 300px;
+
+  @media (max-width: 1024px) {
+    left: 70px;
+    bottom: -35px;
+  }
+
+  @media (max-width: 768px) {
+    width: 135.716px;
+    height: 96.37px;
+    left: 0;
+    bottom: 0;
+  }
+
+  @media (max-width: 375px) {
+    bottom: -17px;
+  }
+}
+
+.mastercardImg {
+  @include media-max-width(md) {
+    display: none;
+  }
+}
+
+.mastercardTableImg {
+  display: none;
+
+  @include media-max-width(md) {
+    display: inline;
+  }
+
+  @include media-max-width(sm) {
+    display: none;
+  }
+}
+
+.mastercardMobileImg {
+  display: none;
+
+  @include media-max-width(sm) {
+    display: inline;
+  }
+}
+
+.backgroundWrap {
+  position: absolute;
+  width: 1600px;
+  height: 100%;
+  overflow-y: hidden;
+  z-index: 1;
+  top: 120px;
+  left: 0;
+
+  @media (max-width: 1024px) {
+    width: 1000px;
+    top: 40px;
+    left: 0;
+  }
+
+  @media (max-width: 768px) {
+    width: 730px;
+    top: 0;
+    left: 0;
+  }
+
+  @media (max-width: 375px) {
+    width: 850px;
+  }
+}
+
+.backgroundImg {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  position: relative;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.backgroundTabletImg {
+  display: none;
+  @media (max-width: 1024px) {
+    display: inline;
+  }
+
+  @media (max-width: 375px) {
+    position: relative;
+    bottom: -80px;
+  }
+}

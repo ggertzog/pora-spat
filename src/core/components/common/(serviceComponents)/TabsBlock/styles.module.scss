@@ -1,0 +1,25 @@
+.tabsWrap {
+  margin-top: 80px;
+  align-self: flex-start;
+  padding: 4px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-secondary);
+  border-radius: 60px;
+
+  @include media-max-width(sm) {
+    margin-top: 48px;
+  }
+
+  .tabButton {
+    @include media-max-width(sm) {
+        padding: 0 16px;
+    }
+  }
+
+  .tabButtonActive {
+    background-color: var(--bg-beige-main);
+  }
+}

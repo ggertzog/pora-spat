@@ -1,44 +1,43 @@
 //libs
-import React, { JSX } from "react";
+import React, { useId, forwardRef } from "react";
 import clsx from "clsx";
 
 //styles
-import styles from "./styles.module.scss";
+import css from "./styles.module.scss";
 
 //assets
-import Arrow from "@p/assets/icons/checkbox-arrow.svg";
+import ArrowIcon from "@p/assets/icons/check-16.svg";
 
-type TIcon = "arrow";
+//components
+import Typography from "@/core/components/ui/shared/Typography/Typography";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const icons: Record<TIcon, (props?: any) => JSX.Element> = {
-  arrow: (props) => <Arrow {...props} />,
-};
-
-type TType = "square" | "circle";
+type TVariant = "square" | "circle";
 type TColor = "vanilla" | "blue";
+type TType = "checkbox" | "radio";
 
-interface IUiCheckBox {
+interface IUiCheckBox extends React.InputHTMLAttributes<HTMLInputElement> {
   text: string;
-  type: TType;
+  variant: TVariant;
   color?: TColor;
+  type?: TType;
 }
 
-const UiCheckBox = ({ text, type, color }: IUiCheckBox) => {
-  const Icon = icons["arrow"];
+const UiCheckBox = forwardRef<HTMLInputElement, IUiCheckBox>(({ type, text, variant, color, ...props }, ref) => {
+  const id = useId();
 
   return (
-    <div className={styles.uiCheckBox}>
-      <input id={text} type="checkbox" className={styles.input} />
-      <label
-        className={clsx(styles.label, styles[`label_type_${type}`], styles[`label_color_${color}`])}
-        htmlFor={text}
-      >
-        <Icon className={styles.icon} />
+    <div className={css.uiCheckBox}>
+      <input id={id} type={type} className={css.input} ref={ref} {...props} />
+      <label className={clsx(css.label, css[`label_type_${variant}`], css[`label_color_${color}`])} htmlFor={id}>
+        {variant === "square" && <ArrowIcon className={css.icon} />}
       </label>
-      <span className={styles.text}>{text}</span>
+      <Typography as="span" variant="tooltip2" className={css.text}>
+        {text}
+      </Typography>
     </div>
   );
-};
+});
+
+UiCheckBox.displayName = 'UiCheckBox'
 
 export default UiCheckBox;

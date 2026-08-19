@@ -1,0 +1,125 @@
+.articlesPage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  background-color: var(--bg-main);
+  padding-bottom: 118px;
+
+  @include media-max-width(md) {
+    padding-bottom: 88px;
+  }
+
+  @include media-max-width(sm) {
+    padding-bottom: 90px;
+  }
+
+  .moreButton {
+    margin-top: 48px;
+    width: auto;
+
+    @include media-max-width(xs) {
+      margin-top: 40px;
+      width: 100%;
+    }
+  }
+}
+
+.articlesWrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.titleWrap {
+  padding-top: 32px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+
+  @include media-max-width(xl) {
+    padding-top: 24px;
+    gap: 72px;
+  }
+
+  @include media-max-width(md) {
+    padding-top: 16px;
+  }
+
+  @include media-max-width(sm) {
+    padding-top: 34px;
+    gap: 48px;
+  }
+
+  @include media-max-width(xs) {
+    padding-top: 10px;
+    gap: 32px;
+  }
+}
+
+.title {
+  color: var(--text-color-main);
+}
+
+.devider {
+  background: var(--bg-border, #fdfdfc);
+  height: 1px;
+  width: 100%;
+}
+
+.tabs {
+  padding: 4px;
+  margin-top: 40px;
+  align-self: flex-start;
+  display: flex;
+  gap: 4px;
+  border-radius: 60px;
+  background: var(--bg-secondary, #f6f6f3);
+
+  @include media-max-width(sm) {
+    margin-top: 20px;
+  }
+
+  @include media-max-width(xs) {
+    margin-top: 16px;
+  }
+
+  .tabActive {
+    background-color: var(--bg-beige-main);
+  }
+}
+
+.grid {
+  @include clearList();
+  width: 100%;
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 20px;
+  row-gap: 48px;
+
+  @include media-max-width(xl) {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 16px;
+    row-gap: 40px;
+  }
+
+  @include media-max-width(md) {
+    row-gap: 24px;
+  }
+
+  @include media-max-width(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include media-max-width(xs) {
+    margin-top: 32px;
+    grid-template-columns: 1fr;
+  }
+}
+
+.gridItem {
+  width: 100%;
+  min-width: 0;
+}

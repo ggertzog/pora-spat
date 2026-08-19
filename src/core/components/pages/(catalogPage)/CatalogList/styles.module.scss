@@ -1,0 +1,57 @@
+.catalogListWrap {
+  .moreButton {
+    margin-top: 20px;
+    width: auto;
+  }
+}
+
+.catalogList {
+  @include clearList();
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 333px;
+  column-gap: 20px;
+  row-gap: 32px;
+
+  @include media-max-width(xl) {
+    column-gap: 16px;
+  }
+
+  @include media-max-width(md) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 309px;
+  }
+
+  @include media-max-width(sm) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 329px;
+    row-gap: 24px;
+  }
+
+  @include media-max-width(xs) {
+    grid-template-rows: 197px;
+    column-gap: 5px;
+    row-gap: 6px;
+  }
+}
+
+.catalogItem {
+  display: flex;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+
+  &:hover [data-weight] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  @include media-max-width(xs) {
+    &:hover [data-weight] {
+      position: relative;
+    }
+  }
+}
