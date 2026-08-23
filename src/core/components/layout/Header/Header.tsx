@@ -1,31 +1,49 @@
+"use client";
 //libs
-import React from "react";
-import Link from "next/link";
+import React, { useEffect } from "react";
+import clsx from "clsx";
 
 //styles
-import styles from "./styles.module.scss";
+import css from "./styles.module.scss";
 
-//assets
-import LocationIcon from "@p/assets/icons/location-full-color-20.svg";
-import ChevronDownIcon from "@p/assets/icons/chevron-16.svg";
-import LogoIcon from "@p/assets/icons/logo.svg";
-import HeartIcon from "@p/assets/icons/heart.svg";
-import ShopingCartIcon from "@p/assets/icons/shopping-cart.svg";
-import MenuIcon from "@p/assets/icons/menu-second.svg";
+//stores
+import { useCatalogIsOpen, useSetCatalogClose } from "@/core/store/useCatalogStore";
 
 //components
-import ButtonRounded from "@/core/components/ui/shared/ButtonRounded/ButtonRounded";
-import ButtonWithQuantity from "@/core/components/ui/shared/ButtonWithQuantity/ButtonWithQuantity";
-import SearchForm from "@/core/components/ui/shared/SearchForm/SearchForm";
-import Typography from "@/core/components/ui/shared/Typography/Typography";
-import MobileHeader from "./MobileHeader/MobileHeader";
-import { DesktopHeader } from "./DesktopHeader/DesktopHeader";
+import { NavBlock } from "./NavBlock/NavBlock";
+import { HeaderBlock } from "./HeaderBlock/HeaderBlock";
+import { MenuCatalog } from "./MenuCatalog/MenuCatalog";
 
-export const Header = () => {
+interface HeaderProps {
+  className?: string;
+}
+
+export const Header = ({ className }: HeaderProps) => {
+  const catalogIsOpen = useCatalogIsOpen();
+  const handleClodeMenu = useSetCatalogClose();
+
+  //Закрытие меню по эскейп
+  useEffect(() => {
+    if (!catalogIsOpen) return;
+
+    const onEscapeDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") handleClodeMenu();
+    };
+
+    document.addEventListener("keydown", onEscapeDown);
+    return () => document.removeEventListener("keydown", onEscapeDown);
+  }, [catalogIsOpen, handleClodeMenu]);
+
   return (
-    <header className={styles.header}>
-      <DesktopHeader />
-      <MobileHeader />
+    <header className={clsx(css.header, className)} data-weight>
+      <NavBlock />
+      <HeaderBlock isOpen={catalogIsOpen} />
+      <div className={clsx(css.overlay, catalogIsOpen && css.overlayVisible)} onClick={handleClodeMenu}></div>
+      <MenuCatalog
+        isOpen={catalogIsOpen}
+        className={clsx(css.menuCatalog, catalogIsOpen && css.menuCatalogOpen)}
+        style={{ maxHeight: "calc(100% - var(--header-height) - 100px)" }}
+      />
     </header>
   );
 };

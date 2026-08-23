@@ -1,11 +1,14 @@
+//libs
 import { queryOptions, useQuery } from "@tanstack/react-query";
-import { KEY_CATEGORIES } from "../constants/queryKeys";
 import { fetchClient } from "../fetchClient/fetchClient";
-import { components } from "@/core/types/__generated__/api-schema";
+
+//constants
+import { KEY_CATEGORIES } from "../constants/queryKeys";
+
+//types
+import { ICategory } from "@/core/types/newapi";
 
 const PATH = "/menu" as const;
-
-export type ICategory = components["schemas"]["ProductCategoryResource"];
 
 export const categoriesQueryOptions = (cityId?: number) =>
   queryOptions<ICategory[]>({

@@ -1,13 +1,13 @@
 .button {
   @include clearButton;
   @include transit(background-color);
+  width: 100%;
   padding: 10px 14px 10px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-radius: 12px;
   background-color: transparent;
-  gap: 147px;
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
@@ -20,13 +20,21 @@
   }
 }
 
+.buttonActive {
+  background-color: var(--button-color-main);
+
+  .arrow {
+    opacity: 1;
+  }
+}
+
 .container {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.icon {
+.image {
   width: 24px;
   height: 24px;
   object-fit: cover;
@@ -34,16 +42,14 @@
 }
 
 .text {
-  font-family: var(--font-vela-sans);
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 110.00000000000001%;
   color: var(--text-color-main);
 }
 
 .arrow {
   @include transit(opacity);
+  margin-left: auto;
   width: 16px;
   height: 16px;
   opacity: 0;
+  transform: rotate(-90deg);
 }

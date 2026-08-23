@@ -7,7 +7,7 @@ import clsx from 'clsx';
 import styles from './styles.module.scss';
 
 //types
-import { ICategory } from '@/core/api/queryFetchers/getCategoriesQuery';
+import { ICategory } from '@/core/types/newapi';
 
 interface ICategoryCard {
     category: ICategory;
