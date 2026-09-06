@@ -1,5 +1,6 @@
 //libs
 import React, { AnchorHTMLAttributes, ElementType, HTMLAttributes } from "react";
+import Link, { type LinkProps } from "next/link";
 import clsx from "clsx";
 
 //styles
@@ -27,9 +28,13 @@ type TypographCommonProps = {
 };
 
 type TAsAnchor = TypographCommonProps & AnchorHTMLAttributes<HTMLAnchorElement> & { as: "a" };
+//Omit<LinkProps, "as"> — у next/link есть собственный проп as (легаси для динамических роутов), он конфликтует с нашим
+type TAsNextLink = TypographCommonProps &
+  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps> &
+  Omit<LinkProps, "as"> & { as: typeof Link };
 type TAsElement = TypographCommonProps & HTMLAttributes<HTMLElement> & { as: ElementType };
 
-type TypographyProps = TAsAnchor | TAsElement;
+type TypographyProps = TAsAnchor | TAsNextLink | TAsElement;
 
 const Typography = ({ variant, as = "p", className, children, ...props }: TypographyProps) => {
   const Component = as;

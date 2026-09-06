@@ -13,10 +13,10 @@ import CategoryLink from "@/core/components/ui/shared/CategoryLink/CategoryLink"
 import FatrowsIcon from "@p/assets/icons/fatrows-20.svg";
 
 //types
-import { ICategory } from "@/core/api/queryFetchers/getCategoriesQuery";
 import ButtonRounded from "@/core/components/ui/shared/ButtonRounded/ButtonRounded";
 import { SortForm } from "@/core/components/pages/(catalogPage)/TitleBlock/SortForm/SortForm";
 import { getPluralForm } from "@/core/utils/helpers/getPluralForm";
+import { ICategory } from "@/core/types/newapi";
 
 interface TitleBlockProps {
   title: string;

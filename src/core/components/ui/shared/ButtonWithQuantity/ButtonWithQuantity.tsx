@@ -1,27 +1,70 @@
 //libs
-import React, { ButtonHTMLAttributes, JSX } from "react";
+import React, { ButtonHTMLAttributes } from "react";
 import clsx from "clsx";
+import Link, { LinkProps } from "next/link";
 
 //styles
-import styles from "./styles.module.scss";
+import css from "./styles.module.scss";
 
-interface IButtonWithQuantity extends ButtonHTMLAttributes<HTMLButtonElement> {
-  quantity: number;
-  text?: string;
-  size?: "xl" | "xs";
+//components
+import Typography from "../Typography/Typography";
+
+type TCommon = {
+  className?: string;
+  quantity?: number;
+  text: string;
+  active: boolean;
   children: React.ReactNode;
-}
+};
 
-const ButtonWithQuantity = ({ children, quantity, text, size = "xl", className, ...props }: IButtonWithQuantity) => {
-  return (
-    <button className={clsx(styles.button, styles[`button_size_${size}`], className)} {...props}>
-      <div className={styles.iconWrapper}>
+type TAsButton = TCommon & ButtonHTMLAttributes<HTMLButtonElement> & { as?: "button" };
+type TAsRouter = TCommon & Omit<LinkProps, "as"> & { as?: "router" };
+
+type ButtonWithQuantityProps = TAsButton | TAsRouter;
+
+const ButtonWithQuantity = ({
+  className,
+  quantity = 0,
+  text,
+  active,
+  children,
+  as: asProp,
+  ...props
+}: ButtonWithQuantityProps) => {
+  const cn = clsx(css.button, active && css.button_active, className);
+
+  const content = (
+    <>
+      <div className={css.iconWrapper}>
         {children}
-        {quantity > 0 && <span className={styles.quantity}>{quantity}</span>}
+        {quantity > 0 && (
+          <Typography as="span" variant="custom" className={css.quantity}>
+            {quantity}
+          </Typography>
+        )}
       </div>
-      {text && <span className={styles.text}>{text}</span>}
-    </button>
+      {text && (
+        <Typography as="span" variant="text4" className={css.text}>
+          {text}
+        </Typography>
+      )}
+    </>
   );
+
+  if (asProp === "router") {
+    return (
+      <Link className={cn} {...(props as Omit<LinkProps, "as">)} prefetch={false}>
+        {content}
+      </Link>
+    );
+  }
+  if (asProp === "button") {
+    return (
+      <button className={cn} {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}>
+        {content}
+      </button>
+    );
+  }
 };
 
 export default ButtonWithQuantity;

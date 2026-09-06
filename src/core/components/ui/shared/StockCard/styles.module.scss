@@ -23,6 +23,11 @@
   }
 }
 
+.link {
+  position: absolute;
+  inset: 0;
+}
+
 .bgWrapper {
   position: absolute;
   width: 100%;
@@ -117,19 +122,11 @@
 }
 
 .title {
-  @include h3;
-
-  @include media-max-width(sm) {
-    @include h3(sm);
-  }
+  color: var(--text-color-main);
 }
 
 .description {
-  @include text1;
-
-  @include media-max-width(sm) {
-    @include text2(sm);
-  }
+  color: var(--text-color-main);
 }
 
 .gradientWrapper {

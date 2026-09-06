@@ -21,6 +21,7 @@
   --bg-green: #e2ebde;
   --bg-red: #d70404;
   --bg-devider: #d9d9d9;
+  --bg-running-line: #f4b42e;
 
   //ico
   --ico-color-main: #171717;
@@ -61,6 +62,7 @@
 
   --max-content-width: 1560px;
   --content-padding: 0px;
+  --header-height: 196px;
 
   @include media-max-width(1640) {
     --max-content-width: 1640px;
@@ -69,12 +71,15 @@
 
   @include media-max-width(md) {
     --content-padding: 20px;
+    --header-height: 180px;
   }
   @include media-max-width(sm) {
     --content-padding: 32px;
+    --header-height: 152px;
   }
   @include media-max-width(xs) {
     --content-padding: 20px;
+    --header-height: 136px;
   }
 }
 

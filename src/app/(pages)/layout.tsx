@@ -1,15 +1,15 @@
 //components
-import { Footer } from "@/core/components/layout/Footer/Footer";
-import { Header } from "@/core/components/layout/Header/Header";
+import { Footer } from "@/core/components/common/Footer/Footer";
+import { Header } from "@/core/components/common/Header/Header";
 
 //styles
-import styles from "./layout.module.scss";
+import css from "./layout.module.scss";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className={styles.layout}>
-      <Header />
-      <main className={styles.main}>{children}</main>
+    <div className={css.layout}>
+      <Header className={css.header} />
+      <main className={css.main}>{children}</main>
       <Footer />
     </div>
   );

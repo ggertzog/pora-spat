@@ -8,6 +8,7 @@ export type ITag = components["schemas"]["TagResource"];
 export type IBanner = components["schemas"]["BannerResource"];
 export type IProductShort = components["schemas"]["OfferListResource"];
 export type IArticle = components["schemas"]["ArticleResource"];
+export type ICategory = components["schemas"]["ProductCategoryResource"];
 
 export type ISort = "new" | "cheaper" | "expensive";
 

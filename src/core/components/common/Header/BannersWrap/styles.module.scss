@@ -1,0 +1,18 @@
+.bannersWrap {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.bannersList {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.bannerCard {
+  flex-shrink: 0;
+}

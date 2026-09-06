@@ -1,0 +1,11 @@
+.categoriesList {
+  @include clearList();
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 280px;
+
+  @include media-max-width(sm) {
+    max-width: 100%;
+  }
+}

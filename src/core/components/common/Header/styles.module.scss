@@ -1,0 +1,84 @@
+.header {
+  // Снести лишние стили, в этом файле
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 0;
+}
+
+.headerTopContent {
+  @include transit(max-height);
+  width: 100%;
+  max-height: 100px;
+  display: flex;
+  flex-direction: column;
+
+  &_hidden {
+    max-height: 0;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  pointer-events: none !important;
+  z-index: -2;
+  transition: opacity 0.3s ease;
+  background-color: #d9d0c7b3;
+  cursor: pointer;
+}
+
+.overlayVisible {
+  opacity: 1;
+  pointer-events: all !important;
+}
+
+.menuCatalog {
+  // Снести лишние стили, не в этом файле, а в меню каталог
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(-100%);
+  z-index: -1;
+  transition: transform 0.3s ease;
+
+  @include media-max-width(sm) {
+    display: none;
+  }
+}
+
+.menuCatalogOpen {
+  transform: translateY(0);
+}
+
+.mobileHeaderMenu[data-weight] {
+  display: none;
+
+  @include media-max-width(sm) {
+    display: flex;
+  }
+}
+
+.menuModal {
+  display: none;
+
+  @include media-max-width(sm) {
+    display: flex;
+  }
+}
+
+// .catalogModal[data-weight] {
+//   display: none;
+
+//   @include media-max-width(sm) {
+//     display: flex;
+//   }
+// }

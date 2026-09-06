@@ -1,0 +1,112 @@
+.headerBlock {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px var(--content-padding);
+  background-color: var(--bg-main);
+}
+
+.headerWrap {
+  max-width: var(--max-content-width);
+  width: 100%;
+}
+
+.headerWrapDesktop {
+  display: flex;
+  align-items: center;
+
+  @include media-max-width(sm) {
+    display: none;
+  }
+}
+
+.headerWrapMobile {
+  display: none;
+
+  @include media-max-width(sm) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.mainLogo {
+  width: 218px;
+  height: 26px;
+
+  @include media-max-width(sm) {
+    width: 178px;
+    height: 20px;
+  }
+
+  @include media-max-width(xs) {
+    width: 124px;
+    height: 14px;
+  }
+}
+
+.wrapper {
+  margin-left: 48px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  @include media-max-width(md) {
+    margin-left: 24px;
+    gap: 16px;
+  }
+}
+
+.buttonsWrap {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 54px;
+
+  @include media-max-width(md) {
+    gap: 32px;
+  }
+
+  @include media-max-width(sm) {
+    gap: 6px;
+  }
+}
+
+.phoneNumber {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 32px;
+  padding-left: 8px;
+  padding-right: 10px;
+  border-radius: 12px;
+  background-color: var(--button-color-main);
+}
+
+.callIcon {
+  width: 20px;
+  height: 20px;
+  color: var(--ico-color-secondary);
+
+  path {
+    fill: var(--ico-color-secondary);
+  }
+}
+
+.phoneText {
+  color: var(--text-color-main);
+}
+
+.locationButton {
+  @include clearButton();
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  background-color: var(--button-color-main);
+  color: var(--ico-color-secondary);
+}

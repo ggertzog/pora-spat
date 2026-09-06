@@ -1,19 +1,24 @@
 //libs
 import React from "react";
+import clsx from "clsx";
 
 //styles
-import styles from "./styles.module.scss";
+import css from "./styles.module.scss";
 
 //assets
 import SearchIcon from "@p/assets/icons/search.svg";
 
-const SearchForm = () => {
+interface SearchFormProps {
+  className?: string;
+}
+
+const SearchForm = ({className}: SearchFormProps) => {
   return (
-    <form className={styles.searchForm}>
-      <label className={styles.searchLabel}>
-        <input type="text" className={styles.searchInput} placeholder="Поиск по сайту" />
-        <button className={styles.searchButton}>
-          <SearchIcon className={styles.searchIcon} />
+    <form className={clsx(css.searchForm, className)}>
+      <label className={css.searchLabel}>
+        <input type="text" className={css.searchInput} placeholder="Поиск по сайту" />
+        <button className={css.searchButton}>
+          <SearchIcon className={css.searchIcon} />
         </button>
       </label>
     </form>
