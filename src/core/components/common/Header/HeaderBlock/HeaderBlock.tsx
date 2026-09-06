@@ -1,4 +1,3 @@
-"use client";
 //libs
 import React from "react";
 import Link from "next/link";
@@ -16,9 +15,6 @@ import CallIcon from "@p/assets/icons/call-20.svg";
 import LocationIcon from "@p/assets/icons/location-full-color-20.svg";
 import CloseIcon from "@p/assets/icons/close-square.svg";
 
-//stores
-import { useToggleCatalogIsOpen } from "@/core/store/useCatalogStore";
-
 //components
 import Typography from "@/core/components/ui/shared/Typography/Typography";
 import ButtonWithQuantity from "@/core/components/ui/shared/ButtonWithQuantity/ButtonWithQuantity";
@@ -28,11 +24,10 @@ import ButtonRounded from "@/core/components/ui/shared/ButtonRounded/ButtonRound
 interface HeaderBlockProps {
   className?: string;
   isOpen: boolean;
+  toggleCatalogState: () => void;
 }
 
-export const HeaderBlock = ({ className, isOpen = false }: HeaderBlockProps) => {
-  const toggleCatalogIsOpen = useToggleCatalogIsOpen();
-
+export const HeaderBlock = ({ className, isOpen = false, toggleCatalogState }: HeaderBlockProps) => {
   return (
     <div className={clsx(css.headerBlock, className)}>
       {/* Для MD и выше */}
@@ -45,15 +40,15 @@ export const HeaderBlock = ({ className, isOpen = false }: HeaderBlockProps) => 
             text="Каталог"
             size="h56"
             leftIcon={isOpen ? <CloseIcon /> : <MenuIcon />}
-            onClick={toggleCatalogIsOpen}
+            onClick={toggleCatalogState}
           />
           <SearchForm className={css.searchForm} />
         </div>
         <div className={css.buttonsWrap}>
-          <ButtonWithQuantity quantity={0} text="Избранное" size="xs">
+          <ButtonWithQuantity quantity={0} text="Избранное" as="router" href="/" active={false}>
             <HeartIcon className={css.icon} />
           </ButtonWithQuantity>
-          <ButtonWithQuantity quantity={0} text="Корзина" size="xs">
+          <ButtonWithQuantity quantity={0} text="Корзина" as="router" href="/" active={false}>
             <ShopingCartIcon className={css.icon} />
           </ButtonWithQuantity>
         </div>

@@ -1,0 +1,37 @@
+.catalogModal {
+  padding: 24px 21px 24px 24px;
+  width: 380px;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-color: var(--bg-main);
+  border-radius: 24px;
+  overflow: auto;
+
+  @include media-max-width(xs) {
+    border-radius: 0;
+    padding: 20px;
+    gap: 24px;
+    width: 100%;
+  }
+}
+
+.searchWrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.closeButton {
+  @include clearButton();
+  width: 24px;
+  height: 24px;
+}
+
+.backToCatalogButton {
+  @include clearButton;
+  width: 20px;
+  height: 20px;
+}

@@ -9,6 +9,18 @@
   z-index: 0;
 }
 
+.headerTopContent {
+  @include transit(max-height);
+  width: 100%;
+  max-height: 100px;
+  display: flex;
+  flex-direction: column;
+
+  &_hidden {
+    max-height: 0;
+  }
+}
+
 .overlay {
   position: fixed;
   top: 0;
@@ -19,7 +31,7 @@
   pointer-events: none !important;
   z-index: -2;
   transition: opacity 0.3s ease;
-  background-color: rgba(217, 208, 199, 0.7);
+  background-color: #d9d0c7b3;
   cursor: pointer;
 }
 
@@ -37,8 +49,36 @@
   transform: translateY(-100%);
   z-index: -1;
   transition: transform 0.3s ease;
+
+  @include media-max-width(sm) {
+    display: none;
+  }
 }
 
 .menuCatalogOpen {
   transform: translateY(0);
 }
+
+.mobileHeaderMenu[data-weight] {
+  display: none;
+
+  @include media-max-width(sm) {
+    display: flex;
+  }
+}
+
+.menuModal {
+  display: none;
+
+  @include media-max-width(sm) {
+    display: flex;
+  }
+}
+
+// .catalogModal[data-weight] {
+//   display: none;
+
+//   @include media-max-width(sm) {
+//     display: flex;
+//   }
+// }

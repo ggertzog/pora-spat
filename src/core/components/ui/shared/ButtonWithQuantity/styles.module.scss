@@ -5,12 +5,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2px;
+  gap: 6px;
+  color: var(--text-color-main);
 
-  &_size_xs {
-    .text {
-      @include text4;
-    }
+  @include media-max-width(xs) {
+    gap: 4px;
+  }
+
+  &_active {
+    color: var(--bg-purple-secondary);
   }
 }
 
@@ -23,8 +26,6 @@
   height: 24px;
   background-color: transparent;
 }
-
-
 
 // TODO: Не понятно что тут за шрифт, в основных его нет, поэтому и инклюдов пока нет
 .quantity {
@@ -43,5 +44,6 @@
 }
 
 .text {
-  @include text1;
+  color: inherit;
+  // color: var(--text-color-main);
 }

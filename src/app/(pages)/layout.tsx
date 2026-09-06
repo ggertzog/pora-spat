@@ -1,6 +1,6 @@
 //components
-import { Footer } from "@/core/components/layout/Footer/Footer";
-import { Header } from "@/core/components/layout/Header/Header";
+import { Footer } from "@/core/components/common/Footer/Footer";
+import { Header } from "@/core/components/common/Header/Header";
 
 //styles
 import css from "./layout.module.scss";

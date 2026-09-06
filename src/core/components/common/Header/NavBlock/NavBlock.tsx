@@ -11,6 +11,7 @@ import ChevronIcon from "@p/assets/icons/chevron-16.svg";
 
 //components
 import Typography from "@/core/components/ui/shared/Typography/Typography";
+import Link from "next/link";
 
 interface NavBlockProps {
   className?: string;
@@ -68,7 +69,7 @@ export const NavBlock = ({ className }: NavBlockProps) => {
           <ul className={css.navigationList}>
             {navItems.map((item) => (
               <li key={item.id} className={css.navigationItem}>
-                <Typography as="a" href={item.path} variant="text4" className={css.navigationLink}>
+                <Typography as={Link} href={item.path} variant="text4" className={css.navigationLink}>
                   {item.title}
                 </Typography>
               </li>
