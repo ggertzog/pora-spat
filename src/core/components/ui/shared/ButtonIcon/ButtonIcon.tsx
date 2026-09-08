@@ -3,20 +3,17 @@ import React, { ButtonHTMLAttributes } from "react";
 import clsx from "clsx";
 
 //styles
-import styles from "./styles.module.scss";
-
+import css from "./styles.module.scss";
 
 interface IButtonIcon extends ButtonHTMLAttributes<HTMLButtonElement> {
   isActive?: boolean;
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 const ButtonIcon = ({ children, isActive = false, className, ...props }: IButtonIcon) => {
   return (
-    <button className={clsx(styles.buttonIcon, className)} {...props}>
+    <button className={clsx(css.buttonIcon, isActive && css["buttonIcon_active"], className)} {...props}>
       {children}
-      {/* TODO: Переделать логику иконки сердца, вынести ее из ui кнопки */}
-      {/* <Heart className={styles.icon} isActive={isActive} /> */}
     </button>
   );
 };

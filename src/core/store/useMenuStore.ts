@@ -18,7 +18,7 @@ const initialState: IState = {
 const menuStore: StateCreator<IMenuStore> = (set) => ({
   ...initialState,
   toggleMenuState: () => set((state) => ({ menuIsOpen: !state.menuIsOpen })),
-  closeMenu: () => set((state) => ({ menuIsOpen: false })),
+  closeMenu: () => set(() => ({ menuIsOpen: false })),
 });
 
 const useMenuStore = create<IMenuStore>()(menuStore);

@@ -1,0 +1,39 @@
+.titleWrap {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0 0;
+
+  @include media-max-width(sm) {
+    margin: 26px 0 0;
+  }
+
+  @include media-max-width(xs) {
+    margin: 10px 0 32px;
+  }
+}
+
+.title {
+  color: var(--text-color-secondary-on);
+}
+
+.count {
+  color: var(--text-color-secondary);
+  margin-top: 10px;
+}
+
+.devider {
+  margin: 48px 0 40px;
+  height: 1px;
+  width: 100%;
+  background-color: var(--bg-border, #e0e0df);
+
+  @include media-max-width(sm) {
+    margin: 40px 0 20px;
+  }
+
+  @include media-max-width(xs) {
+    display: none;
+  }
+}

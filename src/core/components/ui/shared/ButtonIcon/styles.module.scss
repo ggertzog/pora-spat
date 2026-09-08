@@ -11,6 +11,14 @@
   &:hover {
     color: var(--ico-color-beige);
   }
+
+  &_active {
+    color: var(--ico-color-red);
+
+    svg {
+      fill: var(--ico-color-red);
+    }
+  }
 }
 
 .icon {

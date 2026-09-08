@@ -1,3 +1,4 @@
+"use client";
 //libs
 import React from "react";
 import Link from "next/link";
@@ -20,6 +21,7 @@ import Typography from "@/core/components/ui/shared/Typography/Typography";
 import ButtonWithQuantity from "@/core/components/ui/shared/ButtonWithQuantity/ButtonWithQuantity";
 import SearchForm from "@/core/components/ui/shared/SearchForm/SearchForm";
 import ButtonRounded from "@/core/components/ui/shared/ButtonRounded/ButtonRounded";
+import { useFavourites } from "@/core/store/useFavouritesStore";
 
 interface HeaderBlockProps {
   className?: string;
@@ -28,6 +30,8 @@ interface HeaderBlockProps {
 }
 
 export const HeaderBlock = ({ className, isOpen = false, toggleCatalogState }: HeaderBlockProps) => {
+  const count = useFavourites().length;
+
   return (
     <div className={clsx(css.headerBlock, className)}>
       {/* Для MD и выше */}
@@ -45,7 +49,7 @@ export const HeaderBlock = ({ className, isOpen = false, toggleCatalogState }: H
           <SearchForm className={css.searchForm} />
         </div>
         <div className={css.buttonsWrap}>
-          <ButtonWithQuantity quantity={0} text="Избранное" as="router" href="/" active={false}>
+          <ButtonWithQuantity quantity={count} text="Избранное" as="router" href="/favourites" active={false}>
             <HeartIcon className={css.icon} />
           </ButtonWithQuantity>
           <ButtonWithQuantity quantity={0} text="Корзина" as="router" href="/" active={false}>
