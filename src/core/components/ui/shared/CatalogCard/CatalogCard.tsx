@@ -6,7 +6,7 @@ import Image from "next/image";
 import clsx from "clsx";
 
 //styles
-import styles from "./styles.module.scss";
+import css from "./styles.module.scss";
 
 //types
 import { IProductShort } from "@/core/types/newapi";
@@ -15,6 +15,9 @@ import { IProductShort } from "@/core/types/newapi";
 import HeartIcon from "@p/assets/icons/heart.svg";
 import TruckIcon from "@p/assets/icons/truck.svg";
 import BedImage from "@p/assets/images/bed.png";
+
+//stores
+import { useFavouritesIsHydrated, useIsFavourite, useToggleFavourite } from "@/core/store/useFavouritesStore";
 
 //components
 import ProductTag from "@/core/components/ui/shared/ProductTag/ProductTag";
@@ -35,7 +38,6 @@ interface ICatalogCard {
 const CatalogCard = ({ card, size = "xxl", discount }: ICatalogCard) => {
   const { name, sub_name, slug, image, cost, gallery, group_params, days_for_delivery } = card;
 
-  const [isLiked, setIsLiked] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
   const maxImgCount = 3;
 
@@ -44,10 +46,9 @@ const CatalogCard = ({ card, size = "xxl", discount }: ICatalogCard) => {
     [gallery, image],
   );
 
-  //TODO: Мертво, доделать
-  function handleLike() {
-    setIsLiked((prev) => !prev);
-  }
+  const isHydrated = useFavouritesIsHydrated();
+  const isFavourite = useIsFavourite(String(slug));
+  const toggleFavourite = useToggleFavourite();
 
   const handleMouseMove = useCallback(
     (event: React.MouseEvent<HTMLDivElement>) => {
@@ -71,10 +72,14 @@ const CatalogCard = ({ card, size = "xxl", discount }: ICatalogCard) => {
   }, []);
 
   return (
-    <div className={clsx(styles.catalogCard, styles[`catalogCard_size_${size}`])} data-weight>
-      <div className={styles.sliderWrap} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
+    <div className={clsx(css.catalogCard, css[`catalogCard_size_${size}`])} data-weight>
+      <div className={css.sliderWrap} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
         {discount && <ProductTag icon={true} text={`-${cost?.discount}%`} type="discount" />}
-        <ButtonIcon className={styles.likeButton} isActive={isLiked} onClick={handleLike}>
+        <ButtonIcon
+          className={css.likeButton}
+          isActive={isHydrated && isFavourite}
+          onClick={() => toggleFavourite(String(slug))}
+        >
           <HeartIcon />
         </ButtonIcon>
         {/* Галлерея */}
@@ -85,7 +90,7 @@ const CatalogCard = ({ card, size = "xxl", discount }: ICatalogCard) => {
             .slice(0, maxImgCount)
             .map((image, index) => (
               <Image
-                className={clsx(styles.img, index === currentImageIndex && styles.img_visible)}
+                className={clsx(css.img, index === currentImageIndex && css.img_visible)}
                 key={index}
                 src={image}
                 alt={name || "Изображение"}
@@ -95,47 +100,38 @@ const CatalogCard = ({ card, size = "xxl", discount }: ICatalogCard) => {
       </div>
       {/* Пагинация */}
       {images.length > 1 && (
-        <div className={styles.pagination}>
+        <div className={css.pagination}>
           {Array.from({ length: images && images.length <= maxImgCount ? images.length : maxImgCount }).map(
             (_, index) => (
               <div
                 key={index}
-                className={clsx(styles.paginationItem, index === currentImageIndex && styles.paginationItem_active)}
+                className={clsx(css.paginationItem, index === currentImageIndex && css.paginationItem_active)}
               />
             ),
           )}
         </div>
       )}
-      <div className={styles.infoWrap}>
-        <div className={styles.descWrap}>
-          <div className={styles.priceWrap}>
+      <div className={css.infoWrap}>
+        <div className={css.descWrap}>
+          <div className={css.priceWrap}>
             {cost && cost.price && (
-              <Typography as="span" variant="numbers" className={clsx(styles.price, styles.priceNew)}>
+              <Typography as="span" variant="numbers" className={clsx(css.price, css.priceNew)}>
                 {cost?.price} ₽
               </Typography>
             )}
             {cost && cost.old_price && (
-              <Typography
-                as="span"
-                variant="numbers"
-                className={clsx(styles.price, cost?.old_price && styles.priceOld)}
-              >
+              <Typography as="span" variant="numbers" className={clsx(css.price, cost?.old_price && css.priceOld)}>
                 {cost?.old_price} ₽
               </Typography>
             )}
           </div>
-          <Typography as="p" variant="h6" className={styles.title}>
+          <Typography as="p" variant="h6" className={css.title}>
             {sub_name}
           </Typography>
         </div>
-        <div className={styles.buttonWrap}>
+        <div className={css.buttonWrap}>
           {!!group_params && <SpecificationsBlock params={group_params} />}
-          <ButtonRounded
-            leftIcon={<TruckIcon />}
-            size="h48"
-            onClick={() => setIsLiked(!isLiked)}
-            text={days_for_delivery}
-          />
+          <ButtonRounded leftIcon={<TruckIcon />} size="h48" text={days_for_delivery} />
         </div>
       </div>
     </div>

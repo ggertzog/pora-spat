@@ -15,3 +15,4 @@ export const KEY_CITIES = "cities" as const;
 export const KEY_CITY = "city" as const;
 export const KEY_ARTICLES = "articles" as const;
 export const KEY_RUNNING_LINE = "running-line" as const;
+export const KEY_FAVOURITES = "favourites" as const;
