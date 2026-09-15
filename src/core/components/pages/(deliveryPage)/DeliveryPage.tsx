@@ -33,9 +33,7 @@ export const DeliveryPage = () => {
   const table = pageData?.content?.filter((item) => item.type === "table");
   const accordion = pageData?.content?.filter((item) => item.type === "accordion");
 
-    const {openAccordionIndex,  accordionContentRefs, handleAccordionToggle} = useAccordion();
-  
-
+  const { openAccordionIndex, accordionContentRefs, handleAccordionToggle } = useAccordion();
 
   const tables: typeof table = [
     {
@@ -70,7 +68,7 @@ export const DeliveryPage = () => {
         ]}
       />
       <SectionWrapper className={css.contentBlock}>
-        <TitleBlock title={cityData?.title_delivery || ''} description={cityData?.description_delivery || ''} />
+        <TitleBlock title={cityData?.title_delivery || ""} description={cityData?.description_delivery || ""} />
         <TabsBlock currentSlug={slug} />
         {/* TODO: вынести таблицу в отдельный компонент */}
         <table className={css.table}>

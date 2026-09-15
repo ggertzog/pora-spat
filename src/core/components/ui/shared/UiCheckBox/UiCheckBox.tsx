@@ -16,10 +16,10 @@ type TColor = "vanilla" | "blue";
 type TType = "checkbox" | "radio";
 
 interface IUiCheckBox extends React.InputHTMLAttributes<HTMLInputElement> {
-  text: string;
+  text?: string;
   variant: TVariant;
   color?: TColor;
-  type?: TType;
+  type: TType;
 }
 
 const UiCheckBox = forwardRef<HTMLInputElement, IUiCheckBox>(({ type, text, variant, color, ...props }, ref) => {
@@ -31,13 +31,15 @@ const UiCheckBox = forwardRef<HTMLInputElement, IUiCheckBox>(({ type, text, vari
       <label className={clsx(css.label, css[`label_type_${variant}`], css[`label_color_${color}`])} htmlFor={id}>
         {variant === "square" && <ArrowIcon className={css.icon} />}
       </label>
-      <Typography as="span" variant="tooltip2" className={css.text}>
-        {text}
-      </Typography>
+      {text && (
+        <Typography as="span" variant="tooltip2" className={css.text}>
+          {text}
+        </Typography>
+      )}
     </div>
   );
 });
 
-UiCheckBox.displayName = 'UiCheckBox'
+UiCheckBox.displayName = "UiCheckBox";
 
 export default UiCheckBox;
