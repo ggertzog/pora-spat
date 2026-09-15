@@ -1,0 +1,39 @@
+.feedbackPage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0 118px;
+
+  @include media-max-width(xl) {
+    padding: 24px 0 120px;
+  }
+
+  @include media-max-width(md) {
+    padding: 48px 0 90px;
+  }
+
+  @include media-max-width(sm) {
+    padding: 20px 0 90px;
+  }
+
+  @include media-max-width(xs) {
+    padding: 32px 0 90px;
+  }
+}
+
+.titleBlock {
+  margin: 32px 0 80px;
+
+  @include media-max-width(md) {
+    margin: 16px 0 80px;
+  }
+
+  @include media-max-width(sm) {
+    margin: 34px 0 40px;
+  }
+
+  @include media-max-width(xs) {
+    margin: 10px 0 40px;
+  }
+}

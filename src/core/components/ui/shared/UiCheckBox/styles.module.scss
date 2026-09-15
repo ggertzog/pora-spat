@@ -63,6 +63,7 @@
 .icon {
   opacity: 0;
   visibility: hidden;
+  color: var(--ico-color-main-on);
 }
 
 .input:checked + .label .icon {
