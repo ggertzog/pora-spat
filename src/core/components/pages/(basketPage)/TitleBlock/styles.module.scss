@@ -1,0 +1,29 @@
+.titleBlock {
+  width: 100%;
+  margin: 16px 0 48px;
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+
+  @include media-max-width(sm) {
+    margin: 34px 0 40px;
+    gap: 8px;
+  }
+
+  @include media-max-width(xs) {
+    margin: 10px 0 32px;
+  }
+}
+
+.title {
+  color: var(--text-color-main);
+}
+
+.productCount {
+  color: var(--text-color-secondary);
+  margin-bottom: 14px;
+
+  @include media-max-width(sm) {
+    margin-bottom: 8px;
+  }
+}

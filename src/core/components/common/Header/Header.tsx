@@ -22,12 +22,16 @@ import { RunningLine } from "./RunningLine/RunningLine";
 import { Menu } from "./Menu/Menu";
 import { MenuModal } from "./MenuModal/MenuModal";
 import { CatalogModal } from "./CatalogModal/CatalogModal";
+import { useCloseModalsOnRouteChange } from "@/core/utils/hooks/useCloseModalsOnRouteChange";
 
 interface HeaderProps {
   className?: string;
 }
 
 export const Header = ({ className }: HeaderProps) => {
+  // закрытие модальных окон при переходе между страницами
+  useCloseModalsOnRouteChange();
+
   const { data: runningLineData } = useRunningLineQuery();
 
   //фильтрация running line по наличию атрибута is_active

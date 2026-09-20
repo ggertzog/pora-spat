@@ -16,12 +16,15 @@ import CallIcon from "@p/assets/icons/call-20.svg";
 import LocationIcon from "@p/assets/icons/location-full-color-20.svg";
 import CloseIcon from "@p/assets/icons/close-square.svg";
 
+//stores
+import { useFavourites } from "@/core/store/useFavouritesStore";
+import { useBasket } from "@/core/store/useBasketStore";
+
 //components
 import Typography from "@/core/components/ui/shared/Typography/Typography";
 import ButtonWithQuantity from "@/core/components/ui/shared/ButtonWithQuantity/ButtonWithQuantity";
 import SearchForm from "@/core/components/ui/shared/SearchForm/SearchForm";
 import ButtonRounded from "@/core/components/ui/shared/ButtonRounded/ButtonRounded";
-import { useFavourites } from "@/core/store/useFavouritesStore";
 
 interface HeaderBlockProps {
   className?: string;
@@ -30,7 +33,8 @@ interface HeaderBlockProps {
 }
 
 export const HeaderBlock = ({ className, isOpen = false, toggleCatalogState }: HeaderBlockProps) => {
-  const count = useFavourites().length;
+  const favouritesCount = useFavourites().length;
+  const basketCount = useBasket().length;
 
   return (
     <div className={clsx(css.headerBlock, className)}>
@@ -49,10 +53,10 @@ export const HeaderBlock = ({ className, isOpen = false, toggleCatalogState }: H
           <SearchForm className={css.searchForm} />
         </div>
         <div className={css.buttonsWrap}>
-          <ButtonWithQuantity quantity={count} text="Избранное" as="router" href="/favourites" active={false}>
+          <ButtonWithQuantity quantity={favouritesCount} text="Избранное" as="router" href="/favourites" active={false}>
             <HeartIcon className={css.icon} />
           </ButtonWithQuantity>
-          <ButtonWithQuantity quantity={0} text="Корзина" as="router" href="/" active={false}>
+          <ButtonWithQuantity quantity={basketCount} text="Корзина" as="router" href="/basket" active={false}>
             <ShopingCartIcon className={css.icon} />
           </ButtonWithQuantity>
         </div>

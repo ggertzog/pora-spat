@@ -1,0 +1,242 @@
+.basketCard {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 47px;
+  padding: 24px 24px 25px;
+  background-color: var(--bg-secondary);
+  border-radius: 24px;
+
+  @include media-max-width(md) {
+    gap: 37px;
+  }
+
+  @include media-max-width(xs) {
+    padding: 56px 16px 16px;
+  }
+}
+
+.checkbox {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 1;
+  background-color: inherit;
+}
+
+.infoBlock {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  @include media-max-width(md) {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+.content {
+  display: flex;
+  gap: 29px;
+
+  @include media-max-width(xs) {
+    gap: 9px;
+  }
+}
+
+.imageWrap {
+  align-self: center;
+  position: relative;
+  width: 180px;
+  height: 110px;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  @include media-max-width(xs) {
+    width: 148px;
+    height: 90px;
+  }
+}
+
+.image {
+  @include containImg;
+}
+
+.properties {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @include media-max-width(xs) {
+    gap: 12px;
+  }
+}
+
+.propertiesTitle {
+  color: var(--text-color-main);
+
+  @include media-max-width(sm) {
+    font-size: 14px;
+  }
+}
+
+.propertiesList {
+  @include clearList;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  @include media-max-width(xs) {
+    gap: 2px;
+  }
+}
+
+.propertiesItem {
+  display: flex;
+}
+
+.propertiesText {
+  color: var(--text-color-secondary-on);
+}
+
+.counterWrap {
+  @include media-max-width(xs) {
+    margin-left: 29.5px;
+    display: flex;
+    gap: 39px;
+  }
+}
+
+.counter {
+  padding: 3px;
+  width: 72px;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-main);
+  border: 1px solid var(--bg-border);
+  border-radius: 5px;
+
+  @include media-max-width(md) {
+    margin-left: 54px;
+  }
+
+  @include media-max-width(xs) {
+    width: 89px;
+    padding: 6px 8.5px;
+    margin-left: 0;
+  }
+}
+
+.counterButton {
+  @include clearButton;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: var(--ico-color-beige);
+}
+
+.counterValue {
+  font-family: var(--font-vela-sans);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%; /* 15.4px */
+  letter-spacing: 0.14px;
+  color: var(--text-color-main);
+}
+
+.priceBlock {
+  height: 100%;
+  width: 137px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+
+  @include media-max-width(xs) {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    width: auto;
+    height: auto;
+  }
+}
+
+.priceWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+
+  @include media-max-width(xs) {
+    gap: 6px;
+    align-items: flex-start;
+  }
+
+  &_mobile {
+    display: none;
+
+    @include media-max-width(xs) {
+      display: flex;
+    }
+  }
+
+  &_desktop {
+    @include media-max-width(xs) {
+      display: none;
+    }
+  }
+}
+
+.currentPrice {
+  font-family: var(--font-cygre);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 22px */
+  letter-spacing: 0.4px;
+  color: var(--text-color-main);
+
+  @include media-max-width(sm) {
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  @include media-max-width(xs) {
+    font-size: 14px;
+  }
+}
+
+.oldPrice {
+  font-family: var(--font-vela-sans);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 17.6px */
+  text-decoration-line: line-through;
+  color: var(--text-color-secondary);
+
+  @include media-max-width(sm) {
+    font-size: 14px;
+    line-height: 130%; /* 18.2px */
+  }
+
+  @include media-max-width(xs) {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 110%; /* 11px */
+    letter-spacing: 0.3px;
+  }
+}
+
+.controlsWrap {
+  display: flex;
+  gap: 8px;
+}

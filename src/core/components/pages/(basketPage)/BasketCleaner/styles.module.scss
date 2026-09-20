@@ -1,0 +1,39 @@
+.basketCleaner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-secondary);
+  padding: 8px 24px 8px 16px;
+  border-radius: 16px;
+
+  @include media-max-width(xs) {
+    padding: 8px 16px;
+  }
+}
+
+.clearButton {
+  @include clearButton;
+  padding: 4px 0 4px 4px;
+  display: flex;
+  align-items: center;
+  gap: 7.26px;
+
+  @include media-max-width(xl) {
+    gap: 5px;
+  }
+
+  @include media-max-width(xs) {
+    padding: 6px 0 6px 6px;
+    gap: 7px;
+  }
+}
+
+.trashIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.clearButtonText {
+  color: var(--text-color-secondary-on);
+}

@@ -21,7 +21,7 @@ import Typography from "@/core/components/ui/shared/Typography/Typography";
 import { ContactList } from "../ContactList/ContactList";
 import ButtonRounded from "@/core/components/ui/shared/ButtonRounded/ButtonRounded";
 import { NavList } from "../NavList/NavList";
-import UiForm from "@/core/components/ui/shared/UiForm/UiForm";
+import UiForm from "@/core/components/ui/shared/UiInput/UiInput";
 
 interface MdFooterContentProps {
   catalogItems: {
@@ -45,7 +45,7 @@ interface MdFooterContentProps {
   }[];
 }
 
-const MdFooterContent = ({contactItems, customersItems, catalogItems}: MdFooterContentProps) => {
+const MdFooterContent = ({ contactItems, customersItems, catalogItems }: MdFooterContentProps) => {
   return (
     <div className={styles.footerContent}>
       <div className={styles.footerContentItem}>
@@ -160,4 +160,4 @@ const MdFooterContent = ({contactItems, customersItems, catalogItems}: MdFooterC
   );
 };
 
-export default MdFooterContent
+export default MdFooterContent;

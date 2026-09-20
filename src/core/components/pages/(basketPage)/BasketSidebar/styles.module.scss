@@ -1,0 +1,86 @@
+.basketSidebar {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  border-radius: 24px;
+  background-color: var(--bg-secondary);
+}
+
+.title {
+  color: var(--text-color-main);
+}
+
+.calculateBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  width: 100%;
+
+  @include media-max-width(xs) {
+    gap: 10px;
+  }
+}
+
+.calculateWrap {
+  width: 100%;
+  display: flex;
+  gap: 2px;
+}
+
+.devider {
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid var(--bg-border);
+}
+
+.calculateCategory {
+  color: var(-text-color-secondary-on);
+  flex-shrink: 0;
+}
+
+.calculateValue {
+  color: var(-text-color-secondary-on);
+  flex-shrink: 0;
+
+  &_error {
+    color: var(--text-color-red);
+  }
+}
+
+.totalBlock {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.totalText {
+  color: var(--text-color-main);
+  flex-shrink: 0;
+}
+
+.totalValue {
+  color: var(--text-color-main);
+  flex-shrink: 0;
+}
+
+.promocode {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.promocodeTitle {
+  color: var(--text-color-secondary-on);
+}
+
+.promocodeSuccess {
+  color: var(--text-color-main);
+}
+
+.orderButton[data-weight] {
+  @include media-max-width(xs) {
+    height: 44px;
+  }
+}

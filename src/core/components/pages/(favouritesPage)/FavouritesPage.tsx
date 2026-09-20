@@ -9,7 +9,7 @@ import css from "./styles.module.scss";
 import { useFavourites, useFavouritesIsHydrated } from "@/core/store/useFavouritesStore";
 
 //query fetchers
-import { useFavouritesQuery } from "@/core/api/queryFetchers/getFavouritesQuery";
+import { useFavouritesQuery } from "@/core/api/queryFetchers/getPostFavouritesQuery";
 
 //components
 import { BreadCrumbs } from "@/core/components/common/BreadCrumbs/BreadCrumbs";
