@@ -10,7 +10,7 @@ interface IActions {
   toggleFavourite: (slug: string) => void;
   removeFavourite: (slug: string) => void;
   clearFavourites: () => void;
-  setHidrated: () => void;
+  setHydrated: () => void;
 }
 
 interface IFavouritesStore extends IState, IActions {}
@@ -30,7 +30,7 @@ const favouritesStore: StateCreator<IFavouritesStore, [["zustand/persist", unkno
     })),
   removeFavourite: (slug) => set((state) => ({ favourites: state.favourites.filter((item) => item !== slug) })),
   clearFavourites: () => set({ favourites: [] }),
-  setHidrated: () => set({ isHydrated: true }),
+  setHydrated: () => set({ isHydrated: true }),
 });
 
 const useFavouritesStore = create<IFavouritesStore>()(
@@ -38,7 +38,7 @@ const useFavouritesStore = create<IFavouritesStore>()(
     name: "favourites-store",
     storage: createJSONStorage(() => localStorage),
     partialize: (state) => ({ favourites: state.favourites }),
-    onRehydrateStorage: () => (state) => state?.setHidrated(),
+    onRehydrateStorage: () => (state) => state?.setHydrated(),
   }),
 );
 
@@ -48,4 +48,4 @@ export const useToggleFavourite = () => useFavouritesStore((state) => state.togg
 export const useRemoveFavourite = () => useFavouritesStore((state) => state.removeFavourite);
 export const useClearFavourites = () => useFavouritesStore((state) => state.clearFavourites);
 export const useFavouritesIsHydrated = () => useFavouritesStore((state) => state.isHydrated);
-export const useSetHydrated = () => useFavouritesStore((state) => state.setHidrated);
+export const useSetHydrated = () => useFavouritesStore((state) => state.setHydrated);

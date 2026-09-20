@@ -21,7 +21,7 @@ import Typography from "@/core/components/ui/shared/Typography/Typography";
 import { ContactList } from "../ContactList/ContactList";
 import ButtonRounded from "@/core/components/ui/shared/ButtonRounded/ButtonRounded";
 import { NavList } from "../NavList/NavList";
-import UiForm from "@/core/components/ui/shared/UiForm/UiForm";
+import UiForm from "@/core/components/ui/shared/UiInput/UiInput";
 
 interface XsFooterContentProps {
   catalogItems: {

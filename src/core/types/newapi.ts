@@ -9,6 +9,7 @@ export type IBanner = components["schemas"]["BannerResource"];
 export type IProductShort = components["schemas"]["OfferListResource"];
 export type IArticle = components["schemas"]["ArticleResource"];
 export type ICategory = components["schemas"]["ProductCategoryResource"];
+export type IPromoCode = components["schemas"]["PromoCode"];
 
 export type ISort = "new" | "cheaper" | "expensive";
 

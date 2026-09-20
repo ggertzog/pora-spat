@@ -2,9 +2,10 @@
 //libs
 import React, { useCallback, useRef } from "react";
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
+import clsx from "clsx";
 
 //styles
-import styles from "./styles.module.scss";
+import css from "./styles.module.scss";
 import "swiper/css";
 
 //components
@@ -19,12 +20,13 @@ import { IHitSale } from "@/core/api/queryFetchers/getHitSalesQuery";
 import { useMediaQuery } from "@/core/utils/hooks/useMediaQuery";
 
 interface IProductSection {
+  className?: string;
   bgColor: "main" | "secondary";
   cards: IHitSale[];
   title: string;
 }
 
-export default function ProductSection({ cards = [], title, bgColor }: IProductSection) {
+export default function ProductSection({ className, cards = [], title, bgColor }: IProductSection) {
   const swiperRef = useRef<SwiperClass | null>(null);
 
   // Экземпляр Swiper
@@ -46,24 +48,24 @@ export default function ProductSection({ cards = [], title, bgColor }: IProductS
   const isXSlayout = useMediaQuery("(max-width: 767px)");
 
   return (
-    <section className={styles.productSection}>
-      <Typography className={styles.title} variant="h2" as="h2">
+    <section className={clsx(css.productSection, className)}>
+      <Typography className={css.title} variant="h2" as="h2">
         {title}
       </Typography>
       <Swiper
-        className={styles.swiperContainer}
+        className={css.swiperContainer}
         onSwiper={onSwiper}
         slidesPerView={"auto"}
         spaceBetween={isXSlayout ? 10 : 16}
       >
         {cards?.map((card) => (
-          <SwiperSlide className={styles.swiperSlide} key={card.id}>
+          <SwiperSlide className={css.swiperSlide} key={card.id}>
             <ProductCard card={card} bgColor={bgColor} size={isSMlayout ? "xs" : "xl"} />
           </SwiperSlide>
         ))}
       </Swiper>
       {!isXSlayout && (
-        <div className={styles.buttonsWrapper}>
+        <div className={css.buttonsWrapper}>
           <ButtonSlide icon="arrowLeft" theme="dark" onClick={handlePrevClick} />
           <ButtonSlide icon="arrowRight" theme="dark" onClick={handleNextClick} />
         </div>

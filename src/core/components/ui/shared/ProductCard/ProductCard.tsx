@@ -1,7 +1,7 @@
 "use client";
 
 //libs
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import clsx from "clsx";
 import Link from "next/link";
@@ -19,6 +19,7 @@ import ProductTag from "@/core/components/ui/shared/ProductTag/ProductTag";
 
 //types
 import { IHitSale } from "@/core/api/queryFetchers/getHitSalesQuery";
+import { useFavouritesIsHydrated, useIsFavourite, useToggleFavourite } from "@/core/store/useFavouritesStore";
 
 interface IProductCard {
   bgColor: "main" | "secondary";
@@ -27,8 +28,11 @@ interface IProductCard {
 }
 
 const ProductCard = ({ bgColor, size, card }: IProductCard) => {
-  const [isLiked, setIsLiked] = useState(false);
   const { name, sub_name, image, slug, cost, gallery } = card;
+
+  const isFavourite = useIsFavourite(String(slug));
+  const isHydarted = useFavouritesIsHydrated();
+  const handleToggleFavourite = useToggleFavourite();
 
   // TODO: Сделать галлерею изображений
 
@@ -39,7 +43,7 @@ const ProductCard = ({ bgColor, size, card }: IProductCard) => {
       <Link href={`/products/${slug}`}>
         <div className={styles.imgWrap}>
           {image && <Image className={styles.img} src={image} alt={name || "фотография товара"} fill />}
-          <ButtonIcon isActive={isLiked} onClick={() => setIsLiked(!isLiked)}>
+          <ButtonIcon isActive={isHydarted && isFavourite} onClick={() => handleToggleFavourite(String(slug))}>
             <HeartIcon />
           </ButtonIcon>
           <div className={styles.tagsWrap}>

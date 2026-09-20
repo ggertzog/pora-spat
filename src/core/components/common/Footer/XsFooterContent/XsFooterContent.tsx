@@ -10,7 +10,7 @@ import styles from "./styles.module.scss";
 //components
 import Typography from "@/core/components/ui/shared/Typography/Typography";
 import { ContactList } from "../ContactList/ContactList";
-import UiForm from "@/core/components/ui/shared/UiForm/UiForm";
+import UiForm from "@/core/components/ui/shared/UiInput/UiInput";
 import ButtonRounded from "@/core/components/ui/shared/ButtonRounded/ButtonRounded";
 
 //assets

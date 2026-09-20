@@ -22,4 +22,26 @@
 .formInput {
   @include clearInput;
   width: 100px;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+.submitButton {
+  color: var(--ico-color-main-on);
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+}
+
+.formError {
+  padding-left: 24px;
+  display: block;
+  margin-top: 8px;
+  color: var(--text-color-red);
+  font-size: 12px;
+  line-height: 1.3;
 }

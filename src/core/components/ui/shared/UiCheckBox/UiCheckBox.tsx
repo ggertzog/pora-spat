@@ -22,11 +22,11 @@ interface IUiCheckBox extends React.InputHTMLAttributes<HTMLInputElement> {
   type: TType;
 }
 
-const UiCheckBox = forwardRef<HTMLInputElement, IUiCheckBox>(({ type, text, variant, color, ...props }, ref) => {
+const UiCheckBox = forwardRef<HTMLInputElement, IUiCheckBox>(({ type, text, variant, color, className, ...props }, ref) => {
   const id = useId();
 
   return (
-    <div className={css.uiCheckBox}>
+    <div className={clsx(css.uiCheckBox, className)}>
       <input id={id} type={type} className={css.input} ref={ref} {...props} />
       <label className={clsx(css.label, css[`label_type_${variant}`], css[`label_color_${color}`])} htmlFor={id}>
         {variant === "square" && <ArrowIcon className={css.icon} />}

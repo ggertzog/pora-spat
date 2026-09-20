@@ -1,0 +1,11 @@
+.basketCardList {
+  @include clearList;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @include media-max-width(xs) {
+    gap: 10px;
+  }
+}

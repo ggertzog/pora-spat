@@ -37,8 +37,7 @@ const HomePage = () => {
       <TagsSection />
       <CategorySection />
       <TitleSection />
-      {/* TODO: cards={hitSales || []} Переделать */}
-      <ProductSection cards={hitSales || []} title="Хиты продаж" bgColor="secondary" />
+      {hitSales && <ProductSection cards={hitSales} title="Хиты продаж" bgColor="secondary" />}
       <RecommendationSection />
       <div className={styles.deliveryTomorrowSection}>
         <ProductSection cards={deliveryTomorrow || []} title="Доставим завтра" bgColor="main" />

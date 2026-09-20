@@ -18,6 +18,7 @@ import BedImage from "@p/assets/images/bed.png";
 
 //stores
 import { useFavouritesIsHydrated, useIsFavourite, useToggleFavourite } from "@/core/store/useFavouritesStore";
+import { useAddToBasket } from "@/core/store/useBasketStore";
 
 //components
 import ProductTag from "@/core/components/ui/shared/ProductTag/ProductTag";
@@ -49,6 +50,8 @@ const CatalogCard = ({ card, size = "xxl", discount }: ICatalogCard) => {
   const isHydrated = useFavouritesIsHydrated();
   const isFavourite = useIsFavourite(String(slug));
   const toggleFavourite = useToggleFavourite();
+  // TODO: Реализовать переадрисацию на страницу корзины при добавлении товара
+  const addToBasket = useAddToBasket();
 
   const handleMouseMove = useCallback(
     (event: React.MouseEvent<HTMLDivElement>) => {
@@ -131,7 +134,12 @@ const CatalogCard = ({ card, size = "xxl", discount }: ICatalogCard) => {
         </div>
         <div className={css.buttonWrap}>
           {!!group_params && <SpecificationsBlock params={group_params} />}
-          <ButtonRounded leftIcon={<TruckIcon />} size="h48" text={days_for_delivery} />
+          <ButtonRounded
+            onClick={() => addToBasket(String(slug))}
+            leftIcon={<TruckIcon />}
+            size="h48"
+            text={days_for_delivery}
+          />
         </div>
       </div>
     </div>

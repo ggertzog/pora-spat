@@ -16,6 +16,10 @@
 
 .h3 {
   @include h3;
+
+  @include media-max-width(xs) {
+    @include h3(xs);
+  }
 }
 
 .h4 {
